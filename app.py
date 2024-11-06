@@ -43,24 +43,9 @@ for _, fila in datos_filtrados.iterrows():
         popup=fila['nombre']
     ).add_to(mapa)
 
-st.markdown(
-    """
-    <style>
-    .main .block-container {
-        padding: 0;
-    }
-    .main .block-container .element-container {
-        padding: 0;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 st_folium(mapa, width="100%", height=600)
 
-# Muestra los datos cargados
-st.write('Datos cargados:')
-st.dataframe(datos)
 
-st.write('Datos filtrados:')
+# Muestra los datos cargados
+# st.write('Datos cargados:')
+# st.dataframe(datos)
