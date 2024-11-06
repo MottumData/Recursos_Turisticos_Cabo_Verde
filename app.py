@@ -47,5 +47,5 @@ st_folium(mapa, width="100%", height=600)
 
 
 # Muestra los datos cargados
-# st.write('Datos cargados:')
+st.write('Datos cargados:')
 # st.dataframe(datos)
