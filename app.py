@@ -2,6 +2,8 @@ import streamlit as st
 from streamlit.components.v1 import html
 import pandas as pd
 import folium
+from folium import plugins
+from streamlit_folium import st_folium
 
 # Configura la página para que use el diseño ancho
 st.set_page_config(layout="wide")
@@ -14,6 +16,7 @@ ruta_archivo = 'data/santiago_cabo_verde_localizaciones.csv'
 datos = pd.read_csv(ruta_archivo)
 
 # Añade un widget de selección para filtrar por nombre
+st.sidebar.title("Filtros")
 nombres = datos['nombre'].unique()
 nombre_seleccionado = st.selectbox('Selecciona un nombre para filtrar', nombres)
 
@@ -26,6 +29,13 @@ mapa = folium.Map(
     zoom_start=10
 )
 
+plugins.Fullscreen(                                                         
+        position = "topright",                                   
+        title = "Open full-screen map",                       
+        title_cancel = "Close full-screen map",                      
+        force_separate_button = True,                                         
+    ).add_to(mapa) 
+
 # Añade marcadores al mapa
 for _, fila in datos_filtrados.iterrows():
     folium.Marker(
@@ -33,8 +43,12 @@ for _, fila in datos_filtrados.iterrows():
         popup=fila['nombre']
     ).add_to(mapa)
 
+st_folium(mapa, width="fill", height=600)
+
+'''
 # Genera el HTML del mapa
 mapa_html = mapa.get_root().render()
+
 
 # Muestra el mapa en la aplicación ocupando toda la pantalla
 html(f"""
@@ -44,6 +58,7 @@ html(f"""
     """,
     height=700
 )
+'''
 
 # Muestra los datos cargados
 st.write('Datos cargados:')
