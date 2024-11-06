@@ -43,23 +43,9 @@ for _, fila in datos_filtrados.iterrows():
         popup=fila['nombre']
     ).add_to(mapa)
 
-st_folium(mapa, width="fill", height=600)
+st_folium(mapa, width="100%", height=600)
 
-'''
-# Genera el HTML del mapa
-mapa_html = mapa.get_root().render()
-
-
-# Muestra el mapa en la aplicación ocupando toda la pantalla
-html(f"""
-    <div style="width: 100%; height: 100vh;">
-        {mapa_html}
-    </div>
-    """,
-    height=700
-)
-'''
 
 # Muestra los datos cargados
-st.write('Datos cargados:')
-st.dataframe(datos)
+# st.write('Datos cargados:')
+# st.dataframe(datos)
