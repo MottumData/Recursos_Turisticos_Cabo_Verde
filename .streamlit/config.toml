@@ -1,0 +1,9 @@
+[theme]
+base="light"
+primaryColor="#2d5970"
+
+[server]
+runOnSave = true
+
+[ui]
+hideTopBar = true
