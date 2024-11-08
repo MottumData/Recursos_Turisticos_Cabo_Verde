@@ -67,15 +67,16 @@ def main():
     if consejos_seleccionados:
         datos = datos[datos['Conselho'].isin(consejos_seleccionados)]
         
-    categorias = ['Todos'] + sorted(datos['Cara'].unique())
-    categoria_seleccionada = st.sidebar.radio(
-        'Seleccione una categoría:',
-        categorias
-    )
+    # Crear checkboxes para cada categoría
+    categorias = sorted(datos['Cara'].unique())
+    categorias_seleccionadas = []
+    for categoria in categorias:
+        if st.sidebar.checkbox(categoria, value=False):
+            categorias_seleccionadas.append(categoria)
 
-    # Filtrar los datos según la categoría seleccionada
-    if categoria_seleccionada != 'Todos':
-        datos = datos[datos['Cara'] == categoria_seleccionada]
+    # Filtrar los datos según las categorías seleccionadas
+    if categorias_seleccionadas:
+        datos = datos[datos['Cara'].isin(categorias_seleccionadas)]
 
     # Crea el mapa utilizando Folium centrado en Cabo Verde
     mapa = folium.Map(
@@ -122,7 +123,7 @@ def main():
         if recurso is not None:
             # Crear un contenedor para el panel de detalles
             with st.container():
-                with st.expander("🏛️ Detalles del Recurso", expanded=False):
+                with st.expander("🏛️ Detalles del Recurso", expanded=True):
                     cols = st.columns([3, 2])
                     
                     with cols[0]:
@@ -216,6 +217,9 @@ def main():
                     display: none;
                 }
                 .st-emotion-cache-bm2z3a{
+                }
+                .stCheckbox > label{
+                    margin-bottom: 0.1rem; /* Ajusta este valor según tus necesidades */
                 }
         """, unsafe_allow_html=True)
 
