@@ -1,0 +1,21 @@
+{
+    "seleccionar_capa": "Select a map layer:",
+    "seleccionar_ilha": "Select an island:",
+    "detalles_recurso": "🏛️ Resource Details",
+    "descripcion": "📝 Description",
+    "elementos_materiales": "🏺 Material Elements",
+    "elementos_naturales": "🌿 Natural Elements",
+    "error_cara": "The 'Cara' column does not exist in the CSV file.",
+    "select_language": "Select your language:",
+    "select_all": "Select all",
+    "unselect_all": "Deselect all",
+    "warning_ilha": "La columna 'ilha' no está presente en el dataset.",
+    "warning_cara": "La columna 'Cara' no está presente en el dataset.",
+    "columna_ilha": "island",  
+    "columna_cara": "Cara",
+    "council_label": "Council",
+    "parish_label": "Parish",
+    "classification_label": "Classification",
+    "village_label": "Village",
+    "neighborhood_label": "Neighborhood"
+}

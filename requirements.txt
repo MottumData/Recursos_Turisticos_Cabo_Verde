@@ -2,3 +2,9 @@ streamlit
 pandas
 folium
 streamlit_folium
+openrouteservice
+requests
+osmnx
+networkx
+geopy
+scikit-learn

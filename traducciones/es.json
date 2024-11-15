@@ -1,0 +1,21 @@
+{
+    "seleccionar_capa": "Seleccione una capa del mapa:",
+    "seleccionar_ilha": "Seleccione una isla:",
+    "detalles_recurso": "🏛️ Detalles del Recurso",
+    "descripcion": "📝 Descripción",
+    "elementos_materiales": "🏺 Elementos Materiales",
+    "elementos_naturales": "🌿 Elementos Naturales",
+    "error_cara": "La columna 'Cara' no existe en el archivo CSV.",
+    "select_language": "Selecciona tu idioma:",
+    "select_all": "Seleccionar todo",
+    "unselect_all": "Deseleccionar todo",
+    "warning_ilha": "La columna 'ilha' no está presente en el dataset.",
+    "warning_cara": "La columna 'Cara' no está presente en el dataset.",
+    "columna_ilha": "Isla", 
+    "columna_cara": "Cara",
+    "council_label": "Consejo",
+    "parish_label": "Parroquia",
+    "classification_label": "Clasificación",
+    "village_label": "Aldea",
+    "neighborhood_label": "Vecindario"
+}
