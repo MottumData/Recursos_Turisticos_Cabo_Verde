@@ -95,22 +95,21 @@ def crear_mapa(datos, capa_seleccionada, traducciones):
             categoria = fila['category']
             resource_id = fila['id']
             icono = category_icons.get(categoria, {'color': 'gray', 'icon': 'question-circle'})
+            
+            # Incluir resource_id en el popup de manera estructurada
             popup_html = f"""
             <b>{nombre_recurso}</b><br>
-            <a href="?resource_id={resource_id}" target="_self">
-                <button style="background-color:#4CAF50;color:white;padding:5px 10px;border:none;border-radius:3px;cursor:pointer;">
-                    Ver Detalles
-                </button>
-            </a>
+            <a href="#" onclick="Streamlit.setComponentValue({resource_id})">Ver Detalles</a>
             """
 
-            # Agregar el marcador al mapa
+            # Agregar el marcador al mapa con el popup modificado
             folium.Marker(
                 location=[lat, lon],
                 popup=folium.Popup(popup_html, max_width=250),
                 tooltip=nombre_recurso,
                 icon=folium.Icon(color=icono['color'], icon=icono['icon'], prefix='fa')
             ).add_to(mapa)
+
     return mapa
 
 def procesar_rutas(mapa, rutas_df, ruta_predefinida):
@@ -171,15 +170,10 @@ def main(): # Recarga una vez después de 5 segu
     
     idiomas_disponibles = obtener_idiomas()
     
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown('<div class="custom-selectbox">', unsafe_allow_html=True)
-        idioma_seleccionado = st.selectbox(
+    idioma_seleccionado = st.sidebar.selectbox(
             "Seleccione su idioma",
             idiomas_disponibles
-        )
-        st.markdown('</div>', unsafe_allow_html=True)
+    )
 
     # Cargar las traducciones para el idioma seleccionado
     traducciones = cargar_traducciones(idioma_seleccionado)
@@ -190,14 +184,11 @@ def main(): # Recarga una vez después de 5 segu
     if datos.empty:
         st.error("No hay datos disponibles para este idioma.")
         return
-    
-    with col2:
-        st.markdown('<div class="custom-selectbox">', unsafe_allow_html=True)
-        capa_seleccionada = st.selectbox(
+
+    capa_seleccionada = st.sidebar.selectbox(
             "Seleccione la capa",
             list(capas.keys())
-        )
-        st.markdown('</div>', unsafe_allow_html=True)
+    )
 
     # Filtrar por isla
     ilha_seleccionada = st.sidebar.selectbox(
@@ -235,7 +226,17 @@ def main(): # Recarga una vez después de 5 segu
         procesar_rutas(mapa, rutas_df, ruta_predefinida)
         
     # Mostrar el mapa
-    salida = st_folium(mapa, width="Full")
+    salida = st_folium(mapa, height=700, use_container_width=True,)
+    
+    # --- Código Añadido: Detectar resource_id y Redirigir ---
+    resource_id_clicked = st.session_state.get('resource_id', None)
+    
+    if resource_id_clicked:
+        st.session_state.pop('resource_id', None)
+        st.experimental_set_query_params(resource_id=resource_id_clicked)
+        st.switch_page("Detalle del Recurso")
+        return
+    # --- Fin del Código Añadido ---
     
     recurso = None
             
@@ -297,6 +298,7 @@ def main(): # Recarga una vez después de 5 segu
                         img_url = recurso.get(img_key, '')
                         if img_url and pd.notna(img_url):
                             st.image(img_url, use_container_width=True)     
+                            
     # CSS personalizado
     st.markdown("""
         <style>
@@ -330,6 +332,7 @@ def main(): # Recarga una vez después de 5 segu
             .footer {{
                 display: none;
             }}
+            
         </style>
         """, unsafe_allow_html=True)
 

@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd  # Asegúrate de importar pandas
 from src.data_utils import cargar_dataset, cargar_traducciones
 
-def main():
+def detalles_recursos():
     st.set_page_config(page_title="Detalle del Recurso", layout="wide")
 
     # Obtener el resource_id desde st.session_state
@@ -56,6 +56,3 @@ def main():
     if st.button("Volver al Mapa"):
         st.session_state.pop('resource_id', None)
         st.experimental_switch_page("app")
-
-if __name__ == "__main__":
-    main()
