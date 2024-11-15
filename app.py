@@ -99,7 +99,7 @@ def crear_mapa(datos, capa_seleccionada, traducciones):
             # Incluir resource_id en el popup de manera estructurada
             popup_html = f"""
             <b>{nombre_recurso}</b><br>
-            <a href="#" onclick="Streamlit.setComponentValue({resource_id})">Ver Detalles</a>
+            <a href="#" onclick="Streamlit.setComponentValue({resource_id})"></a>
             """
 
             # Agregar el marcador al mapa con el popup modificado
