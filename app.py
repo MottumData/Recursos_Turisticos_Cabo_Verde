@@ -12,7 +12,6 @@ from shapely.geometry import Point
 from shapely.ops import unary_union
 import geopandas as gpd
 import streamlit.components.v1 as components
-from streamlit_autorefresh import st_autorefresh
 
 # Importar funciones desde los nuevos módulos
 from src.data_utils import cargar_dataset, cargar_traducciones, obtener_idiomas
