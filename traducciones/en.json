@@ -6,7 +6,7 @@
     "elementos_materiales": "🏺 Material Elements",
     "elementos_naturales": "🌿 Natural Elements",
     "error_cara": "The 'Cara' column does not exist in the CSV file.",
-    "select_language": "Select your language:",
+    "select_language": "Language:",
     "select_all": "Select all",
     "unselect_all": "Deselect all",
     "warning_ilha": "La columna 'ilha' no está presente en el dataset.",
@@ -17,5 +17,30 @@
     "parish_label": "Parish",
     "classification_label": "Classification",
     "village_label": "Village",
-    "neighborhood_label": "Neighborhood"
+    "neighborhood_label": "Neighborhood",
+    "resource_selected": "The resource information loaded succesfully: {resource_name}",
+    "more_information": "More information",
+    "select_category": "Categories:",
+    "select_route": "Route:",
+    "category_mapping": {
+        "Natural Places": "category_natural_places",
+        "Beaches and Coastal Locations": "category_beaches_coastal",
+        "Mountains and Mountains": "category_mountains",
+        "Flora and Fauna Observation Sites": "category_flora_fauna",
+        "Vales": "category_vales",
+        "Architectural and Artistic Heritage": "category_architectural_heritage",
+        "Museums and Exhibition Halls": "category_museums",
+        "Representative Works of Art": "category_representative_works",
+        "Crafts With Folklore Materials": "category_ethnography_folklore",
+        "Spiritual Folklore": "category_spiritual_folklore",
+        "Ethnic Groups": "category_ethnic_groups",
+        "Scientific and Technical Achievements": "category_scientific_achievements",
+        "Engineering Works": "category_engineering_works",
+        "Human Settlements and Living Architecture": "category_human_settlements",
+        "Geological and Paleontological Formations": "category_geological_formations",
+        "Archaeological Legacy": "category_archaeological_legacy",
+        "Farms": "category_farms",
+        "Others": "category_others"
+    }
+
 }

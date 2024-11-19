@@ -20,37 +20,29 @@ from src.draw_routes import convertir_coordenadas, obtener_coordenadas, cargar_r
 # Configura la página para que use el diseño ancho
 st.set_page_config(layout="wide")
 
-capas = {
-        'OpenStreetMap': 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-        'Stamen Terrain': 'https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg',
-        'Stamen Toner': 'http://tile.stamen.com/toner/{z}/{x}/{y}.png',
-        'CartoDB positron': 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-        'CartoDB dark_matter': 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-    }
-
-atribuciones = {
-    'OpenStreetMap': '&copy; OpenStreetMap contributors',
-    'Stamen Terrain': 'Map tiles by Stamen Design, CC BY 3.0',
-    'Stamen Toner': 'Map tiles by Stamen Design, CC BY 3.0',
-    'CartoDB positron': '&copy; OpenStreetMap contributors & CARTO',
-    'CartoDB dark_matter': '&copy; OpenStreetMap contributors & CARTO'
-}
-
-def filtrar_datos(datos, ilha_seleccionada, categorias_seleccionadas):
-    if ilha_seleccionada != 'Todos':
-        datos = datos[datos['island'] == ilha_seleccionada]
+def filtrar_datos(datos, categorias_seleccionadas):
     if categorias_seleccionadas:
-        datos = datos[datos['category'].isin(categorias_seleccionadas)]
+        datos = datos[datos['category_id'].isin(categorias_seleccionadas)]
     return datos
 
-def crear_mapa(datos, capa_seleccionada, traducciones):
+def crear_mapa(datos, traducciones):
 
     mapa = folium.Map(
         location=[15.1111, -23.6167],
         zoom_start=10,
-        tiles=capas[capa_seleccionada],
-        attr=atribuciones[capa_seleccionada]
+        tiles=None
     )
+    
+    folium.TileLayer('OpenStreetMap', name='OpenStreetMap', show=True).add_to(mapa)
+    folium.TileLayer('OpenTopoMap', name='OpenTopoMap', show=False).add_to(mapa)
+    #folium.TileLayer('Stamen Watercolor', name='Stamen Watercolor', show=False).add_to(mapa)
+    #folium.TileLayer('Stamen Terrain', name='Stamen Terrain', show=False).add_to(mapa)
+    #folium.TileLayer('Stamen Toner', name='Stamen Toner', show=False).add_to(mapa)
+    folium.TileLayer('CartoDB positron', name='CartoDB Positron', show=False).add_to(mapa)
+    folium.TileLayer('CartoDB dark_matter', name='CartoDB Dark Matter', show=False).add_to(mapa)
+
+    # Agregar control de capas
+    folium.LayerControl().add_to(mapa)
 
     plugins.Fullscreen(
         position="topright",
@@ -60,47 +52,42 @@ def crear_mapa(datos, capa_seleccionada, traducciones):
     ).add_to(mapa)
     
     category_icons = {
-    'Natural Places': {'color': 'lightgreen', 'icon': 'tree'},
-    'Beaches and Coastal Locations': {'color': 'darkgreen', 'icon': 'umbrella-beach'},
-    'Mountains and Mountains': {'color': 'green', 'icon': 'mountain'},
-    'Flora and Fauna Observation Sites': {'color': 'lightgreen', 'icon': 'binoculars'},
-    'Vales': {'color': 'green', 'icon': 'tree'},
-    
-    'Architectural and Artistic Heritage': {'color': 'blue', 'icon': 'university'},
-    'Museums and Exhibition Halls': {'color': 'darkblue', 'icon': 'university'},
-    'Representative Works of Art': {'color': 'lightblue', 'icon': 'palette'},
-    
-    'Ethnography and folklore': {'color': 'orange', 'icon': 'users'},
-    'Spiritual Folklore': {'color': 'orange', 'icon': 'church'},
-    'Ethnic Groups': {'color': 'orange', 'icon': 'users'},
-    
-    'Scientific Technical Achievements': {'color': 'purple', 'icon': 'flask'},
-    'Engineering Works': {'color': 'purple', 'icon': 'cogs'},
-    
-    'Human Settlements and Living Architecture': {'color': 'brown', 'icon': 'home'},
-    
-    'Geological and Paleontological Formations': {'color': 'darkpurple', 'icon': 'gem'},
-    'Archaeological Legacy': {'color': 'maroon', 'icon': 'landmark'},
-    
-    'Farms': {'color': 'olive', 'icon': 'tractor'},
-    
-    'Others': {'color': 'gray', 'icon': 'question-circle'},
-}
+    'category_natural_places': {'color': 'lightgreen', 'icon': 'tree'},
+    'category_beaches_coastal': {'color': 'darkgreen', 'icon': 'umbrella-beach'},
+    'category_mountains': {'color': 'green', 'icon': 'mountain'},
+    'category_flora_fauna': {'color': 'lightgreen', 'icon': 'binoculars'},
+    'category_vales': {'color': 'green', 'icon': 'tree'},
+    'category_architectural_heritage': {'color': 'blue', 'icon': 'university'},
+    'category_museums': {'color': 'darkblue', 'icon': 'university'},
+    'category_representative_works': {'color': 'lightblue', 'icon': 'palette'},
+    'category_ethnography_folklore': {'color': 'orange', 'icon': 'users'},
+    'category_spiritual_folklore': {'color': 'orange', 'icon': 'church'},
+    'category_ethnic_groups': {'color': 'orange', 'icon': 'users'},
+    'category_scientific_achievements': {'color': 'purple', 'icon': 'flask'},
+    'category_engineering_works': {'color': 'purple', 'icon': 'cogs'},
+    'category_human_settlements': {'color': 'brown', 'icon': 'home'},
+    'category_geological_formations': {'color': 'darkpurple', 'icon': 'gem'},
+    'category_archaeological_legacy': {'color': 'maroon', 'icon': 'landmark'},
+    'category_farms': {'color': 'olive', 'icon': 'tractor'},
+    'category_others': {'color': 'gray', 'icon': 'question-circle'},
+    }
 
     for index, fila in datos.iterrows():
         coordenadas = convertir_coordenadas(fila['lat_long'])
         if coordenadas:
             lat, lon = coordenadas
             nombre_recurso = fila['resource_name']
-            categoria = fila['category']
+            categoria = fila['category_id']
             resource_id = fila['id']
             icono = category_icons.get(categoria, {'color': 'gray', 'icon': 'question-circle'})
             
             # Incluir resource_id en el popup de manera estructurada
-            popup_html = f"""
+            mas_informacion = traducciones.get("more_information", "Más información")
+            
+            popup_html = f'''
             <b>{nombre_recurso}</b><br>
-            <a href="#" onclick="Streamlit.setComponentValue({resource_id})"></a>
-            """
+            <a href="#" onclick="parent.scrollToBottom(); return false;">{mas_informacion}</a>
+            '''
 
             # Agregar el marcador al mapa con el popup modificado
             folium.Marker(
@@ -171,56 +158,56 @@ def main(): # Recarga una vez después de 5 segu
     idiomas_disponibles = obtener_idiomas()
     
     idioma_seleccionado = st.sidebar.selectbox(
-            "Seleccione su idioma",
+            "Idioma:",
             idiomas_disponibles
     )
 
     # Cargar las traducciones para el idioma seleccionado
     traducciones = cargar_traducciones(idioma_seleccionado)
     
+    category_mapping = traducciones.get("category_mapping", {})
+    
     # Cargar el dataset correspondiente y aplicar el mapeo de columnas
-    datos = cargar_dataset(idioma_seleccionado)
+    datos = cargar_dataset(idioma_seleccionado, category_mapping)
 
     if datos.empty:
         st.error("No hay datos disponibles para este idioma.")
         return
 
-    capa_seleccionada = st.sidebar.selectbox(
-            "Seleccione la capa",
-            list(capas.keys())
+    # Obtener todas las categorías disponibles con sus identificadores
+    categorias = datos[['category_id', 'category']].drop_duplicates().sort_values('category')
+
+    # Crear un diccionario para mapear etiquetas a identificadores
+    categoria_dict = dict(zip(categorias['category'], categorias['category_id']))
+
+    # Obtener las etiquetas traducidas para mostrar al usuario
+    categorias_labels = list(categoria_dict.keys())
+
+    # Crear el multiselect usando las etiquetas traducidas
+    categorias_seleccionadas_labels = st.sidebar.multiselect(
+        traducciones.get("select_category", "Categorias:"),
+        categorias_labels
     )
 
-    # Filtrar por isla
-    ilha_seleccionada = st.sidebar.selectbox(
-        traducciones.get("seleccionar_ilha", "Seleccionar isla"),
-        ['Todos'] + sorted(datos['island'].dropna().unique())
-    )
-
-    # Filtrar por categoría
-    categorias = sorted(datos['category'].dropna().unique())
-    categorias_seleccionadas = st.sidebar.multiselect(
-        traducciones.get("seleccionar_categorias", "Seleccionar categorías"),
-        categorias
-    )
+    # Mapear las etiquetas seleccionadas a los identificadores
+    categorias_seleccionadas_ids = [categoria_dict[label] for label in categorias_seleccionadas_labels]
+    
+    datos_filtrados = filtrar_datos(datos, categorias_seleccionadas_ids)
 
     # Nuevo: Cargar las rutas y definir el selector de rutas fuera de la función
     rutas_df = cargar_rutas()
     ruta_predefinida = None
     if not rutas_df.empty:
-        st.sidebar.subheader("Rutas Predefinidas")
         ruta_predefinida = st.sidebar.selectbox(
-            "Seleccione una ruta predefinida",
+            traducciones.get("select_route", "Seleccionar ruta"),
             ['Ninguna'] + list(rutas_df['Nombre de la ruta'].unique())
         )
         if ruta_predefinida == 'Ninguna':
             ruta_predefinida = None
 
-    # Filtrar los datos según las selecciones
-    datos_filtrados = filtrar_datos(datos, ilha_seleccionada, categorias_seleccionadas)
-
     # Crear el mapa utilizando Folium centrado en Cabo Verde
     
-    mapa = crear_mapa(datos_filtrados, capa_seleccionada, traducciones)
+    mapa = crear_mapa(datos_filtrados, traducciones)
     
     if ruta_predefinida:
         procesar_rutas(mapa, rutas_df, ruta_predefinida)
@@ -233,10 +220,9 @@ def main(): # Recarga una vez después de 5 segu
     
     if resource_id_clicked:
         st.session_state.pop('resource_id', None)
-        st.experimental_set_query_params(resource_id=resource_id_clicked)
+        st.query_params(resource_id=resource_id_clicked)
         st.switch_page("Detalle del Recurso")
         return
-    # --- Fin del Código Añadido ---
     
     recurso = None
             
@@ -298,7 +284,18 @@ def main(): # Recarga una vez después de 5 segu
                         img_url = recurso.get(img_key, '')
                         if img_url and pd.notna(img_url):
                             st.image(img_url, use_container_width=True)     
-                            
+    # Inyectar la función JavaScript para hacer scroll al fondo
+    st.markdown("""
+        <script>
+        #bottom {
+            height: 50px;
+        }
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+        </script>
+    """, unsafe_allow_html=True)
+                          
     # CSS personalizado
     st.markdown("""
         <style>
@@ -316,6 +313,15 @@ def main(): # Recarga una vez después de 5 segu
     
     st.markdown(f"""
         <style>
+            html, body{{
+                height: 100%;
+                width: 100%;
+            }}
+            #map-div {{
+                height: 100vh;
+                width: 100vh;
+                margin: 0;
+            }}
             .stAppHeader {{
                 display: none;
             }}
@@ -325,6 +331,7 @@ def main(): # Recarga una vez después de 5 segu
             /* Ajustar el contenedor principal para usar Flexbox */
             .stMainBlockContainer {{
                 padding: 0 !important;
+                margin: 0 !important;
             }}
             .stCheckbox > label{{
                 margin-bottom: 0.1rem;
