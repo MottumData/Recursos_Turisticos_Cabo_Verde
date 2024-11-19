@@ -6,7 +6,7 @@
     "elementos_materiales": "🏺 Elementos Materiales",
     "elementos_naturales": "🌿 Elementos Naturales",
     "error_cara": "La columna 'Cara' no existe en el archivo CSV.",
-    "select_language": "Selecciona tu idioma:",
+    "select_language": "Idioma:",
     "select_all": "Seleccionar todo",
     "unselect_all": "Deseleccionar todo",
     "warning_ilha": "La columna 'ilha' no está presente en el dataset.",
@@ -17,5 +17,30 @@
     "parish_label": "Parroquia",
     "classification_label": "Clasificación",
     "village_label": "Aldea",
-    "neighborhood_label": "Vecindario"
+    "neighborhood_label": "Vecindario",
+    "resource_selected": "La información del recurso se cargó correctamente: {resource_name}",
+    "more_information": "Más información",
+    "select_category": "Categorías:",
+    "select_route": "Ruta:",
+    
+    "category_mapping": {
+        "Lugares Naturales": "category_natural_places",
+        "Playas y zonas costeras": "category_beaches_coastal",
+        "Montañas y montañas": "category_mountains",
+        "Sitios de Observación de Flora y Fauna": "category_flora_fauna",
+        "Vales": "category_vales",
+        "Patrimonio Arquitectónico y Artístico": "category_architectural_heritage",
+        "Museos y salas de exposiciones": "category_museums",
+        "Obras De Arte Representativas": "category_representative_works",
+        "Folclore Espiritual": "category_spiritual_folklore",
+        "Grupos Étnicos": "category_ethnic_groups",
+        "Logros Científicos y Técnicos": "category_scientific_achievements",
+        "Obras de Ingeniería": "category_engineering_works",
+        "Asentamientos humanos y arquitectura viva": "category_human_settlements",
+        "Formaciones geológicas y paleontológicas": "category_geological_formations",
+        "Legado Arqueológico": "category_archaeological_legacy",
+        "Granjas": "category_farms",
+        "Otros": "category_others",
+        "Manualidades Con Materiales Folclóricos" : "category_ethnography_folklore"
+    }
 }

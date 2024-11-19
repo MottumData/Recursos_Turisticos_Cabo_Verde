@@ -17,7 +17,7 @@ def cargar_column_mappings():
         return {}
 
 @st.cache_data
-def cargar_dataset(idioma):
+def cargar_dataset(idioma, category_mapping):
     # Cargar el mapeo de columnas
     column_mappings = cargar_column_mappings()
     if not column_mappings:
@@ -28,6 +28,15 @@ def cargar_dataset(idioma):
         df = pd.read_csv(ruta_archivo)
         # Aplicar el mapeo de columnas
         df = df.rename(columns=column_mappings.get(idioma, {}))
+        
+        # Asignar category_id basado en el mapeo proporcionado
+        if 'category' in df.columns:
+            df['category_id'] = df['category'].map(category_mapping)
+            df['category_id'] = df['category_id'].fillna('category_others')
+        else:
+            st.error("El dataset no contiene la columna 'category'.")
+            df['category_id'] = 'category_others'
+        
         return df
     else:
         st.error(f"El archivo para el idioma {idioma} no existe.")
