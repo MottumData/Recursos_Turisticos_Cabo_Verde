@@ -7,3 +7,6 @@ runOnSave = true
 
 [ui]
 hideTopBar = true
+
+[client]
+showSidebarNavigation = false
