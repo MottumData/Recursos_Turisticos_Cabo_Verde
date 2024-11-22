@@ -12,7 +12,7 @@ def mostrar_mapa(datos_filtrados, traducciones, ruta_predefinida, rutas_df):
     mapa = crear_mapa(datos_filtrados, traducciones)
     if ruta_predefinida:
         procesar_rutas(mapa, rutas_df, ruta_predefinida)
-    salida = st_folium(mapa, height=1000, use_container_width=True)
+    salida = st_folium(mapa, height=2000, use_container_width=True)
     return salida
 
 def mostrar_detalles_recurso(salida, datos):
