@@ -35,45 +35,52 @@ def cargar_red_carreteras_por_puntos(coords):
     G = ox.graph_from_bbox(north, south, east, west, network_type='drive')
     return G
 
-def dibujar_ruta(mapa, inicio_coords, fin_coords, G, nombre_ruta):
+
+def dibujar_ruta(mapa, coords, G, nombre_ruta):
     try:
-        # osmnx.nearest_nodes espera (lon, lat)
-        nodo_inicio = ox.nearest_nodes(G, inicio_coords[1], inicio_coords[0])
-        nodo_fin = ox.nearest_nodes(G, fin_coords[1], fin_coords[0])
+        # Convertir las coordenadas a nodos en la red de carreteras
+        nodos = [ox.nearest_nodes(G, coord[1], coord[0]) for coord in coords]
     except Exception as e:
         st.error(f"No se pudo encontrar nodos cercanos para {nombre_ruta}: {e}")
         return
     
-    try:
-        ruta = nx.shortest_path(G, nodo_inicio, nodo_fin, weight='length')
-    except nx.NetworkXNoPath:
-        st.error(f"No se encontró una ruta entre los puntos seleccionados para {nombre_ruta}.")
-        return
+    ruta_coords = []
+    for i in range(len(nodos) - 1):
+        try:
+            ruta_segmento = nx.shortest_path(G, nodos[i], nodos[i + 1], weight='length')
+            ruta_coords.extend([(G.nodes[nodo]['y'], G.nodes[nodo]['x']) for nodo in ruta_segmento])
+        except nx.NetworkXNoPath:
+            st.error(f"No se encontró una ruta entre los puntos seleccionados para {nombre_ruta}.")
+            return
     
-    ruta_coords = [(G.nodes[nodo]['y'], G.nodes[nodo]['x']) for nodo in ruta]  # (lat, lon)
-    
+    highlight = {
+        'color': 'yellow',
+        'weight': 6,
+        'opacity': 1.0
+    }
     # Dibujar la ruta en el mapa
     folium.PolyLine(
         ruta_coords,
         color='blue',
         weight=4,
         opacity=0.7,
-        tooltip=nombre_ruta
+        popup=nombre_ruta,
+        tooltip=None,
+        interactive=False,  # Deshabilitar la interacción
+        highlight_function=lambda x: highlight
     ).add_to(mapa)
     
-    # Opcional: Añadir marcadores de inicio y fin solo en el primer y último segmento
-    if 'Segmento Inicial' in nombre_ruta:
-        folium.Marker(
-            location=inicio_coords,
-            popup=f"Inicio: {nombre_ruta}",
-            icon=folium.Icon(color='green', icon='play')
-        ).add_to(mapa)
-    if 'Segmento Final' in nombre_ruta:
-        folium.Marker(
-            location=fin_coords,
-            popup=f"Fin: {nombre_ruta}",
-            icon=folium.Icon(color='red', icon='stop')
-        ).add_to(mapa)
+    # Añadir marcadores de inicio y fin
+    folium.Marker(
+        location=coords[0],
+        popup=f"Inicio: {nombre_ruta}",
+        icon=folium.Icon(color='green', icon='play')
+    ).add_to(mapa)
+    folium.Marker(
+        location=coords[-1],
+        popup=f"Fin: {nombre_ruta}",
+        icon=folium.Icon(color='red', icon='stop')
+    ).add_to(mapa)
         
 @st.cache_data
 def cargar_rutas():
@@ -84,3 +91,34 @@ def cargar_rutas():
     else:
         st.error("El archivo rutas_cabo_verde.csv no existe.")
         return pd.DataFrame()
+    
+def procesar_rutas(mapa, rutas_df, ruta_predefinida):
+    if ruta_predefinida:
+        ruta = rutas_df[rutas_df['Nombre de la ruta'] == ruta_predefinida].iloc[0]
+        recursos_georeferenciados = ruta['Recursos Georeferenciados']
+        
+        # Parsear las coordenadas
+        puntos = recursos_georeferenciados.split(';')
+        coords = []
+        municipios = ruta['Municipios por los que transcurre'].split(',')
+        for punto in puntos:
+            try:
+                parte = punto.strip().split(':')[1].strip().strip('[]')
+                lat, lon = map(float, parte.split(','))
+                coords.append((lat, lon))
+            except (IndexError, ValueError):
+                st.error(f"Formato inválido en Recursos Georeferenciados para la ruta {ruta_predefinida}.")
+                coords = []
+                break
+        
+        if len(coords) >= 2:
+            nombre_ruta = ruta_predefinida
+            
+            # Cargar la red de carreteras alrededor de los puntos de la ruta
+            with st.spinner('Cargando la red de carreteras para la ruta seleccionada...'):
+                G = cargar_red_carreteras_por_puntos(coords)
+            
+            # Dibujar la ruta completa como un solo segmento
+            dibujar_ruta(mapa, coords, G, nombre_ruta)
+        else:
+            st.error(f"No hay suficientes puntos para dibujar la ruta {ruta_predefinida}.")
