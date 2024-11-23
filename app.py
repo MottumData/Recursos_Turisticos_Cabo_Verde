@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_folium import st_folium
 from src.data_utils import filtrar_datos, cargar_datos, inicializar_estado, seleccionar_idioma, seleccionar_categorias, seleccionar_ruta, mostrar_logo
-from src.draw_routes import convertir_coordenadas, cargar_rutas, procesar_rutas
+from src.draw_routes import convertir_coordenadas, procesar_rutas
 from src.create_map import crear_mapa
 import pandas as pd
 
@@ -32,30 +32,15 @@ def mostrar_detalles_recurso(salida, datos):
             st.sidebar.warning("No se encontró un recurso en la ubicación clickeada.")
     return recurso
 
-def mostrar_detalles_ruta(salida, rutas_df):
+def mostrar_detalles_ruta(rutas_df):
     ruta = None
-    if salida is not None and salida.get('last_object_clicked'):
-        lat = salida['last_object_clicked']['lat']
-        lng = salida['last_object_clicked']['lng']
-        for _, fila in rutas_df.iterrows():
-            recursos_georeferenciados = fila['Recursos Georeferenciados']
-            puntos = recursos_georeferenciados.split(';')
-            for punto in puntos:
-                try:
-                    parte = punto.strip().split(':')[1].strip().strip('[]')
-                    lat_punto, lon_punto = map(float, parte.split(','))
-                    if abs(lat_punto - lat) < 0.0001 and abs(lon_punto - lng) < 0.0001:
-                        ruta = fila
-                        break
-                except (IndexError, ValueError):
-                    continue
-            if ruta is not None:
-                break
-        if ruta is not None:
-            st.session_state['selected_route_id'] = ruta['Nombre de la ruta']
+    if 'selected_route_id' in st.session_state and st.session_state['selected_route_id'] is not None:
+        ruta = rutas_df[rutas_df['Nombre de la ruta'] == st.session_state['selected_route_id']]
+        if not ruta.empty:
+            ruta = ruta.iloc[0]
             st.sidebar.success(f"Ruta seleccionada: {ruta['Nombre de la ruta']}")
         else:
-            st.sidebar.warning("No se encontró una ruta en la ubicación clickeada.")
+            st.sidebar.warning("No se encontró la ruta seleccionada.")
     return ruta
 
 def aplicar_css_personalizado():
@@ -174,16 +159,18 @@ def main():
             st.switch_page("pages/detalle_recurso.py")
         else:
             st.sidebar.warning("Por favor, selecciona un recurso en el mapa antes de ver más información.")
+    mostrar_detalles_recurso(salida, datos)
+
+    mostrar_detalles_ruta(rutas_df)
+
+    aplicar_css_global()
     
     if st.sidebar.button('Detalle de ruta'):
         if st.session_state['selected_route_id'] is not None:
             st.session_state['route_id'] = st.session_state['selected_route_id']
             st.switch_page("pages/detalle_ruta.py")
-            
-    mostrar_detalles_recurso(salida, datos)
-    mostrar_detalles_ruta(salida, rutas_df)
-
-    aplicar_css_global()
+        else:
+            st.sidebar.warning("Por favor, selecciona una ruta en el mapa antes de ver más información.")
 
 if __name__ == "__main__":
     main()

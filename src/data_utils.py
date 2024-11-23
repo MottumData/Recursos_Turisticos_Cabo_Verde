@@ -2,7 +2,7 @@ import pandas as pd
 import json
 import os
 import streamlit as st
-from src.draw_routes import cargar_rutas
+from src.draw_routes import cargar_dataset_rutas
 
 @st.cache_data
 def cargar_column_mappings():
@@ -67,7 +67,7 @@ def inicializar_estado():
     if 'idioma_seleccionado' not in st.session_state:
         st.session_state['idioma_seleccionado'] = 'es' 
     if 'ruta_seleccionada' not in st.session_state:
-        st.session_state['ruta_seleccionada'] = None
+        st.session_state['selected_route_id'] = None
         
     # Idioma por defecto
 
@@ -90,6 +90,11 @@ def cargar_datos(idioma_seleccionado):
     datos = cargar_dataset(idioma_seleccionado, category_mapping)
     return datos, traducciones
 
+def cargar_datos_rutas(idioma_seleccionado):
+    traducciones = cargar_traducciones(idioma_seleccionado)
+    datos = cargar_dataset_rutas(idioma_seleccionado)
+    return datos, traducciones
+
 def seleccionar_categorias(traducciones, datos):
     categorias = datos[['category_id', 'category']].drop_duplicates().sort_values('category')
     categoria_dict = dict(zip(categorias['category'], categorias['category_id']))
@@ -102,14 +107,15 @@ def seleccionar_categorias(traducciones, datos):
     return categorias_seleccionadas_ids
 
 def seleccionar_ruta(traducciones):
-    rutas_df = cargar_rutas()
+    rutas_df = cargar_dataset_rutas(st.session_state['idioma_seleccionado'])
     ruta_predefinida = None
     if not rutas_df.empty:
         ruta_predefinida = st.sidebar.selectbox(
             traducciones.get("select_route", "Seleccionar ruta"),
             ['Ninguna'] + list(rutas_df['Nombre de la ruta'].unique())
         )
-        st.session_state['ruta_seleccionada'] = ruta_predefinida
-        if ruta_predefinida == 'Ninguna':
-            ruta_predefinida = None
+        if ruta_predefinida != 'Ninguna':
+            st.session_state['selected_route_id'] = rutas_df[rutas_df['Nombre de la ruta'] == ruta_predefinida]['id'].values[0]
+        else:
+            st.session_state['selected_route_id'] = None
     return ruta_predefinida, rutas_df
