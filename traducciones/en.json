@@ -22,6 +22,8 @@
     "more_information": "More information",
     "select_category": "Categories:",
     "select_route": "Route:",
+    "route_selected": "Route selected: {route_name}",
+    
     "category_mapping": {
         "Natural Places": "category_natural_places",
         "Beaches and Coastal Locations": "category_beaches_coastal",
@@ -90,5 +92,44 @@
     "medios_acceso": "Means of Access",
     "servicios": "Services",
     "servicios_disponibles": "Available Services",
-    "estado_senalizacion": "Signage Status"
+    "estado_senalizacion": "Signage Status",
+
+    "category_mapping_ruta": {
+    "Route name": "route_name",
+    "Municipalities through which it passes": "municipalities",
+    "Image 1": "image_1",
+    "Image 2": "image_2",
+    "Image 3": "image_3",
+    "Image 4": "image_4",
+    "Route description": "description",
+    "Duration": "duration",
+    "Distance": "distance",
+    "Access mode": "access_mode",
+    "Difficulty": "difficulty",
+    "Activity": "activity",
+    "Resources included": "resources_included",
+    "Starting point": "starting_point",
+    "Exit point": "exit_point",
+    "Georeferenced resources": "georeferenced_resources",
+    "id": "id"
+    },
+    "buttons": {
+        "resource_details": "Resource Details",
+        "route_details": "Route Details",
+        "details_resource_button": "Resource Details",
+        "details_route_button": "Route Details",
+        "see_resource_info": "See Resource Information",
+        "see_route_info": "See Route Information"
+    },
+    "messages": {
+        "no_data_error": "No data available for this language.",
+        "route_not_found": "Selected route not found.",
+        "resource_not_found": "Selected resource not found.",
+        "select_resource_warning": "Please, select a resource on the map before viewing more information.",
+        "select_route_warning": "Please, select a route on the map before viewing more information.",
+        "loading_roads": "Loading road network for the selected route...",
+        "invalid_georeferenced_format": "Invalid format in Georeferenced Resources for route {route_predefinida}.",
+        "no_resources_selected": "Please, select a resource on the map before viewing more information.",
+        "no_route_selected": "Please, select a route on the map before viewing more information."
+    }
 }

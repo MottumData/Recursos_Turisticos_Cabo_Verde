@@ -5,13 +5,14 @@ from src.draw_routes import cargar_dataset_rutas
 
 def cargar_datos_ruta(idioma_seleccionado, route_id):
     traducciones = cargar_traducciones(idioma_seleccionado)
-    datos = cargar_dataset_rutas(idioma_seleccionado)
+    category_mapping = traducciones.get("category_mapping_ruta", {})
+    datos = cargar_dataset_rutas(idioma_seleccionado, category_mapping)
     if datos.empty:
         st.error("No hay datos disponibles para este idioma.")
         st.stop()
     ruta = datos[datos['id'] == route_id]
     if ruta.empty:
-        print(f"Ruta no encontrada: {route_id}")
+        st.error(f"Ruta no encontrada: {route_id}")
         st.stop()
     return ruta.iloc[0], traducciones
 
@@ -22,10 +23,10 @@ def mostrar_informacion_general(ruta, traducciones):
 
 def mostrar_informacion_basica(ruta, traducciones):
     info_basica = {
-        traducciones.get("route_name_label", "Nombre de la Ruta"): ruta.get('Nombre de la Ruta', ''),
-        traducciones.get("distance_label", "Distancia"): ruta.get('Distancia', ''),
-        traducciones.get("duration_label", "Duración"): ruta.get('Duración', ''),
-        traducciones.get("difficulty_label", "Dificultad"): ruta.get('Dificultad', ''),
+        traducciones.get("route_name_label", "Nombre de la Ruta"): ruta.get('route_name', ''),
+        traducciones.get("distance_label", "Distancia"): ruta.get('distance', ''),
+        traducciones.get("duration_label", "Duración"): ruta.get('duration', ''),
+        traducciones.get("difficulty_label", "Dificultad"): ruta.get('difficulty', ''),
     }
     st.table(info_basica)
 
@@ -42,7 +43,7 @@ def mostrar_puntos_interes(ruta, traducciones):
         st.write(puntos_interes)
 
 def mostrar_recursos_asociados(ruta, traducciones):
-    recursos_asociados = ruta.get('associated_resources', '')
+    recursos_asociados = ruta.get('resources_included', '')
     if recursos_asociados:
         st.markdown(f"**{traducciones.get('recursos_asociados', 'Recursos Asociados')}:**")
         st.write(recursos_asociados)

@@ -3,19 +3,7 @@ import json
 import os
 import streamlit as st
 from src.draw_routes import cargar_dataset_rutas
-
-@st.cache_data
-def cargar_column_mappings():
-    # Obtener la ruta absoluta del archivo JSON
-    ruta = os.path.join(os.path.dirname(__file__), "column_mappings.json")
-    
-    if os.path.exists(ruta):
-        with open(ruta, "r", encoding="utf-8") as f:
-            mappings = json.load(f)
-        return mappings
-    else:
-        st.error("El archivo column_mappings.json no existe.")
-        return {}
+from src.column_mappings import cargar_column_mappings
 
 @st.cache_data
 def cargar_dataset(idioma, category_mapping):
@@ -92,7 +80,7 @@ def cargar_datos(idioma_seleccionado):
 
 def cargar_datos_rutas(idioma_seleccionado):
     traducciones = cargar_traducciones(idioma_seleccionado)
-    datos = cargar_dataset_rutas(idioma_seleccionado)
+    datos = cargar_dataset_rutas(idioma_seleccionado, traducciones.get("category_mapping_ruta", {}))
     return datos, traducciones
 
 def seleccionar_categorias(traducciones, datos):
@@ -107,15 +95,17 @@ def seleccionar_categorias(traducciones, datos):
     return categorias_seleccionadas_ids
 
 def seleccionar_ruta(traducciones):
-    rutas_df = cargar_dataset_rutas(st.session_state['idioma_seleccionado'])
+    category_mapping_ruta = traducciones.get("category_mapping_ruta", {})
+    rutas_df = cargar_dataset_rutas(st.session_state['idioma_seleccionado'], category_mapping_ruta)
     ruta_predefinida = None
     if not rutas_df.empty:
+        # Usa el nombre de la columna después del mapeo ('route_name')
         ruta_predefinida = st.sidebar.selectbox(
             traducciones.get("select_route", "Seleccionar ruta"),
-            ['Ninguna'] + list(rutas_df['Nombre de la ruta'].unique())
+            ['Ninguna'] + list(rutas_df['route_name'].unique())
         )
         if ruta_predefinida != 'Ninguna':
-            st.session_state['selected_route_id'] = rutas_df[rutas_df['Nombre de la ruta'] == ruta_predefinida]['id'].values[0]
+            st.session_state['selected_route_id'] = rutas_df[rutas_df['route_name'] == ruta_predefinida]['id'].values[0]
         else:
             st.session_state['selected_route_id'] = None
     return ruta_predefinida, rutas_df

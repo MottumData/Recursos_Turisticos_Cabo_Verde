@@ -22,6 +22,7 @@
     "more_information": "Más información",
     "select_category": "Categorías:",
     "select_route": "Ruta:",
+    "route_selected": "Ruta seleccionada: {route_name}",
     
     "category_mapping": {
         "Lugares Naturales": "category_natural_places",
@@ -90,5 +91,44 @@
     "medios_acceso": "Medios de Acceso",
     "servicios": "Servicios",
     "servicios_disponibles": "Servicios Disponibles",
-    "estado_senalizacion": "Estado de la Señalización"
+    "estado_senalizacion": "Estado de la Señalización",
+
+    "category_mapping_ruta": {
+    "Nombre de la ruta": "route_name",
+    "Municipios por los que transcurre": "municipalities",
+    "Imagen 1": "image_1",
+    "Imagen 2": "image_2",
+    "Imagen 3": "image_3",
+    "Imagen 4": "image_4",
+    "Descripción de la ruta": "description",
+    "Duración": "duration",
+    "Distancia": "distance",
+    "Modo de acceso": "access_mode",
+    "Dificultad": "difficulty",
+    "Actividad": "activity",
+    "Recursos incluidos": "resources_included",
+    "Punto de inicio": "starting_point",
+    "Punto de salida": "exit_point",
+    "Recursos Georeferenciados": "georeferenced_resources",
+    "id": "id"
+    },
+    "buttons": {
+        "resource_details": "Detalles de Recurso",
+        "route_details": "Detalles de Ruta",
+        "details_resource_button": "Detalles de Recurso",
+        "details_route_button": "Detalles de Ruta",
+        "see_resource_info": "Ver Información del Recurso",
+        "see_route_info": "Ver Información de la Ruta"
+    },
+    "messages": {
+        "no_data_error": "No hay datos disponibles para este idioma.",
+        "route_not_found": "No se encontró la ruta seleccionada.",
+        "resource_not_found": "No se encontró el recurso seleccionado.",
+        "select_resource_warning": "Por favor, selecciona un recurso en el mapa antes de ver más información.",
+        "select_route_warning": "Por favor, selecciona una ruta en el mapa antes de ver más información.",
+        "loading_roads": "Cargando la red de carreteras para la ruta seleccionada...",
+        "invalid_georeferenced_format": "Formato inválido en Recursos Georeferenciados para la ruta {route_predefinida}.",
+        "no_resources_selected": "Por favor, selecciona un recurso en el mapa antes de ver más información.",
+        "no_route_selected": "Por favor, selecciona una ruta en el mapa antes de ver más información."
+    }
 }
