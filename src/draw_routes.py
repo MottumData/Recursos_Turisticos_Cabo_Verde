@@ -9,6 +9,7 @@ import geopandas as gpd
 import pandas as pd
 from geopy.geocoders import Nominatim
 import os
+from src.column_mappings import cargar_column_mappings
 
 def convertir_coordenadas(coordenadas):
     try:
@@ -82,43 +83,41 @@ def dibujar_ruta(mapa, coords, G, nombre_ruta):
         icon=folium.Icon(color='red', icon='stop')
     ).add_to(mapa)
         
-@st.cache_data
-def cargar_rutas():
-    ruta = "data/rutas_cabo_verde.csv"
-    if os.path.exists(ruta):
-        df = pd.read_csv(ruta)
-        return df
-    else:
-        st.error("El archivo rutas_cabo_verde.csv no existe.")
-        return pd.DataFrame()
+    
+def cargar_dataset_rutas(idioma_seleccionado, category_mapping):
+    archivo_rutas = f"data/rutas_cabo_verde_{idioma_seleccionado}.csv"
+    datos = pd.read_csv(archivo_rutas)
+    # Aplicar el mapeo de columnas
+    if category_mapping:
+        datos.rename(columns=category_mapping, inplace=True)
+    return datos
     
 def procesar_rutas(mapa, rutas_df, ruta_predefinida):
     if ruta_predefinida:
-        ruta = rutas_df[rutas_df['Nombre de la ruta'] == ruta_predefinida].iloc[0]
-        recursos_georeferenciados = ruta['Recursos Georeferenciados']
-        
-        # Parsear las coordenadas
-        puntos = recursos_georeferenciados.split(';')
-        coords = []
-        municipios = ruta['Municipios por los que transcurre'].split(',')
-        for punto in puntos:
-            try:
-                parte = punto.strip().split(':')[1].strip().strip('[]')
-                lat, lon = map(float, parte.split(','))
-                coords.append((lat, lon))
-            except (IndexError, ValueError):
-                st.error(f"Formato inválido en Recursos Georeferenciados para la ruta {ruta_predefinida}.")
-                coords = []
-                break
-        
-        if len(coords) >= 2:
-            nombre_ruta = ruta_predefinida
+        ruta = rutas_df[rutas_df['route_name'] == ruta_predefinida]
+        if not ruta.empty:
+            ruta = ruta.iloc[0]
+            recursos_georeferenciados = ruta['georeferenced_resources']
+            puntos = recursos_georeferenciados.split(';')
+            coords = []
+            for punto in puntos:
+                try:
+                    parte = punto.strip().split(':')[1].strip().strip('[]')
+                    lat, lon = map(float, parte.split(','))
+                    coords.append((lat, lon))
+                except (IndexError, ValueError):
+                    st.error(f"Formato inválido en Recursos Georeferenciados para la ruta {ruta_predefinida}.")
+                    coords = []
+                    break
             
-            # Cargar la red de carreteras alrededor de los puntos de la ruta
-            with st.spinner('Cargando la red de carreteras para la ruta seleccionada...'):
-                G = cargar_red_carreteras_por_puntos(coords)
-            
-            # Dibujar la ruta completa como un solo segmento
-            dibujar_ruta(mapa, coords, G, nombre_ruta)
-        else:
-            st.error(f"No hay suficientes puntos para dibujar la ruta {ruta_predefinida}.")
+            if len(coords) >= 2:
+                nombre_ruta = ruta_predefinida
+                
+                # Cargar la red de carreteras alrededor de los puntos de la ruta
+                with st.spinner('Cargando la red de carreteras para la ruta seleccionada...'):
+                    G = cargar_red_carreteras_por_puntos(coords)
+                
+                # Dibujar la ruta completa como un solo segmento
+                dibujar_ruta(mapa, coords, G, nombre_ruta)
+            else:
+                st.error(f"No hay suficientes puntos para dibujar la ruta {ruta_predefinida}.")

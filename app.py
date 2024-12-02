@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_folium import st_folium
 from src.data_utils import filtrar_datos, cargar_datos, inicializar_estado, seleccionar_idioma, seleccionar_categorias, seleccionar_ruta, mostrar_logo
-from src.draw_routes import convertir_coordenadas, cargar_rutas, procesar_rutas
+from src.draw_routes import convertir_coordenadas, procesar_rutas
 from src.create_map import crear_mapa
 import pandas as pd
 
@@ -15,7 +15,7 @@ def mostrar_mapa(datos_filtrados, traducciones, ruta_predefinida, rutas_df):
     salida = st_folium(mapa, height=2000, use_container_width=True)
     return salida
 
-def mostrar_detalles_recurso(salida, datos):
+def mostrar_detalles_recurso(salida, datos, traducciones):
     recurso = None
     if salida is not None and salida.get('last_object_clicked'):
         lat = salida['last_object_clicked']['lat']
@@ -27,35 +27,20 @@ def mostrar_detalles_recurso(salida, datos):
                 break
         if recurso is not None:
             st.session_state['selected_resource_id'] = recurso['id']
-            st.sidebar.success(f"Recurso seleccionado: {recurso['resource_name']}")
+            st.sidebar.success(traducciones["resource_selected"].format(resource_name=recurso['resource_name']))
         else:
-            st.sidebar.warning("No se encontró un recurso en la ubicación clickeada.")
+            st.sidebar.warning(traducciones["messages"]["resource_not_found_at_location"])
     return recurso
 
-def mostrar_detalles_ruta(salida, rutas_df):
+def mostrar_detalles_ruta(rutas_df, traducciones):
     ruta = None
-    if salida is not None and salida.get('last_object_clicked'):
-        lat = salida['last_object_clicked']['lat']
-        lng = salida['last_object_clicked']['lng']
-        for _, fila in rutas_df.iterrows():
-            recursos_georeferenciados = fila['Recursos Georeferenciados']
-            puntos = recursos_georeferenciados.split(';')
-            for punto in puntos:
-                try:
-                    parte = punto.strip().split(':')[1].strip().strip('[]')
-                    lat_punto, lon_punto = map(float, parte.split(','))
-                    if abs(lat_punto - lat) < 0.0001 and abs(lon_punto - lng) < 0.0001:
-                        ruta = fila
-                        break
-                except (IndexError, ValueError):
-                    continue
-            if ruta is not None:
-                break
-        if ruta is not None:
-            st.session_state['selected_route_id'] = ruta['Nombre de la ruta']
-            st.sidebar.success(f"Ruta seleccionada: {ruta['Nombre de la ruta']}")
+    if 'selected_route_id' in st.session_state and st.session_state['selected_route_id'] is not None:
+        ruta = rutas_df[rutas_df['id'] == st.session_state['selected_route_id']]
+        if not ruta.empty:
+            ruta = ruta.iloc[0]
+            st.sidebar.success(traducciones["route_selected"].format(route_name=ruta['route_name']))
         else:
-            st.sidebar.warning("No se encontró una ruta en la ubicación clickeada.")
+            st.sidebar.warning(traducciones["messages"]["route_not_found"])
     return ruta
 
 def aplicar_css_personalizado():
@@ -158,7 +143,7 @@ def main():
     datos, traducciones = cargar_datos(idioma_seleccionado)
     
     if datos.empty:
-        st.error("No hay datos disponibles para este idioma.")
+        st.error(traducciones["messages"]["no_data_error"])
         return
 
     categorias_seleccionadas_ids = seleccionar_categorias(traducciones, datos)
@@ -168,22 +153,24 @@ def main():
     
     aplicar_css_personalizado()
     
-    if st.sidebar.button('Detalles de Recurso'):
+    if st.sidebar.button(traducciones["buttons"]["details_resource_button"]):
         if st.session_state['selected_resource_id'] is not None:
             st.session_state['resource_id'] = st.session_state['selected_resource_id']
             st.switch_page("pages/detalle_recurso.py")
         else:
-            st.sidebar.warning("Por favor, selecciona un recurso en el mapa antes de ver más información.")
+            st.sidebar.warning(traducciones["messages"]["select_resource_warning"])
+    mostrar_detalles_recurso(salida, datos, traducciones)
+
+    mostrar_detalles_ruta(rutas_df, traducciones)
+
+    aplicar_css_global()
     
-    if st.sidebar.button('Detalle de ruta'):
+    if st.sidebar.button(traducciones["buttons"]["details_route_button"]):
         if st.session_state['selected_route_id'] is not None:
             st.session_state['route_id'] = st.session_state['selected_route_id']
             st.switch_page("pages/detalle_ruta.py")
-            
-    mostrar_detalles_recurso(salida, datos)
-    mostrar_detalles_ruta(salida, rutas_df)
-
-    aplicar_css_global()
+        else:
+            st.sidebar.warning(traducciones["messages"]["select_route_warning"])
 
 if __name__ == "__main__":
     main()
