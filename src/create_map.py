@@ -6,8 +6,8 @@ import streamlit_folium as st_folium
 def crear_mapa(datos, traducciones):
 
     mapa = folium.Map(
-        location=[15.1111, -23.6167],
-        zoom_start=10,
+        location=[13.4000, -23.6167],
+        zoom_start=9,
         tiles=None
     )
     

@@ -28,8 +28,6 @@ def mostrar_detalles_recurso(salida, datos, traducciones):
         if recurso is not None:
             st.session_state['selected_resource_id'] = recurso['id']
             st.sidebar.success(traducciones["resource_selected"].format(resource_name=recurso['resource_name']))
-        else:
-            st.sidebar.warning(traducciones["messages"]["resource_not_found_at_location"])
     return recurso
 
 def mostrar_detalles_ruta(rutas_df, traducciones):
