@@ -119,7 +119,9 @@
         "details_resource_button": "Resource Details",
         "details_route_button": "Route Details",
         "see_resource_info": "See Resource Information",
-        "see_route_info": "See Route Information"
+        "see_route_info": "See Route Information",
+        "no_route": "No route selected",
+        "search_route": "Search Route"
     },
     "messages": {
         "no_data_error": "No data available for this language.",

@@ -119,7 +119,9 @@
         "details_resource_button": "Detalhes do Recurso",
         "details_route_button": "Detalhes da Rota",
         "see_resource_info": "Ver Informações do Recurso",
-        "see_route_info": "Ver Informações da Rota"
+        "see_route_info": "Ver Informações da Rota",
+        "no_route": "Sem Rota",
+        "search_route": "Pesquisar Rota"
     },
     "messages": {
         "no_data_error": "Não há dados disponíveis para este idioma.",
