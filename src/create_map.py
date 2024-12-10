@@ -8,7 +8,8 @@ def crear_mapa(datos, traducciones):
     mapa = folium.Map(
         location=[13.4000, -23.6167],
         zoom_start=9,
-        tiles=None
+        tiles=None,
+        zoom_control=False
     )
     
     folium.TileLayer('OpenStreetMap', name='OpenStreetMap', show=True).add_to(mapa)
@@ -20,7 +21,7 @@ def crear_mapa(datos, traducciones):
     folium.TileLayer('CartoDB dark_matter', name='CartoDB Dark Matter', show=False).add_to(mapa)
 
     # Agregar control de capas
-    folium.LayerControl().add_to(mapa)
+    folium.LayerControl(position='bottomleft').add_to(mapa)
 
     plugins.Fullscreen(
         position="topright",
@@ -64,7 +65,6 @@ def crear_mapa(datos, traducciones):
             
             popup_html = f'''
             <b>{nombre_recurso}</b><br>
-            {mas_informacion}
             '''
 
             # Agregar el marcador al mapa con el popup modificado

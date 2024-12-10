@@ -64,7 +64,7 @@ def mostrar_logo():
 
 def seleccionar_idioma():
     idiomas_disponibles = obtener_idiomas()
-    idioma_seleccionado = st.sidebar.selectbox(
+    idioma_seleccionado = st.selectbox(
         "Idioma:",
         idiomas_disponibles,
         index=idiomas_disponibles.index(st.session_state['idioma_seleccionado']) if 'idioma_seleccionado' in st.session_state else 0
@@ -87,12 +87,13 @@ def seleccionar_categorias(traducciones, datos):
     categorias = datos[['category_id', 'category']].drop_duplicates().sort_values('category')
     categoria_dict = dict(zip(categorias['category'], categorias['category_id']))
     categorias_labels = list(categoria_dict.keys())
-    categorias_seleccionadas_labels = st.sidebar.multiselect(
+    categorias_seleccionadas_labels = st.multiselect(
         traducciones.get("select_category", "Categorias:"),
         categorias_labels
     )
     categorias_seleccionadas_ids = [categoria_dict[label] for label in categorias_seleccionadas_labels]
     return categorias_seleccionadas_ids
+
 
 def seleccionar_ruta(traducciones):
     category_mapping_ruta = traducciones.get("category_mapping_ruta", {})
@@ -100,7 +101,7 @@ def seleccionar_ruta(traducciones):
     ruta_predefinida = None
     if not rutas_df.empty:
         # Usa el nombre de la columna después del mapeo ('route_name')
-        ruta_predefinida = st.sidebar.selectbox(
+        ruta_predefinida = st.selectbox(
             traducciones.get("select_route", "Seleccionar ruta"),
             ['Ninguna'] + list(rutas_df['route_name'].unique())
         )

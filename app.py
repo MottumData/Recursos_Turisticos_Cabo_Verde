@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_folium import st_folium
-from src.data_utils import filtrar_datos, cargar_datos, inicializar_estado, seleccionar_idioma, seleccionar_categorias, seleccionar_ruta, mostrar_logo
-from src.draw_routes import convertir_coordenadas, procesar_rutas
+from src.data_utils import filtrar_datos, cargar_datos, inicializar_estado, seleccionar_idioma, seleccionar_categorias, mostrar_logo, seleccionar_ruta
+from src.draw_routes import convertir_coordenadas, procesar_rutas, cargar_dataset_rutas
 from src.create_map import crear_mapa
 import pandas as pd
 
@@ -41,10 +41,31 @@ def mostrar_detalles_ruta(rutas_df, traducciones):
             st.sidebar.warning(traducciones["messages"]["route_not_found"])
     return ruta
 
-def aplicar_css_personalizado():
-    st.markdown("""
+def aplicar_css_personalizado(ruta_label, categorias_label):
+    st.markdown(f"""
     <style>
-        .stButton button {
+    [data-testid="stSelectbox"]:has(input[aria-label$="{ruta_label}"]) {{
+            position: fixed;
+            top: 10px;
+            left: 100px;
+            z-index: 99999999 !important;
+            width: auto !important;
+        }}
+        [data-testid="stSelectbox"]:has(input[aria-label$="Idioma:"]) {{
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            z-index: 99999999 !important;
+            width: auto !important;
+        }}
+        [data-testid="stMultiSelect"]{{
+            position: fixed;
+            top: 10px;
+            left: 220px;
+            z-index: 99999999 !important;
+            width: auto !important;
+        }}
+        .stButton button {{
             width: 100%; /* Ajustar al tamaño del sidebar */
             margin: 20px auto;
             margin-top: 5px;
@@ -61,8 +82,8 @@ def aplicar_css_personalizado():
             position: relative;
             transition: background-color .6s ease;
             overflow: hidden;
-        }
-        .stButton button:after {
+        }}
+        .stButton button:after {{
             content: "";
             position: absolute;
             width: 0;
@@ -74,33 +95,74 @@ def aplicar_css_personalizado():
             background: rgba(255, 255, 255, 0.1);
             border-radius: 100%;
             transition: width .3s ease, height .3s ease;
-        }
+        }}
         .stButton button:focus,
-        .stButton button:hover {
+        .stButton button:hover {{
             background: #E65A3E;
             color: white !important;
-        }
-        .stButton button:active:after {
+        }}
+        .stButton button:active:after {{
             width: 300px;
             height: 300px;
-        }
+        }}
+        
+        .fixed-button {{
+            position: fixed;
+            bottom: 80px;
+            right: 10px;
+            z-index: 100000 !important;  /* Aumentar el z-index y usar !important */
+        }}
+        .fixed-button a {{
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #FC6E51;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }}
+        .fixed-button a:hover {{
+            background-color: #E65A3E;
+        }}
+        .element-container:has(#button-after) + div button {{
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 100000 !important;
+
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #FC6E51;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            width: auto;
+        }}
+        .element-container:has(#button-after) + div button:hover {{
+            background-color: #E65A3E;
+        }}
+        [data-testid="stSidebar"] {{
+                display: none;
+            }}
+        .eyeqlp53.st-emotion-cache-qsoh6x.ex0cdmw0 {{
+            display: none;
+        }}
+        .st-emotion-cache-wfudur e1f1d6gn4 {{
+            display: none;
+        }}
     </style>
     """, unsafe_allow_html=True)
 
 def aplicar_css_global():
-    st.markdown("""
-    <style>
-        .stColumn {
-            padding-left: 30px;
-            padding-right: 30px;
-            padding-top: 10px;
-        }
-        .stExpander {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-    </style>
-    """, unsafe_allow_html=True)
     
     st.markdown(f"""
     <style>
@@ -132,13 +194,15 @@ def aplicar_css_global():
         }}
     </style>
     """, unsafe_allow_html=True)
-    
 
 def main():
     inicializar_estado()
     mostrar_logo()
     idioma_seleccionado = seleccionar_idioma()
     datos, traducciones = cargar_datos(idioma_seleccionado)
+    
+    ruta_label = traducciones.get("select_route", "Seleccionar ruta")
+    categorias_label = traducciones.get("select_category", "Categorias:")
     
     if datos.empty:
         st.error(traducciones["messages"]["no_data_error"])
@@ -149,26 +213,39 @@ def main():
     ruta_predefinida, rutas_df = seleccionar_ruta(traducciones)
     salida = mostrar_mapa(datos_filtrados, traducciones, ruta_predefinida, rutas_df)
     
-    aplicar_css_personalizado()
-    
-    if st.sidebar.button(traducciones["buttons"]["details_resource_button"]):
-        if st.session_state['selected_resource_id'] is not None:
-            st.session_state['resource_id'] = st.session_state['selected_resource_id']
-            st.switch_page("pages/detalle_recurso.py")
-        else:
-            st.sidebar.warning(traducciones["messages"]["select_resource_warning"])
     mostrar_detalles_recurso(salida, datos, traducciones)
+    
+    # Agregar el Botón Fijo en la Esquina Superior Izquierda
+    st.session_state['resource_id'] = st.session_state['selected_resource_id']
+    st.sidebar.write("Selected Resource ID:", st.session_state['selected_resource_id'])
+    if st.session_state['selected_resource_id'] is not None:
+        detalle_url = f"/detalle_recurso?resource_id={st.session_state['resource_id']}&idioma_seleccionado={idioma_seleccionado}"
+        onclick_action = ""
+    else:
+        detalle_url = "#"
+        onclick_action = "onclick=\"alert('Por favor, selecciona un recurso primero.'); return false;\""
+
+    st.markdown(f"""
+    <div class="fixed-button">
+        <a href="{detalle_url}" {onclick_action}>
+            {traducciones["buttons"]["details_resource_button"]}
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
 
     mostrar_detalles_ruta(rutas_df, traducciones)
-
-    aplicar_css_global()
     
-    if st.sidebar.button(traducciones["buttons"]["details_route_button"]):
+    st.markdown('<span id="button-after"></span>', unsafe_allow_html=True)
+    
+    if st.button(traducciones["buttons"]["details_route_button"], key='details_route_button'):
         if st.session_state['selected_route_id'] is not None:
             st.session_state['route_id'] = st.session_state['selected_route_id']
             st.switch_page("pages/detalle_ruta.py")
         else:
             st.sidebar.warning(traducciones["messages"]["select_route_warning"])
 
+    aplicar_css_global()
+    aplicar_css_personalizado(ruta_label, categorias_label)
+    
 if __name__ == "__main__":
     main()
