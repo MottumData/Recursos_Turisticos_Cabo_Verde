@@ -4,9 +4,10 @@ from src.data_utils import filtrar_datos, cargar_datos, inicializar_estado, sele
 from src.draw_routes import convertir_coordenadas, procesar_rutas, cargar_dataset_rutas
 from src.create_map import crear_mapa
 import pandas as pd
+import folium
 
 # Configura la página para que use el diseño ancho
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide", initial_sidebar_state="collapsed", menu_items=None)
 
 def mostrar_mapa(datos_filtrados, traducciones, ruta_predefinida, rutas_df):
     mapa = crear_mapa(datos_filtrados, traducciones)
@@ -54,14 +55,14 @@ def aplicar_css_personalizado(ruta_label, categorias_label):
         [data-testid="stSelectbox"]:has(input[aria-label$="Idioma:"]) {{
             position: fixed;
             top: 10px;
-            left: 20px;
+            left: 10px;
             z-index: 99999999 !important;
             width: auto !important;
         }}
         [data-testid="stMultiSelect"]{{
             position: fixed;
             top: 10px;
-            left: 220px;
+            right: 10px;
             z-index: 99999999 !important;
             width: auto !important;
         }}
@@ -150,9 +151,9 @@ def aplicar_css_personalizado(ruta_label, categorias_label):
         .element-container:has(#button-after) + div button:hover {{
             background-color: #E65A3E;
         }}
-        [data-testid="stSidebar"] {{
-                display: none;
-            }}
+        [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {{
+            width: 0px;
+        }}
         .eyeqlp53.st-emotion-cache-qsoh6x.ex0cdmw0 {{
             display: none;
         }}
@@ -198,8 +199,45 @@ def aplicar_css_global():
 def main():
     inicializar_estado()
     mostrar_logo()
+
+    # Cargar configuración inicial desde session_state o usar valores por defecto
+    # Por ejemplo, idioma por defecto "es"
+    if 'idioma_seleccionado' not in st.session_state:
+        st.session_state['idioma_seleccionado'] = 'pt'
+
+    # Cargar datos según el idioma en session_state
+    datos, traducciones = cargar_datos(st.session_state['idioma_seleccionado'])
+    if datos.empty:
+        st.error("No hay datos disponibles.")
+        return
+    
+    category_mapping_ruta = traducciones.get("category_mapping_ruta", {})
+    rutas_df = cargar_dataset_rutas(st.session_state['idioma_seleccionado'], category_mapping_ruta)
+    
+    if 'categorias_seleccionadas_ids' not in st.session_state:
+        st.session_state['categorias_seleccionadas_ids'] = []
+
+    # Determinar ruta seleccionada, o None por defecto
+    if 'selected_route_id' not in st.session_state:
+        st.session_state['selected_route_id'] = None
+
+    # Filtrar datos según categorías en session_state
+    datos_filtrados = filtrar_datos(datos, st.session_state['categorias_seleccionadas_ids'])
+
+    # Ruta predefinida desde session_state
+    ruta_predefinida = st.session_state['selected_route_id']
+
+    # Renderizar el mapa UNA SOLA VEZ en cada ejecución, con los datos actuales
+    salida = mostrar_mapa(datos_filtrados, traducciones, ruta_predefinida, rutas_df)
+
     idioma_seleccionado = seleccionar_idioma()
-    datos, traducciones = cargar_datos(idioma_seleccionado)
+    st.session_state['idioma_seleccionado'] = idioma_seleccionado
+
+    categorias_seleccionadas_ids = seleccionar_categorias(traducciones, datos)
+    st.session_state['categorias_seleccionadas_ids'] = categorias_seleccionadas_ids
+
+    ruta_predefinida = seleccionar_ruta(traducciones)
+    st.session_state['selected_route_id'] = ruta_predefinida
     
     ruta_label = traducciones.get("select_route", "Seleccionar ruta")
     categorias_label = traducciones.get("select_category", "Categorias:")
@@ -207,13 +245,10 @@ def main():
     if datos.empty:
         st.error(traducciones["messages"]["no_data_error"])
         return
-
-    categorias_seleccionadas_ids = seleccionar_categorias(traducciones, datos)
-    datos_filtrados = filtrar_datos(datos, categorias_seleccionadas_ids)
-    ruta_predefinida, rutas_df = seleccionar_ruta(traducciones)
-    salida = mostrar_mapa(datos_filtrados, traducciones, ruta_predefinida, rutas_df)
     
+    aplicar_css_personalizado(ruta_label, categorias_label)
     mostrar_detalles_recurso(salida, datos, traducciones)
+    mostrar_detalles_ruta(rutas_df, traducciones)
     
     # Agregar el Botón Fijo en la Esquina Superior Izquierda
     st.session_state['resource_id'] = st.session_state['selected_resource_id']
@@ -232,8 +267,6 @@ def main():
         </a>
     </div>
     """, unsafe_allow_html=True)
-
-    mostrar_detalles_ruta(rutas_df, traducciones)
     
     st.markdown('<span id="button-after"></span>', unsafe_allow_html=True)
     
@@ -245,7 +278,6 @@ def main():
             st.sidebar.warning(traducciones["messages"]["select_route_warning"])
 
     aplicar_css_global()
-    aplicar_css_personalizado(ruta_label, categorias_label)
     
 if __name__ == "__main__":
     main()

@@ -22,13 +22,6 @@ def crear_mapa(datos, traducciones):
 
     # Agregar control de capas
     folium.LayerControl(position='bottomleft').add_to(mapa)
-
-    plugins.Fullscreen(
-        position="topright",
-        title=traducciones.get("abrir_pantalla_completa", "Open full-screen map"),
-        title_cancel=traducciones.get("cerrar_pantalla_completa", "Close full-screen map"),
-        force_separate_button=True,
-    ).add_to(mapa)
     
     category_icons = {
     'category_natural_places': {'color': 'lightgreen', 'icon': 'tree'},

@@ -109,4 +109,4 @@ def seleccionar_ruta(traducciones):
             st.session_state['selected_route_id'] = rutas_df[rutas_df['route_name'] == ruta_predefinida]['id'].values[0]
         else:
             st.session_state['selected_route_id'] = None
-    return ruta_predefinida, rutas_df
+    return ruta_predefinida
