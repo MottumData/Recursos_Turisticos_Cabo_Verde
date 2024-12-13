@@ -259,22 +259,13 @@ aplicar_css_personalizado()
 st.sidebar.image('assets/Logo_cabo_verde.png')
 
 # Obtener el ID del recurso
-#resource_id = st.session_state.get("resource_id", None)
-query_params = st.query_params
-resource_id = query_params.get('resource_id', [None])
-idioma_seleccionado = query_params.get('idioma_seleccionado', ['es'])
-
-print(resource_id)
-if resource_id is not None:
-    try:
-        resource_id = int(resource_id)
-        st.write("Resource ID como entero:", resource_id)
-    except ValueError:
-        st.error("El ID de recurso no es válido.")
-        st.stop()
-else:
+resource_id = st.session_state.get("resource_id", None)
+if resource_id is None:
     st.error("No se proporcionó ningún ID de recurso.")
     st.stop()
+
+# Obtener el idioma seleccionado
+idioma_seleccionado = st.session_state.get('idioma_seleccionado', 'es')
 
 # Cargar los datos del recurso
 recurso, traducciones = cargar_datos_recurso(idioma_seleccionado, resource_id)
