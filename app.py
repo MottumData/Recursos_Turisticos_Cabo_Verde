@@ -11,7 +11,17 @@ st.set_page_config(layout="wide", initial_sidebar_state="collapsed", menu_items=
 def mostrar_mapa(datos_filtrados, traducciones, ruta_predefinida, rutas_df):
     mapa = crear_mapa(datos_filtrados, traducciones)
     if ruta_predefinida:
-        procesar_rutas(mapa, rutas_df, ruta_predefinida)
+        recurso_ids = procesar_rutas(mapa, rutas_df, ruta_predefinida)
+        if recurso_ids:
+            #print('recursos_ids:', recurso_ids)
+            recurso_ids = [int(rid) for rid in recurso_ids if rid.isdigit()]
+            #print('Tipos de recurso_ids:', [type(rid) for rid in recurso_ids])
+            #print("d_filtors:", datos_filtrados['id'].dtype)
+            datos_filtrados['id'] = datos_filtrados['id'].astype(int)
+            datos_filtrados_por_id = datos_filtrados[datos_filtrados['id'].isin(recurso_ids)]
+            #print('datos_filtrados:', datos_filtrados_por_id)
+            st.session_state['recurso_seleccionados_ids'] = datos_filtrados_por_id['id'].unique().tolist()
+            print(f"Categorías seleccionadas: {st.session_state['recurso_seleccionados_ids']}")
     salida = st_folium(mapa, height=2000, use_container_width=True)
     return salida
 
@@ -46,7 +56,7 @@ def aplicar_css_personalizado(ruta_label, categorias_label):
     <style>
         [data-testid="stImageContainer"] {{
             position: fixed;
-            bottom: 10px;
+            top: 10px;
             left: 10px;
             z-index: 99999999 !important;
             max-width: 150px;
@@ -64,11 +74,16 @@ def aplicar_css_personalizado(ruta_label, categorias_label):
         }}
         [data-testid="stSelectbox"]:has(input[aria-label$="Idioma:"]) {{
             position: fixed;
-            top: 10px;
+            bottom: 10px;
             left: 10px;
             z-index: 99999999 !important;
             width: auto !important;
         }}
+        
+        [data-testid="stSelectbox"]:has(input[aria-label$="Idioma:"]) label {{
+            display: none;
+        }}
+
         [data-testid="stMultiSelect"]{{
             position: fixed;
             top: 10px;
@@ -221,6 +236,7 @@ def aplicar_css_global():
 
 def main():
     inicializar_estado()
+    st.session_state['categorias_seleccionadas_ids'] = []
 
     # Cargar configuración inicial desde session_state o usar valores por defecto
     if 'idioma_seleccionado' not in st.session_state:
@@ -235,22 +251,27 @@ def main():
     category_mapping_ruta = traducciones.get("category_mapping_ruta", {})
     rutas_df = cargar_dataset_rutas(st.session_state['idioma_seleccionado'], category_mapping_ruta)
     
-    if 'categorias_seleccionadas_ids' not in st.session_state:
-        st.session_state['categorias_seleccionadas_ids'] = []
-
     # Determinar ruta seleccionada, o None por defecto
     if 'selected_route_name' not in st.session_state:
         st.session_state['selected_route_name'] = None
 
     # Filtrar datos según categorías en session_state
-    datos_filtrados = filtrar_datos(datos, st.session_state['categorias_seleccionadas_ids'])
+    datos_filtrados = filtrar_datos(
+        datos,
+        st.session_state['categorias_seleccionadas_ids'],
+        st.session_state.get('recurso_seleccionados_ids', None)
+    )
 
     # Ruta predefinida desde session_state
     ruta_predefinida = st.session_state['selected_route_name']
+    
+    print('categorias_seleccionadas_ids1:', st.session_state['categorias_seleccionadas_ids'])
 
     # Renderizar el mapa UNA SOLA VEZ en cada ejecución, con los datos actuales
     salida = mostrar_mapa(datos_filtrados, traducciones, st.session_state['selected_route_name'], rutas_df)
 
+    print('categorias_seleccionadas_ids2:', st.session_state['categorias_seleccionadas_ids'])
+    
     idioma_seleccionado = seleccionar_idioma()
     st.session_state['idioma_seleccionado'] = idioma_seleccionado
 
@@ -258,6 +279,12 @@ def main():
     st.session_state['categorias_seleccionadas_ids'] = categorias_seleccionadas_ids
     
     seleccionar_ruta(traducciones)
+    
+    datos_filtrados = filtrar_datos(
+        datos,
+        st.session_state['categorias_seleccionadas_ids'],
+        st.session_state.get('recurso_seleccionados_ids', None)
+    )
     
     ruta_label = traducciones.get("select_route", "Seleccionar ruta")
     categorias_label = traducciones.get("select_category", "Categorias:")

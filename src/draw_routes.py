@@ -33,7 +33,7 @@ def cargar_red_carreteras_por_puntos(coords):
     lats, lons = zip(*coords)
     north, south = max(lats) + margin, min(lats) - margin
     east, west = max(lons) + margin, min(lons) - margin
-    G = ox.graph_from_bbox(north, south, east, west, network_type='drive')
+    G = ox.graph_from_bbox(north, south, east, west, network_type='all_private')
     return G
 
 
@@ -93,6 +93,7 @@ def cargar_dataset_rutas(idioma_seleccionado, category_mapping):
     return datos
     
 def procesar_rutas(mapa, rutas_df, ruta_predefinida):
+    recurso_ids = []
     if ruta_predefinida:
         ruta = rutas_df[rutas_df['route_name'] == ruta_predefinida]
         if not ruta.empty:
@@ -102,22 +103,21 @@ def procesar_rutas(mapa, rutas_df, ruta_predefinida):
             coords = []
             for punto in puntos:
                 try:
-                    parte = punto.strip().split(':')[1].strip().strip('[]')
-                    lat, lon = map(float, parte.split(','))
+                    recurso_info, coord_str = punto.strip().split(':')
+                    # Extraer solo el ID numérico (suponiendo que está antes del nombre)
+                    recurso_id = recurso_info.strip().split()[0]
+                    lat, lon = map(float, coord_str.strip().strip('[]').split(','))
                     coords.append((lat, lon))
-                except (IndexError, ValueError):
-                    st.error(f"Formato inválido en Recursos Georeferenciados para la ruta {ruta_predefinida}.")
+                    recurso_ids.append(recurso_id)
+                except (IndexError, ValueError) as e:
+                    st.error(f"Formato inválido en Recursos Georeferenciados para la ruta {ruta_predefinida}: {e}")
                     coords = []
                     break
-            
             if len(coords) >= 2:
                 nombre_ruta = ruta_predefinida
-                
-                # Cargar la red de carreteras alrededor de los puntos de la ruta
                 with st.spinner('Cargando la red de carreteras para la ruta seleccionada...'):
                     G = cargar_red_carreteras_por_puntos(coords)
-                
-                # Dibujar la ruta completa como un solo segmento
                 dibujar_ruta(mapa, coords, G, nombre_ruta)
             else:
                 st.error(f"No hay suficientes puntos para dibujar la ruta {ruta_predefinida}.")
+    return recurso_ids
