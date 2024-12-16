@@ -44,9 +44,11 @@ def cargar_traducciones(idioma):
 def obtener_idiomas():
     return [archivo.split(".")[0] for archivo in os.listdir("traducciones") if archivo.endswith(".json")]
 
-def filtrar_datos(datos, categorias_seleccionadas):
-    if categorias_seleccionadas:
-        datos = datos[datos['category_id'].isin(categorias_seleccionadas)]
+def filtrar_datos(datos, categorias_ids, recurso_ids=None):
+    if categorias_ids:
+        datos = datos[datos['category_id'].isin(categorias_ids)]
+    if recurso_ids:
+        datos = datos[datos['id'].isin(recurso_ids)]
     return datos
 
 def inicializar_estado():
@@ -94,8 +96,6 @@ def seleccionar_categorias(traducciones, datos):
     categorias_seleccionadas_ids = [categoria_dict[label] for label in categorias_seleccionadas_labels]
     return categorias_seleccionadas_ids
 
-
-# src/data_utils.py
 
 # src/data_utils.py
 
