@@ -4,7 +4,6 @@ from src.data_utils import filtrar_datos, cargar_datos, inicializar_estado, sele
 from src.draw_routes import convertir_coordenadas, procesar_rutas, cargar_dataset_rutas
 from src.create_map import crear_mapa
 import pandas as pd
-import folium
 
 # Configura la página para que use el diseño ancho
 st.set_page_config(layout="wide", initial_sidebar_state="collapsed", menu_items=None)
@@ -28,7 +27,7 @@ def mostrar_detalles_recurso(salida, datos, traducciones):
                 break
         if recurso is not None:
             st.session_state['selected_resource_id'] = recurso['id']
-            st.sidebar.success(traducciones["resource_selected"].format(resource_name=recurso['resource_name']))
+            st.success(traducciones["resource_selected"].format(resource_name=recurso['resource_name']))
     return recurso
 
 def mostrar_detalles_ruta(rutas_df, traducciones):
@@ -37,20 +36,31 @@ def mostrar_detalles_ruta(rutas_df, traducciones):
         ruta = rutas_df[rutas_df['id'] == st.session_state['selected_route_id']]
         if not ruta.empty:
             ruta = ruta.iloc[0]
-            st.sidebar.success(traducciones["route_selected"].format(route_name=ruta['route_name']))
+            st.success(traducciones["route_selected"].format(route_name=ruta['route_name']))
         else:
-            st.sidebar.warning(traducciones["messages"]["route_not_found"])
+            st.warning(traducciones["messages"]["route_not_found"])
     return ruta
 
 def aplicar_css_personalizado(ruta_label, categorias_label):
     st.markdown(f"""
     <style>
-    [data-testid="stSelectbox"]:has(input[aria-label$="{ruta_label}"]) {{
+        [data-testid="stImageContainer"] {{
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            z-index: 99999999 !important;
+            max-width: 150px;
+            
+        }}
+            
+        [data-testid="stSelectbox"]:has(input[aria-label$="{ruta_label}"]) {{
             position: fixed;
             top: 10px;
-            left: 100px;
+            right: 170px;
             z-index: 99999999 !important;
             width: auto !important;
+            max-width: 200px;
+            
         }}
         [data-testid="stSelectbox"]:has(input[aria-label$="Idioma:"]) {{
             position: fixed;
@@ -65,7 +75,9 @@ def aplicar_css_personalizado(ruta_label, categorias_label):
             right: 10px;
             z-index: 99999999 !important;
             width: auto !important;
+            max-width: 150px;
         }}
+        
         .stButton button {{
             width: 100%; /* Ajustar al tamaño del sidebar */
             margin: 20px auto;
@@ -84,6 +96,7 @@ def aplicar_css_personalizado(ruta_label, categorias_label):
             transition: background-color .6s ease;
             overflow: hidden;
         }}
+
         .stButton button:after {{
             content: "";
             position: absolute;
@@ -97,44 +110,24 @@ def aplicar_css_personalizado(ruta_label, categorias_label):
             border-radius: 100%;
             transition: width .3s ease, height .3s ease;
         }}
+
         .stButton button:focus,
         .stButton button:hover {{
             background: #E65A3E;
             color: white !important;
         }}
+
         .stButton button:active:after {{
             width: 300px;
             height: 300px;
         }}
-        
-        .fixed-button {{
+
+        /* Botón 1 */
+        .element-container:has(#button-after-1) + div button {{
             position: fixed;
-            bottom: 80px;
-            right: 10px;
-            z-index: 100000 !important;  /* Aumentar el z-index y usar !important */
-        }}
-        .fixed-button a {{
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background-color: #FC6E51;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
-        }}
-        .fixed-button a:hover {{
-            background-color: #E65A3E;
-        }}
-        .element-container:has(#button-after) + div button {{
-            position: fixed;
-            bottom: 10px;
+            bottom: 60px;
             right: 10px;
             z-index: 100000 !important;
-
             display: inline-block;
             padding: 10px 20px;
             font-size: 16px;
@@ -147,21 +140,51 @@ def aplicar_css_personalizado(ruta_label, categorias_label):
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease;
             width: auto;
+            margin-bottom: 10px; /* Espacio inferior */
         }}
-        .element-container:has(#button-after) + div button:hover {{
+
+        .element-container:has(#button-after-1) + div button:hover {{
             background-color: #E65A3E;
         }}
+
+        /* Botón 2 */
+        .element-container:has(#button-after-2) + div button {{
+            position: fixed;
+            bottom: 10px; /* Ajusta la posición para evitar superposición */
+            right: 10px;
+            z-index: 100000 !important;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #FC6E51;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            width: auto;
+            margin-bottom: 10px; /* Espacio inferior */
+        }}
+
+        .element-container:has(#button-after-2) + div button:hover {{
+            background-color: #E65A3E;
+        }}
+
         [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {{
             width: 0px;
         }}
+
         .eyeqlp53.st-emotion-cache-qsoh6x.ex0cdmw0 {{
             display: none;
         }}
+
         .st-emotion-cache-wfudur e1f1d6gn4 {{
             display: none;
         }}
-    </style>
-    """, unsafe_allow_html=True)
+            </style>
+            """, unsafe_allow_html=True)
 
 def aplicar_css_global():
     
@@ -198,10 +221,8 @@ def aplicar_css_global():
 
 def main():
     inicializar_estado()
-    mostrar_logo()
 
     # Cargar configuración inicial desde session_state o usar valores por defecto
-    # Por ejemplo, idioma por defecto "es"
     if 'idioma_seleccionado' not in st.session_state:
         st.session_state['idioma_seleccionado'] = 'pt'
 
@@ -218,26 +239,25 @@ def main():
         st.session_state['categorias_seleccionadas_ids'] = []
 
     # Determinar ruta seleccionada, o None por defecto
-    if 'selected_route_id' not in st.session_state:
-        st.session_state['selected_route_id'] = None
+    if 'selected_route_name' not in st.session_state:
+        st.session_state['selected_route_name'] = None
 
     # Filtrar datos según categorías en session_state
     datos_filtrados = filtrar_datos(datos, st.session_state['categorias_seleccionadas_ids'])
 
     # Ruta predefinida desde session_state
-    ruta_predefinida = st.session_state['selected_route_id']
+    ruta_predefinida = st.session_state['selected_route_name']
 
     # Renderizar el mapa UNA SOLA VEZ en cada ejecución, con los datos actuales
-    salida = mostrar_mapa(datos_filtrados, traducciones, ruta_predefinida, rutas_df)
+    salida = mostrar_mapa(datos_filtrados, traducciones, st.session_state['selected_route_name'], rutas_df)
 
     idioma_seleccionado = seleccionar_idioma()
     st.session_state['idioma_seleccionado'] = idioma_seleccionado
 
     categorias_seleccionadas_ids = seleccionar_categorias(traducciones, datos)
     st.session_state['categorias_seleccionadas_ids'] = categorias_seleccionadas_ids
-
-    ruta_predefinida = seleccionar_ruta(traducciones)
-    st.session_state['selected_route_id'] = ruta_predefinida
+    
+    seleccionar_ruta(traducciones)
     
     ruta_label = traducciones.get("select_route", "Seleccionar ruta")
     categorias_label = traducciones.get("select_category", "Categorias:")
@@ -250,34 +270,28 @@ def main():
     mostrar_detalles_recurso(salida, datos, traducciones)
     mostrar_detalles_ruta(rutas_df, traducciones)
     
-    # Agregar el Botón Fijo en la Esquina Superior Izquierda
-    st.session_state['resource_id'] = st.session_state['selected_resource_id']
-    st.sidebar.write("Selected Resource ID:", st.session_state['selected_resource_id'])
-    if st.session_state['selected_resource_id'] is not None:
-        detalle_url = f"/detalle_recurso?resource_id={st.session_state['resource_id']}&idioma_seleccionado={idioma_seleccionado}"
-        onclick_action = ""
-    else:
-        detalle_url = "#"
-        onclick_action = "onclick=\"alert('Por favor, selecciona un recurso primero.'); return false;\""
-
-    st.markdown(f"""
-    <div class="fixed-button">
-        <a href="{detalle_url}" {onclick_action}>
-            {traducciones["buttons"]["details_resource_button"]}
-        </a>
-    </div>
-    """, unsafe_allow_html=True)
     
-    st.markdown('<span id="button-after"></span>', unsafe_allow_html=True)
+    st.markdown('<span id="button-after-1"></span>', unsafe_allow_html=True)
+    
+    # Agregar el Botón Fijo en la Esquina Superior Izquierda
+    if st.button(traducciones["buttons"]["details_resource_button"]):
+        if st.session_state['selected_resource_id'] is not None:
+            st.session_state['resource_id'] = st.session_state['selected_resource_id']
+            st.switch_page("pages/detalle_recurso.py")
+        else:
+            st.warning(traducciones["messages"]["select_resource_warning"])
+    
+    st.markdown('<span id="button-after-2"></span>', unsafe_allow_html=True)
     
     if st.button(traducciones["buttons"]["details_route_button"], key='details_route_button'):
         if st.session_state['selected_route_id'] is not None:
             st.session_state['route_id'] = st.session_state['selected_route_id']
             st.switch_page("pages/detalle_ruta.py")
         else:
-            st.sidebar.warning(traducciones["messages"]["select_route_warning"])
+            st.warning(traducciones["messages"]["select_route_warning"])
 
     aplicar_css_global()
+    mostrar_logo()
     
 if __name__ == "__main__":
     main()

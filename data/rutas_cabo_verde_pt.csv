@@ -1,3 +1,860 @@
-Nome da rota,Municípios por onde passa,Imagem 1,Imagem 2,Imagem 3,Imagem 4,Descrição da rota,Duração,Distância,Modo de acesso,Dificuldade,Atividade,Recursos incluídos,Ponto de inicio,Ponto de saída,Recursos Georeferenciados,id
-Ruta de Fogo,"São Filipe, Mosteiros, Santa Catarina",Imagen São Filipe,Imagen Pico do Fogo,Imagen Mosteiros,Imagem Santa Catarina,"Rota vulcânica que atravessa o Parque Natural do Fogo, incluindo a subida ao Pico do Fogo e visitas a plantações de café e aldeias tradicionais.",1-2 dias,35 km,Caminata o vehículo,Media-Alta,"Caminhadas, natureza","Guias locais, transporte",São Filipe,Santa Catarina,"São Filipe: [14.8965, -24.4956]; Cha das Caldeiras: [14.8737, -24.2841]; Pico do Fogo: [14.9566, -24.2916]; Mosteiros: [15.0289, -24.3458]; Parque Natural de Fogo: [14.9583, -24.3775]; Santa Catarina: [15.0819, -24.3487]",1
-Ruta de Santo Antão,"Ribeira Grande, Paul, Porto Novo",Imagen Ribeira Grande,Imagen Cova,Imagem Paulo,Imagen Porto Novo,"Percurso panorâmico pela ilha de Santo Antão, conhecida pelas suas falésias e vales profundos, ligando os principais concelhos numa caminhada deslumbrante.",2-3 dias,40 km,Caminata o vehículo,Mídia,"Caminhadas, paisagem","Mapas, transporte local",Porto Novo,Ribeira Grande,"Porto Novo: [17.0206, -25.0714]; Ribeira Grande: [17.1817, -25.0668]; Cova de Paul: [17.1135, -25.0067]; Paul: [17.1198, -25.0233]",2
+Nome da rota,Municípios por onde passa,Imagem 1,URL_img1,Imagem 2,URL_img2,Imagem 3,URL_img3,Imagem 4,URL_img4,"Descrição da rota
+Máx. 300 palavras",Duración,Distância,Modo de acesso,Dificuldade,Atividade,Recursos incluidos,Punto de inicio,Ponto de saída,Recursos Georeferenciados,URL do Google Maps,Rota LatLong,Ruta LatLong Transformada,Atividades opcionais:,Recomendações,id
+ROTA DO SURF: “ONDAS E AVENTURA EM SANTIAGO”,"Praia, Tarrafal, São Domingos",COD_55,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/ol20dU6aO9GOLCOVP4x0.jpg,COD_24,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/iobEyEZLoiRISWGMZkJK.jpg,COD_51,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/o0J3FG1XuAQMvDXOBAiB.jpg,COD_68,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/HXHfwzSweRjHE2Iu0V6d.jpg,"Adéntrate en la Ruta del Surf de Santiago, un recorrido que combina playas paradisíacas, olas perfectas para principiantes e intermedios, y una vibrante comunidad surfista local. Descubre paisajes espectaculares y vive la emoción de un deporte acuático en un entorno cálido y acogedor.",5h30min,109 km,Veículo,Media-Alta,"Surfar
+Bodyboard
+Windsurf
+Snorkeling e mergulho
+Caminhadas costeiras
+Avistamento de fauna marinha","1. Praia Quebra Canela
+Praia urbana bem equipada com restaurantes, bares e hotéis próximos. Embora seja mais conhecida pelo seu ambiente descontraído, os desportos náuticos também são praticados durante a época alta.
+A canoagem e o paddleboarding são populares aqui por causa de suas águas calmas. Em dias específicos, pode ser utilizado para começar a surfar quando as ondas permitirem.
+Dica prática: Ideal para quem procura uma experiência de praia aliada ao conforto urbano. Aprecie as vistas dos mirantes próximos antes de praticar esportes aquáticos
+2. Praia de São Francisco
+Uma das praias mais emblemáticas de Santiago, de areia branca e mar agitado ideal para desfrutar da paisagem costeira. Além dos seus impressionantes pores-do-sol, a Praia de São Francisco destaca-se pela sua biodiversidade, sendo ponto de nidificação de tartarugas marinhas.
+Embora a praia não seja tradicionalmente utilizada para a prática de surf, as suas ondas constantes tornam-na num local adequado para a prática de windsurf ou bodyboard para níveis intermédios.
+Dica principal: Use sapatos resistentes se planeja explorar as cavernas de sal e evite nadar durante a maré alta devido às fortes correntes.
+3.Praia Baixo
+Com uma mistura única de areia branca e preta que cria um tom cinzento claro, a Praia Baixo oferece um cenário ideal para a prática de desportos náuticos.
+Excelente para surfistas intermediários e avançados, graças às suas ondas consistentes e águas mornas. Também é ideal para a prática de windsurf e paddleboarding devido à ampla praia e às condições de vento.
+Dica importante: aproveite os serviços de aluguel de equipamentos disponíveis nas proximidades e verifique as condições do vento para planejar atividades como windsurf.
+4. Ponta d’Atum (Turismo de Surf)
+O destino estrela dos surfistas em Santiago. As suas ondas, consideradas das melhores de Cabo Verde, atraem atletas de todo o mundo. A grande plataforma vulcânica permite a formação de ondas esquerda e direita que atingem uma qualidade quase perfeita.
+Surf e bodyboard são as principais atividades. Os meses de maio a julho oferecem as condições ideais para ondas grandes e consistentes.
+Dica prática: Pergunte aos habitantes locais sobre as correntes marítimas e o acesso através de serviços de transporte a partir do Tarrafal. Durante os campeonatos, a área é monitorada para garantir a segurança dos surfistas e espectadores.
+5. Praia Branca (Tarrafal)
+Esta praia paradisíaca é perfeita para nadar, mergulhar e relaxar. Com suas águas mornas e biodiversidade, é também local de destaque para surfistas que buscam ondas moderadas, ideal para iniciantes que desejam praticar em ambiente seguro.
+Arrebentações pequenas e fáceis de manusear nas laterais da praia. Recomendado para aulas de surf iniciantes ou para crianças.
+Dica: Visite de manhã cedo para aproveitar as condições da água e evitar a afluência de turistas",Praia de Quebra Canela,Praia Branca do Tarrafal de Santiago,"55 Praia de Quebra Canela Praia 14.904089466426283, -23.51714866782945
+24 Praia de São Francisco Praia 14.971722400036619, -23.46103552186532
+51 Praia Baixo São Domingos 15.062061290148275, -23.473368916612312
+68 Turismo de surf (ponta d ´atum) Tarrafal 15.276685277487989, -23.757980658013825
+48 Praia Branca do Tarrafal de Santiago Tarrafal 15.281517197755285, -23.752689347404843
+
+https://maps.app.goo.gl/ix4ntDvjFiQSUaNk6",https://maps.app.goo.gl/ix4ntDvjFiQSUaNk6,"55 Praia de Quebra Canela Praia 14.904089466426283, -23.51714866782945
+24 Praia de São Francisco Praia 14.971722400036619, -23.46103552186532
+51 Praia Baixo São Domingos 15.062061290148275, -23.473368916612312
+68 Turismo de surf (ponta d ´atum) Tarrafal 15.276685277487989, -23.757980658013825
+48 Praia Branca do Tarrafal de Santiago Tarrafal 15.281517197755285, -23.752689347404843
+","55 Praia de Quebra Canela Praia: [14.904089466426283, -23.51714866782945]; 24 Praia de São Francisco Praia: [14.971722400036619, -23.46103552186532]; 51 Praia Baixo São Domingos: [15.062061290148275, -23.473368916612312]; 68 Turismo de surf (ponta d ´atum) Tarrafal: [15.276685277487989, -23.757980658013825]; 48 Praia Branca do Tarrafal de Santiago Tarrafal: [15.281517197755285, -23.752689347404843]","Degustação de produtos locais: Prove pratos típicos de Cabo Verde, como a cachupa, nos restaurantes costeiros de Quebra Canela.
+Excursão de caiaque: Desfrute de um passeio pelas águas cristalinas da Praia Branca.
+Aulas de surf: Aprimore suas habilidades na Ponta d’Atum, um dos melhores spots de surf da região.
+Caminhadas costeiras: Explore as falésias e grutas de sal da Praia de São Francisco.","Equipamento necessário: Use roupas e calçados confortáveis ​​e adequados para terrenos costeiros. Protetor solar, água e lanches são essenciais.
+Época recomendada: Melhores meses para surfar: maio a julho.
+Acessibilidade: Todas as praias têm acesso gratuito; Confira os horários de aluguel de equipamentos em cada ponto.
+Cuidados: Adequado para famílias, mas supervisione as crianças em praias com ondas fortes.
+Regras: Respeitar a fauna marinha e evitar deixar resíduos no meio ambiente.",1
+"ROTA DOS PIRATAS: ""O CARIBE AFRICANO""","Ribeira Grande de Santiago, Praia, Tarrafal",COD_37,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/vVeXVH8J1qqudIokg1qc.jpg,COD_26,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/lND6pPqDQl0DEVlQZuEy.jpg,COD_56,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/ENhixE9bRN4Nq8WvB6Jw.jpg,COD_42,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/tBg3MaKoiQi294PBbZmG.jpg,"Adéntrate en la fascinante historia de piratas y comerciantes en Santiago, recorriendo fortalezas, miradores estratégicos y playas que fueron testigos de contrabandos y defensas épicas. Una experiencia ideal para amantes de la historia y la aventura.",4h30min,95 km,Veículo,Baixo-médio,Cultura,"1. Fortaleza Real de São Filipe
+Construída no século XVI, esta fortaleza é um símbolo da defesa da ilha contra os ataques dos piratas. A sua localização estratégica permite desfrutar de vistas impressionantes sobre a Ribeira Grande de Santiago.
+Dica principal: Use sapatos confortáveis ​​para explorar as áreas de paralelepípedos e aproveite os guias locais para obter detalhes fascinantes.
+2. Miradouro do Cruzeiro
+Situado no Planalto, este miradouro combina vistas panorâmicas da cidade e do porto com uma história de defesa marítima. Os antigos canhões e a cruz memorial lembram o seu papel na proteção contra os piratas.
+Dica principal: Visite ao nascer ou pôr do sol para obter as melhores vistas e fotos.
+3. Porto de Mangui
+Antigo porto que desempenhou um papel crucial na economia e na defesa do Tarrafal. Foi usado para comércio, desembarque de prisioneiros e contrabando.
+Dica prática: Ideal para quem se interessa pela história marítima.
+4. Praia Ribeira da Prata
+Famosa por suas dunas de areia preta e sua história como ponto de contrabando. Além disso, é um importante local de nidificação de tartarugas marinhas.
+Dica prática: Leve protetor solar e água, pois a praia é ampla e não possui sombra natural.
+5. Museu de Arqueologia
+Este museu abriga artefatos únicos que contam a história de Santiago como ponto de comércio e defesa contra piratas.
+Dica prática: Visite-o antes de percorrer o percurso para entender melhor o contexto histórico dos locais.",Museu de Arqueología,Porto de Mangui,"NEW Museu de Arqueología Praia 14.918169526538868, -23.509633129264902
+37 Miradouro de Cruzeiro Praia 14.916918434881977, -23.507501734802467
+26 Fortaleza Real de São Filipe Ribeira Grande de Santiago 14.916230527923444, -23.602094419460148
+56 Praia Ribeira da Prata Tarrafal 15.233114997172203, -23.743263992213826
+42 Porto de Mangui Tarrafal 15.28519185524424, -23.755995907839342
+
+
+https://maps.app.goo.gl/sA9ARnMUbr9TevG17
+",https://maps.app.goo.gl/sA9ARnMUbr9TevG17,"NEW Museu de Arqueología Praia 14.918169526538868, -23.509633129264902
+37 Miradouro de Cruzeiro Praia 14.916918434881977, -23.507501734802467
+26 Fortaleza Real de São Filipe Ribeira Grande de Santiago 14.916230527923444, -23.602094419460148
+56 Praia Ribeira da Prata Tarrafal 15.233114997172203, -23.743263992213826
+42 Porto de Mangui Tarrafal 15.28519185524424, -23.755995907839342
+
+","NEW Museu de Arqueología Praia: [14.918169526538868, -23.509633129264902]; 37 Mirante de Cruzeiro Praia: [14.916918434881977, -23.507501734802467]; 26 Fortaleza Real de São Filipe Ribeira Grande de Santiago: [14.916230527923444, -23.602094419460148]; 56 Praia Ribeira da Prata Tarrafal: [15.233114997172203, -23.743263992213826]; 42 Porto de Mangui Tarrafal: [15.28519185524424, -23.755995907839342]","Caminhadas nas dunas vulcânicas da Praia Ribeira da Prata: Caminhe pelas suas areias negras e conheça mais sobre o habitat das tartarugas marinhas.
+Avistamento de flora e fauna na Praia Ribeira da Prata: Observe os manguezais, os coqueiros e as tartarugas marinhas que utilizam esta praia como ponto de nidificação.","Equipamento necessário: Roupa leve, chapéu, calçado confortável, protetor solar e água.
+Acessibilidade: A maioria dos pontos é acessível por veículo; alguns exigem caminhadas curtas.
+Horário recomendado: Durante todo o ano, evitando dias de chuva para aproveitar as praias e paisagens.
+Regras locais: Respeitar a sinalização e não alterar os elementos históricos.
+Idiomas disponíveis: Português, Espanhol e Inglês na maioria dos locais turísticos.",2
+"RUTA COLONIAL: ""LOS TIEMPOS DE CIDADE VELHA""",Ribeira Grande de Santiago,COD_64,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/RCWmKa0rNlYa2ggxXF4C.jpg,COD_41,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/EvLeHsyYwf5TCd4kK7aV.jpg,COD_26,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/lND6pPqDQl0DEVlQZuEy.jpg,COD_29,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/Fp3lN5HeJxjzZY9reqk1.jpg,"Revive los inicios del colonialismo en África explorando la primera ciudad europea en los trópicos, Cidade Velha. Este recorrido lleva al visitante a través de monumentos históricos, calles emblemáticas y espacios religiosos que cuentan la historia de la expansión portuguesa y el comercio transatlántico. Una experiencia cultural y educativa en el corazón de Cabo Verde.",2 horas. 10 minutos,6 km,Veículo,Baixo-médio,Cultura,"1. Fortaleza Real de São Filipe
+Construída no século XVI, esta fortaleza defendeu a Cidade Velha dos ataques piratas. O seu desenho trapezoidal e materiais locais como o basalto são testemunhas da sua importância estratégica.
+Dica importante: use sapatos confortáveis ​​e visite cedo para evitar o calor do meio-dia.
+2. Igreja de Nossa Senhora do Rosário
+A igreja mais antiga da África Subsariana, construída em 1495. A sua capela lateral manuelina é um raro exemplar da arquitectura gótica na região.
+Dica prática: Faça uma visita guiada para conhecer as histórias dos três túmulos missionários que abriga.
+3. Pelourinho
+Este monumento manuelino em mármore branco foi construído entre 1512 e 1520 como símbolo do poder municipal. Localizada na praça principal, era o local onde aconteciam os julgamentos e punições públicas.
+Dica prática: Ideal para sessões de fotografia histórica e aprendizagem sobre a justiça colonial.
+4. Rua da Banana
+Reconhecida como a primeira rua urbanizada da África Subsaariana em 1462, esta estrada liga a entrada da Cidade Velha à Igreja de Nossa Senhora do Rosário. As suas casas em pedra com telhados de telha reflectem a influência portuguesa.
+Dica principal: caminhe ao entardecer para aproveitar a iluminação natural e o ambiente histórico.",Rua da Banana,Igreja da nossa Senhora do Rosário,"64 Rua da Banana Ribeira Grande de Santiago 14.916211162622261, -23.605426276563957
+41 Pelourinho Ribeira Grande de Santiago 14.915174398165258, -23.605130690008735
+26 Fortaleza Real de São Filipe Ribeira Grande de Santiago 14.916230527923444, -23.602094419460148
+29 Igreja da nossa Senhora do Rosário Ribeira Grande de Santiago 14.93716208087615, -23.598002269329278
+
+
+https://maps.app.goo.gl/Z4bJJSEVkbVWFsko9",https://maps.app.goo.gl/Z4bJJSEVkbVWFsko9,"64 Rua da Banana Ribeira Grande de Santiago 14.916211162622261, -23.605426276563957
+41 Pelourinho Ribeira Grande de Santiago 14.915174398165258, -23.605130690008735
+26 Fortaleza Real de São Filipe Ribeira Grande de Santiago 14.916230527923444, -23.602094419460148
+29 Igreja da nossa Senhora do Rosário Ribeira Grande de Santiago 14.93716208087615, -23.598002269329278
+
+","64 Rua da Banana Ribeira Grande de Santiago: [14.916211162622261, -23.605426276563957]; 41 Pelourinho Ribeira Grande de Santiago: [14.915174398165258, -23.605130690008735]; 26 Fortaleza Real de São Filipe Ribeira Grande de Santiago: [14.916230527923444, -23.602094419460148]; 29 Igreja da nossa Senhora do Rosário Ribeira Grande de Santiago: [14.93716208087615, -23.598002269329278]",Experiência gastronómica em restaurantes locais: Saboreie pratos tradicionais da Cidade Velha perto destes recursos históricos.,"Equipamento necessário: Roupa leve, chapéu, calçado confortável, água e protetor solar.
+Acessibilidade: Adaptado para caminhadas; Recomenda-se transporte turístico entre recursos.
+Horário recomendado: Durante todo o ano, evitando dias de chuva para uma melhor experiência ao ar livre.
+Regras locais: Respeitar a sinalização e não alterar os elementos históricos.
+Idiomas disponíveis: Português, Inglês e Espanhol na maioria das visitas guiadas.",3
+ROTA AFRICANA: “RAÍZES DE SANTIAGO”,"Santa Catarina
+Praia
+São Miguel
+Santa Cruz",COD_7,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/mvKxDy2phNHJ9Zk7YARj.jpg,COD_39,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/yN0uoK3C7kkYtZoS8sUp.jpg,COD_59,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/s5zvE0DG43MmwjYp6rIO.jpg,COD_35,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/Jn7MMlTcCadjmLIBJh2c.jpg,"La Ruta Africana ""Raíces de Santiago"" ofrece una inmersión en las tradiciones africanas vivas de la isla. Este recorrido conecta al visitante con las costumbres que han perdurado a través de siglos, reflejando la riqueza cultural de Cabo Verde y las profundas influencias africanas que moldearon su identidad.",5h00min,80 km,Veículo,Baixo-médio,Cultura,"1. Mercado Municipal
+Situado no coração da Praia, este mercado é o epicentro da vida comercial e social da cidade. O seu design moderno contrasta com as tradições que ainda sobrevivem nos seus salões, onde agricultores e comerciantes locais oferecem produtos frescos, desde frutas tropicais a ervas medicinais utilizadas em antigas práticas curativas. Neste mercado, a herança africana reflecte-se na gastronomia e nos métodos de cultivo e colheita que foram transmitidos de geração em geração. É um local ideal para experimentar os sabores e aromas que definem a cultura cabo-verdiana.  
+Dica importante: visite cedo para vivenciar a atividade diária e a maior variedade de produtos.
+2. Museu Etnográfico da Praia
+Inaugurado em 1997, este museu está instalado num edifício histórico que alberga um rico acervo de objetos relacionados com o quotidiano e as técnicas ancestrais das comunidades de Cabo Verde. Desde ferramentas agrícolas a instrumentos musicais tradicionais, o museu oferece uma janela única para as práticas e conhecimentos que definem a identidade cultural cabo-verdiana, profundamente influenciada pelas suas raízes africanas. As exposições destacam como estas tradições perduraram e evoluíram ao longo dos séculos, ligando os visitantes à herança africana do arquipélago.  
+Dica principal: Confira as visitas guiadas para uma explicação detalhada das coleções.
+3. Aldeia Rabelados de Achada Bel-Bel
+Esta aldeia é uma das comunidades mais representativas dos Rabelados. Aqui, as tradições africanas manifestam-se em todos os aspectos da vida quotidiana, desde a arquitectura das casas às práticas agrícolas e cerimónias religiosas. As casas de pedra e colmo não são apenas funcionais, mas também reflectem uma relação simbiótica com a natureza, característica das raízes africanas do grupo. Além disso, os Rabelados desenvolveram um sistema artesanal baseado em técnicas herdadas, que faz desta aldeia um espaço de aprendizagem e reflexão sobre a importância da preservação do património cultural.  
+Dica: Use calçados confortáveis ​​e faça um passeio pela região para apreciar as paisagens rurais e a dinâmica da comunidade.
+4. Rabelados
+Os Rabelados são uma comunidade única em Cabo Verde que resistiu à modernização para preservar um estilo de vida e tradições profundamente enraizados na cultura africana. Situados em Espinho Branco e Achada Bel-Bel, estes grupos oferecem uma experiência autêntica de ligação com práticas religiosas milenares, como as orações latinas e a criação de artesanato. As suas casas, construídas com materiais tradicionais como pedra e palha, evocam uma estética que se liga directamente às raízes africanas e ao isolamento auto-imposto para proteger a sua identidade cultural.  
+Dica prática: Solicite autorização prévia para participar de oficinas de artesanato e conheça suas tradições diretamente com a comunidade.
+5. Antigo Mercado Municipal
+Este mercado histórico, construído em 1931, foi o primeiro espaço comercial estruturado de Cabo Verde e simboliza a transição das práticas cambiais tradicionais para sistemas comerciais organizados sob a administração colonial portuguesa. Sua arquitetura colonial de linhas simples e sua atmosfera rica em história fazem dele um reflexo vivo das raízes africanas, que se manifestam nas interações sociais, nos costumes comerciais e nos produtos artesanais que ainda são oferecidos em seus espaços. Aqui, a ligação entre passado e presente está sempre latente.  
+Dica principal: Participe de exposições culturais ocasionais para conhecer mais sobre a história do comércio local.",Mercado Municipal Praia,Mercado Municipal Antigo,"7 Mercado Municipal Praia 14.919239383843912, -23.508637271147673
+39 Museo Etnográfico da Praia Praia 14.923139226801977, -23.50702813527767
+SC-02 Aldeia Rabelados de Achada Bel-Bel Santa Cruz 15.148016885234043, -23.586953098323402
+59 Rabelados São Miguel 15.223586470236894, -23.61883279014649
+35 Mercado Municipal Antigo Santa Catarina 15.098096258262572, -23.667853391821478
+
+
+https://maps.app.goo.gl/i5SJcjXk7FurJ1kTA",https://maps.app.goo.gl/i5SJcjXk7FurJ1kTA,"7 Mercado Municipal Praia 14.919239383843912, -23.508637271147673
+39 Museo Etnográfico da Praia Praia 14.923139226801977, -23.50702813527767
+SC-02 Aldeia Rabelados de Achada Bel-Bel Santa Cruz 15.148016885234043, -23.586953098323402
+59 Rabelados São Miguel 15.223586470236894, -23.61883279014649
+35 Mercado Municipal Antigo Santa Catarina 15.098096258262572, -23.667853391821478
+
+","7 Mercado Municipal Praia: [14.919239383843912, -23.508637271147673]; 39 Museo Etnográfico da Praia Praia: [14.923139226801977, -23.50702813527767]; SC-02 Aldeia Rabelados de Achada Bel-Bel Santa Cruz: [15.148016885234043, -23.586953098323402]; 59 Rabelados São Miguel: [15.223586470236894, -23.61883279014649]; 35 Mercado Municipal Antigo Santa Catarina: [15.098096258262572, -23.667853391821478]","Demonstração da produção tradicional de licor nos Trapiches: Aprenda o processo artesanal de confecção do ""grogue"", bebida emblemática de Cabo Verde, nos tradicionais engenhos de açúcar de Chã de Tanque e Engenhos​
+Provas gastronómicas na Rota da Carne: Prove pratos típicos como a cachupa e o porco assado, acompanhados de música tradicional, nos espaços rurais da Ribeira Seca
+Participação nas festas da Tabanca: Mergulhe nesta expressão cultural única com desfiles, rituais e música em Santa Cruz. Inclui atividades como orações kadaínhas e danças tradicionais
+Show de Batuque: Aproveite esta vibrante expressão musical e de dança que se destaca pelo ritmo frenético e profundo simbolismo cultural em Santa Cruz​","Equipamento recomendado: Use roupa leve e respirável, chapéu ou boné para se proteger do sol e calçado confortável para passear pelos mercados rurais e aldeias.
+Duração sugerida: Reserve entre 5 e 7 horas para explorar todos os pontos do percurso com tranquilidade, incluindo tempo para atividades opcionais e descanso.
+Acessibilidade: Embora a maioria dos pontos sejam acessíveis, algumas aldeias de Rabelados requerem caminhadas moderadas por estradas rurais. Se necessário, consulte as agências locais sobre opções de transporte adaptadas.
+Época ideal para visitar: O ano todo é propício para esta rota, mas a estação seca (novembro a maio) oferece um clima mais favorável para atividades ao ar livre.
+Normas culturais: Respeitar as tradições das comunidades, especialmente nas aldeias Rabelados, onde o quotidiano segue ritmos e valores ancestrais. Sempre pergunte antes de tirar fotos e siga as instruções dos guias locais.",4
+PERCURSO HISTÓRICO: “CABO VERDE NA LUTA PELA LIBERDADE”,"Tarrafal
+Santa Catarina
+Praia",COD_27,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/R5mNymU3FgNv5dSx23q5.jpg,COD_9,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/kXaUaDECXQ0xEGjB9JVt.png,COD_60,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/gC9jne5pC31Qe52JLB4r.jpg,COD_6,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/s5zvE0DG43MmwjYp6rIO.jpg,"Recorre los hitos más significativos de la lucha por la independencia de Cabo Verde. Esta ruta conecta lugares emblemáticos donde se escribieron capítulos cruciales de la historia, ofreciendo al visitante una experiencia conmovedora y educativa sobre la resistencia y el sacrificio que llevaron a la libertad del país.",4 horas. 45 minutos,80 km,Veículo,Baixo-médio,Cultura,"1. Museu e Fundação Amílcar Cabral
+Este museu preserva documentos, fotografias e objetos pessoais de Amílcar Cabral, o ideólogo da independência de Cabo Verde e da Guiné-Bissau. É um espaço dedicado à reflexão sobre as lutas anticoloniais e à construção de uma identidade nacional, preservando o legado cultural e político deste líder revolucionário.
+Dica prática: Aproveite as visitas guiadas para uma experiência enriquecedora.
+2. Lar de Infância Amílcar Cabral
+Esta modesta casa é um reflexo das origens humildes do líder revolucionário que marcou a história de Cabo Verde e da Guiné-Bissau. Aqui se formaram os valores e princípios que norteariam sua luta pela independência. O seu significado histórico torna-o num local imperdível para compreender o contexto humano por detrás da emancipação africana.​
+Dica prática: Participe de atividades educativas para entender melhor seu impacto histórico.
+3. Monumento da Revolta de Ribeirão Manuel
+Este monumento comemora uma das revoltas sociais mais emblemáticas de Cabo Verde, liderada em 1910 por mulheres como Ana da Veiga, conhecida como Nhanha Bombolom. A luta, nascida da opressão dos agricultores pelo sistema colonial, simboliza a coragem e a procura de justiça social das comunidades rurais cabo-verdianas.
+Dica importante: Combine a sua visita com um passeio pelos jardins circundantes.
+4. Campo de Concentração do Tarrafal
+Este local histórico, conhecido como “Campo da Morte Lenta”, é um testemunho da brutalidade do regime colonial português. Serviu de prisão para os combatentes da independência de Cabo Verde, Angola e Guiné-Bissau, simbolizando o sofrimento e a resistência dos povos africanos na sua luta contra a opressão. As suas instalações, como “La Frigideira”, são uma representação dolorosa do sacrifício pela liberdade.
+Dica principal: use sapatos confortáveis ​​e planeje sua visita com um guia para obter um contexto mais profundo",Museu Amílcar Cabral e Fundação Amílcar Cabral,Campo de Concentração de Tarrafal,"27 Museu Amílcar Cabral e Fundação Amílcar Cabral Praia 14.91937784911368, -23.508089449533845
+9 Casa da Infância de Amilcar Cabral Santa Catarina 15.12574178378061, -23.674921840078337
+60 Monumento -Revolta de Ribeirão Manel Santa Catarina 15.106733598394506, -23.705708974873538
+6 Campo de Concentração de Tarrafal Tarrafal 15.263697243130842, -23.743767789751654
+
+
+https://maps.app.goo.gl/Uzx5Za1hEdQRaftf8",https://maps.app.goo.gl/Uzx5Za1hEdQRaftf8,"27 Museu Amílcar Cabral e Fundação Amílcar Cabral Praia 14.91937784911368, -23.508089449533845
+9 Casa da Infância de Amilcar Cabral Santa Catarina 15.12574178378061, -23.674921840078337
+60 Monumento -Revolta de Ribeirão Manel Santa Catarina 15.106733598394506, -23.705708974873538
+6 Campo de Concentração de Tarrafal Tarrafal 15.263697243130842, -23.743767789751654
+
+","27 Museu Amílcar Cabral e Fundação Amílcar Cabral Praia: [14.91937784911368, -23.508089449533845]; 9 Casa da Infância de Amilcar Cabral Santa Catarina: [15.12574178378061, -23.674921840078337]; 60 Monumento -Revolta de Ribeirão Manel Santa Catarina: [15.106733598394506, -23.705708974873538]; 6 Campo de Concentração de Tarrafal Tarrafal: [15.263697243130842, -23.743767789751654]","Workshop Olaria em Fonte Lima
+Explore as oficinas de ceramistas locais e adquira peças únicas confeccionadas com técnicas tradicionais. Estes espaços oferecem também a oportunidade de observar o processo de criação e apreciar a importância cultural desta prática artesanal praticada desde a antiguidade pelas mulheres da comunidade, que preservam métodos sustentáveis ​​e ecológicos na criação de utensílios e decorações.
+Exploração da Tabanca em Lém Cabral
+Mergulhe nas celebrações da Tabanca, um evento cultural de raízes africanas que combina desfiles, música e rituais comunitários em homenagem a Santo António. Ideal para entender o sincretismo religioso e cultural da região
+Passeio interpretativo pelo Ribeirão Manuel
+Explore o monumento da Revolta e conheça a importância histórica das mulheres na luta pela justiça social em Cabo Verde​","Equipamento recomendado: Leve roupas leves, chapéu, protetor solar e calçados confortáveis ​​para caminhada.
+Acessibilidade: A maioria dos lugares é acessível por veículo, mas alguns exigem caminhadas curtas.
+Época ideal para visitar: É adequado durante todo o ano, principalmente na estação seca (novembro a maio).
+Normas culturais: Respeite as instruções dos guias locais e evite alterar elementos históricos.
+Idiomas disponíveis: As visitas guiadas estão disponíveis em crioulo, português, inglês e espanhol.",5
+ROTA RELIGIOSA: “FÉ E TRADIÇÕES DO NORTE DE SANTIAGO”,"São Miguel
+Tarrafal
+Santa Cruz
+Santa Catarina",COD_8,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/LxpNNSgXKqn68PY0btgt.jpg,COD_20,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/Ey6BTxxiVBbG0CFymLRI.jpg,COD_30,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/StCUvzqLdsfcTDC6Kjpc.jpg,COD_31,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/qXnG0N85xiN3fVByEpQQ.jpg,"Descubre la riqueza espiritual e histórica de Santiago en una ruta que conecta los templos religiosos más emblemáticos del norte de la isla. Desde pequeñas capillas rurales hasta majestuosas iglesias, esta experiencia única es ideal para quienes buscan explorar la herencia cultural y arquitectónica de Cabo Verde.",3 horas 20 minutos,75 km,Veículo,Baixo-médio,Cultura,"1. Capela de Mato Correia
+Pequena capela com capacidade para 100 pessoas, construída pela comunidade local e de imigrantes. Este local de peregrinação oferece um ambiente tranquilo e deslumbrantes vistas panorâmicas sobre o concelho de São Miguel.
+Dica Prática: Use calçados confortáveis ​​para aproveitar as trilhas próximas.
+2. Igreja Matriz Santo Amaro Abade
+Principal templo católico do Tarrafal, reconstruído em 2015 com o apoio da diáspora. Seu estilo arquitetônico e relevância cultural fazem dele um destaque do percurso.
+Dica Prática: Ideal para visitar durante as celebrações de Santo Amaro.
+3. Igreja Nossa Senhora de Fátima
+Situada no centro histórico de Assomada, esta igreja colonial do século XX é conhecida pela sua arquitetura impressionante e pela sua relevância na fé local.
+Dica Prática: Visite durante as festividades de 13 de maio para viver uma experiência cultural enriquecedora.
+4. Igreja São Tiago Maior
+Segunda igreja mais antiga de Santiago, reconstruída para preservar o seu valor histórico. O seu estilo rústico e a sua ligação com as tradições religiosas locais tornam-no num local imprescindível.
+Dica importante: planeje sua visita entre outubro e abril, quando as celebrações locais estão no auge.",Igreja Matriz santo Amaro Abade,Igreja Nossa senhora de Fatima,"20 Igreja Matriz santo Amaro Abade Tarrafal 15.278772953995617, -23.751064019461676
+8 Capela de Mato Correia São Miguel 15.202334449736513, -23.638574105779252
+30 Igreja São tiago Maior Santa Cruz 15.129555942323655, -23.524592507812905
+31 Igreja Nossa senhora de Fatima Santa Catarina 15.09619763039477, -23.667297330669346
+
+
+https://maps.app.goo.gl/TX7DXKjq8gxujQe39",https://maps.app.goo.gl/TX7DXKjq8gxujQe39,"20 Igreja Matriz santo Amaro Abade Tarrafal 15.278772953995617, -23.751064019461676
+8 Capela de Mato Correia São Miguel 15.202334449736513, -23.638574105779252
+30 Igreja São tiago Maior Santa Cruz 15.129555942323655, -23.524592507812905
+31 Igreja Nossa senhora de Fatima Santa Catarina 15.09619763039477, -23.667297330669346
+
+","20 Igreja Matriz santo Amaro Abade Tarrafal: [15.278772953995617, -23.751064019461676]; 8 Capela de Mato Correia São Miguel: [15.202334449736513, -23.638574105779252]; 30 Igreja São tiago Maior Santa Cruz: [15.129555942323655, -23.524592507812905]; 31 Igreja Nossa senhora de Fatima Santa Catarina: [15.09619763039477, -23.667297330669346]","Degustação de Doces Locais: Experimente iguarias típicas perto da Igreja Matriz Santo Amaro Abade.
+Compra de Artesanato Religioso: Adquira lembranças exclusivas nos pontos de venda de artigos religiosos.
+Observação Panorâmica: Desfrute de vistas espectaculares a partir da Capela de Mato Correia, local ideal para reflexão.
+Participação na Festa de São Miguel Arcanjo: Celebrar a padroeira do concelho de São Miguel com missas solenes, procissões e festas musicais nos dias 8 de maio e 29 de setembro
+Presença na Festa de Nossa Senhora de Fátima: Viva a devoção em Assomada e Tarrafal no dia 13 de maio, com novenas, procissões e atividades culturais
+Festa Nho Santiago Maior: Aproveite a maior festa de Santa Cruz no dia 25 de julho, com procissões religiosas e festivais de música","Equipamento Recomendado: Calçado confortável, protetor solar e água.
+Acessibilidade: Transportes públicos disponíveis a partir da Praia; A maioria dos templos é acessível a pessoas com mobilidade reduzida.
+Hora Ideal: Durante todo o ano, mas recomenda-se a visita durante as festividades locais.
+Custos: Entrada gratuita em todos os templos. Transporte e atividades opcionais têm custos variáveis.
+Normas: Respeito aos horários de missas e uso adequado dos espaços religiosos.",6
+ROTA RELIGIOSA: “FÉ E TRADIÇÕES DO SUL DE SANTIAGO”,"Ribeira Grande de Santiago
+São Lourenço dos Órgãos
+São Domingos
+Praia",COD_58,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/CAq5w9OgAWN4uYyAsfjh.jpg,COD_17,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/YC6P5bDMphaoPmHaBaoC.jpg,COD_29,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/Fp3lN5HeJxjzZY9reqk1.jpg,COD_18,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/ElB4yb1c0081NE8gp4fe.jpg,"Explora la fe, la historia y la arquitectura en la ruta que conecta los templos más representativos del sur de Santiago. Desde el icónico Convento de São Francisco hasta la emblemática Praça Cruz de Papa, vive una experiencia única de espiritualidad y cultura, ideal para fieles y amantes de la historia.",3 horas. 40 minutos,80 km,Veículo,Baixo-médio,Cultura,"1. Praça Cruz do Papa
+Erguida em memória da visita do Papa João Paulo II em 1990, esta praça possui um miradouro e um parque que complementam o monumento.
+Dica Prática: Desfrute de um pôr do sol na Baía de Quebra Canela.
+2. Igreja Matriz de Nossa Senhora da Graça
+Construída entre 1894 e 1902, esta igreja colonial serve como catedral da diocese de Santiago. Destaca-se pela sua arquitetura única e pela praça adjacente.
+Dica Prática: Ideal para combinar com um passeio pelo centro histórico do Planalto.
+3. Convento de São Francisco
+Construído em 1640, este convento histórico foi um importante centro de formação religiosa e cultural. Embora danificada por ataques e desastres naturais, mantém a sua estrutura e está rodeada de paisagens deslumbrantes.
+Dica Prática: Use calçados confortáveis ​​para aproveitar o ambiente natural.
+4. Igreja de Nossa Senhora do Rosário
+A mais antiga igreja em funcionamento da África Subsariana, construída em 1495. A sua arquitectura manuelina e relevância histórica fazem dela um destaque.
+Dica Prática: Compre um bilhete combinado para visitar outros locais da Ribeira Grande.
+5. Igreja de S. Nicolau Tolentino
+Localizada em São Domingos, esta igreja de estilo colonial é conhecida pela dedicação ao padroeiro São Nicolau Tolentino, comemorada todo dia 10 de setembro. Ao longo dos anos tem sido ponto de encontro de fiéis de diversas localidades, com festividades que incluem procissões, música e celebrações eucarísticas.
+Dica importante: planeje sua visita durante as férias de setembro para vivenciar a atmosfera cultural e espiritual
+6. Igreja Nossa Senhora da Luz
+Construída em 1480, é uma das primeiras igrejas construídas pelos portugueses nos trópicos. Recentemente remodelado, continua a ser um local de devoção e património cultural de grande valor.
+Dica Prática: Visite em maio para coincidir com as festividades locais.",Praça Cruz de Papa,Igreja Nossa Senhora da Luz,"45 Praça Cruz de Papa Praia 14.905296827398644, -23.518607834679845
+58 Igreja Matriz de Nossa Senhora da Graça Praia 14.917539299579525, -23.508872907408445
+14 Convento de São Francisco Ribeira Grande de Santiago 14.918262629862722, -23.603861989755426
+29 Igreja da nossa Senhora do Rosário Ribeira Grande de Santiago 14.93716208087615, -23.598002269329278
+SD-01 Igreja de S. Nicolau Tolentino São Domingos 15.030319060671761, -23.560768467672514
+17 Igreja matriz de São Lorenço dos Orgãos São Lourenço dos Órgãos 15.068670438611454, -23.582101553864582
+18 Igreja Nossa senhora da Luz São Domingos 15.037714364270734, -23.454270648425307
+   
+   
+https://maps.app.goo.gl/B45R1EgqKbpPkrek8 ",https://maps.app.goo.gl/B45R1EgqKbpPkrek8,"45 Praça Cruz de Papa Praia 14.905296827398644, -23.518607834679845
+58 Igreja Matriz de Nossa Senhora da Graça Praia 14.917539299579525, -23.508872907408445
+14 Convento de São Francisco Ribeira Grande de Santiago 14.918262629862722, -23.603861989755426
+29 Igreja da nossa Senhora do Rosário Ribeira Grande de Santiago 14.93716208087615, -23.598002269329278
+SD-01 Igreja de S. Nicolau Tolentino São Domingos 15.030319060671761, -23.560768467672514
+17 Igreja matriz de São Lorenço dos Orgãos São Lourenço dos Órgãos 15.068670438611454, -23.582101553864582
+18 Igreja Nossa senhora da Luz São Domingos 15.037714364270734, -23.454270648425307
+   
+   ","45 Praça Cruz de Papa Praia: [14.905296827398644, -23.518607834679845]; 58 Igreja Matriz de Nossa Senhora da Graça Praia: [14.917539299579525, -23.508872907408445]; 14 Convento de São Francisco Ribeira Grande de Santiago: [14.918262629862722, -23.603861989755426]; 29 Igreja da nossa Senhora do Rosário Ribeira Grande de Santiago: [14.93716208087615, -23.598002269329278]; SD-01 Igreja de S. Nicolau Tolentino São Domingos: [15.030319060671761, -23.560768467672514]; 17 Igreja matriz de São Lorenço dos Orgãos São Lourenço dos Órgãos: [15.068670438611454, -23.582101553864582]; 18 Igreja Nossa senhora da Luz São Domingos: [15.037714364270734, -23.454270648425307]","Participação na Festa de São Nicolau Tolentino: Comemore o 10 de setembro com missas, procissões e eventos culturais em São Domingos​
+Festa de Nossa Senhora da Graça: Participe das celebrações em agosto, na igreja matriz de mesmo nome, com eventos religiosos e atividades culturais","Equipamento Recomendado: Roupa confortável, máquina fotográfica e água.
+Acessibilidade: Transportes públicos e privados disponíveis para todos os pontos de interesse.
+Momento Ideal: Durante todo o ano, mas principalmente durante as festividades religiosas.
+Custos: Entrada gratuita na maioria dos pontos; No entanto, alguns templos podem exigir uma taxa nominal ou doação para sua manutenção.
+Regras: Vestimenta respeitosa e silêncio nos locais de culto.",7
+"ROTA NATURAL: ""TESOUROS NATURAIS DO NORTE DE SANTIAGO""","São Domingos
+São Miguel",COD_21,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/FMXeGDSdOMssg12xTqFR.jpg,COD_69,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/mvKxDy2phNHJ9Zk7YARj.jpg,COD_70,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/cdXbrImQjnrVtPWH1Saq.jpg,,,"Adéntrate en los paisajes más impresionantes de Santiago con esta ruta que conecta parques naturales, valles históricos y montañas emblemáticas. Este recorrido destaca los ecosistemas protegidos, flora y fauna endémicas, y el impresionante relieve montañoso, posicionando a Santiago como un destino ideal para los amantes del ecoturismo y el senderismo.",6h30min,60 km,Veículo,Media-Alta,Caminhada,"1. GonGon
+Uma área natural menos conhecida mas perfeita para observar aves e relaxar na natureza.
+Dica Prática: Verifique as condições meteorológicas antes de visitar.
+2. Serra Malagueta
+Um santuário de biodiversidade com mais de 100 espécies de plantas e animais endémicos, perfeito para caminhadas e observação da natureza.
+Dica Prática: Ideal para visitar fora da época das chuvas para desfrutar de vistas desafogadas.
+3. Parque Natural da Serra do Pico D´Antónia
+Ponto mais alto da ilha com 1.392 metros, este parque combina um ecossistema montanhoso com paisagens vulcânicas e microclimas únicos. É ideal para trekking e ecoturismo.
+Dica Prática: Use calçado confortável e água suficiente, pois as caminhadas podem ser exigentes.",Foi embora,Parque Natural da Serra do Pico D´Antónia,"70 GonGon São Miguel 15.207843356425276 -23.66730115576977
+69 Serra Malagueta São Miguel 15.184657412969914, -23.68333352679121
+21 Parque Natural da Serra do Pico D´Antónia São Domingos 15.050128985303479, -23.650050723377085
+   
+   
+https://maps.app.goo.gl/QFmUhevREm679jVy8 ",https://maps.app.goo.gl/QFmUhevREm679jVy8,"70 GonGon São Miguel 15.207843356425276 -23.66730115576977
+69 Serra Malagueta São Miguel 15.184657412969914, -23.68333352679121
+21 Parque Natural da Serra do Pico D´Antónia São Domingos 15.050128985303479, -23.650050723377085
+   
+   ","70 GonGon São Miguel: [15.207843356425276, -23.66730115576977]; 69 Serra Malagueta São Miguel: [15.184657412969914, -23.68333352679121]; 21 Parque Natural da Serra do Pico D´Antónia São Domingos: [15.050128985303479, -23.650050723377085]",,"Equipamento Recomendado: Calçado de trekking, roupa confortável, protetor solar, água e lanches.
+Acessibilidade: A maioria dos pontos é acessível por veículo e exige caminhada média.
+Época Ideal: Durante todo o ano, exceto durante as fortes chuvas (novembro a janeiro).
+Custos: Entrada gratuita na maioria dos pontos, exceto na Serra Malagueta, onde se aplica uma taxa simbólica de 100 escudos para visitantes internacionais.
+Regras: Levar lixo, evitar barulhos altos e respeitar a flora e a fauna locais.",8
+"ROTA NATURAL: ""TESOUROS NATURAIS DO SUL DE SANTIAGO""","Ribeira Grande de Santiago
+São Lourenço dos Órgãos",COD_66,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/JyIgFvrq2T2liESjceCO.jpg,,,,,,,"Adéntrate en los paisajes más impresionantes de Santiago con esta ruta que conecta parques naturales, valles históricos y montañas emblemáticas. Este recorrido destaca los ecosistemas protegidos, flora y fauna endémicas, y el impresionante relieve montañoso, posicionando a Santiago como un destino ideal para los amantes del ecoturismo y el senderismo.",3 horas 50 minutos,30 km,Veículo,Mídia,Caminhada,"1. Vale da Ribeira Grande de Santiago
+Vale histórico e natural utilizado como laboratório agrícola na época colonial, com árvores centenárias e vestígios do tráfico de escravos.
+Dica Prática: O percurso inclui 5 km a pé; use roupas leves.
+2. Monte Gamboa
+Esta montanha oferece impressionantes vistas panorâmicas de Santiago e é ideal para uma curta caminhada com amigos ou família.
+Dica Prática: Recomendado para o pôr do sol pela sua beleza cênica.",Vale da Ribeira Grande de Santiago,Monte Gâmboa,"66 Vale da Ribeira Grande de Santiago Ribeira Grande de Santiago 14.939774408876229, -23.593705941753953
+NEW Monte Gâmboa São Lourenço dos Órgãos 15.032633537407914, -23.626289759790442
+   
+   
+   
+https://maps.app.goo.gl/krtvwBfQVM3xMFUWA   ",https://maps.app.goo.gl/krtvwBfQVM3xMFUWA,"66 Vale da Ribeira Grande de Santiago Ribeira Grande de Santiago 14.939774408876229, -23.593705941753953
+NEW Monte Gâmboa São Lourenço dos Órgãos 15.032633537407914, -23.626289759790442
+   
+   
+   ","66 Vale da Ribeira Grande de Santiago Ribeira Grande de Santiago: [14.939774408876229, -23.593705941753953]; NEW Monte Gâmboa São Lourenço dos Órgãos: [15.032633537407914, -23.626289759790442]",,"Equipamento Recomendado: Calçado de trekking, roupa confortável, protetor solar, água e lanches.
+Acessibilidade: A maioria dos pontos é acessível por veículo e exige caminhada média.
+Época Ideal: Durante todo o ano, exceto durante as fortes chuvas (novembro a janeiro).
+Custos: Entrada gratuita na maioria dos pontos.
+Regras: Levar lixo, evitar barulhos altos e respeitar a flora e a fauna locais.",9
+ROTA MUSICAL E GASTRONÔMICA: “SABOR E SONS DE SANTIAGO”,"Santa Cruz
+Santa Catarina
+São Lourenço dos Órgãos",COD_10,,COD_33,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/Jd94rDemjBeN1s62wWM6.jpg,,,,,"Sumérgete en los sabores y ritmos de Santiago con esta ruta que celebra la herencia musical y gastronómica de Cabo Verde. Explora centros culturales, plazas emblemáticas, museos y destilerías para vivir una experiencia única que combina tradición, música y delicias locales.",2h05min,35 km,Veículo,Baixo-médio,Cultura,"1. Largo Catchás ""Rei do Funaná""
+Uma homenagem ao lendário Carlos Alberto Martins, fundador do grupo Bulimundo e divulgador do funaná. A praça possui uma estátua simbólica e placas comemorativas.
+Dica Prática: Ideal para desfrutar durante as festividades locais.
+2. Destilaria Grogue: UPAPIT
+Conheça o processo tradicional de fabricação do ""grogue"", bebida destilada da cana-de-açúcar. A visita inclui degustações e um passeio pela destilaria.
+Dica: Verifique horários e disponibilidade de passeios antes de sua visita.
+3. Centro Cultural Norberto Tavares
+Situado na Assomada, este centro presta homenagem ao legado musical de Norberto Tavares, destacado músico cabo-verdiano. Abriga exposições sobre sua vida, instrumentos tradicionais e eventos culturais.
+Dica Prática: Aberto de terça a sábado, das 9h às 17h; entrada 100 escudos.
+4. Museu Tabanca
+Dedicado à tradição da tabanca, este museu oferece uma visão profunda desta manifestação cultural através de instrumentos, trajes e registos históricos.
+Conselhos práticos: Recomenda-se visitá-lo com guia para uma experiência mais enriquecedora.","Largo Catchás ""Rei do Funaná""",Museu da Tabanca,"33 Largo Catchás “rei do funana” Santa Cruz 15.137413367082063, -23.53389234711447
+NEW Destilería Grogue: UPAPIT São Lourenço dos Órgãos 15.065663013650335, -23.632835232447512
+10 Centro Cultural Norberto Tavares Santa Catarina 15.096290678294723, -23.667058405097823
+SCS-07 Museu da Tabanca Santa Catarina 15.093096144474808, -23.701294215269165
+   
+https://maps.app.goo.gl/krtvwBfQVM3xMFUWA   ",https://maps.app.goo.gl/krtvwBfQVM3xMFUWA,"33 Largo Catchás “rei do funana” Santa Cruz 15.137413367082063, -23.53389234711447
+NEW Destilería Grogue: UPAPIT São Lourenço dos Órgãos 15.065663013650335, -23.632835232447512
+10 Centro Cultural Norberto Tavares Santa Catarina 15.096290678294723, -23.667058405097823
+SCS-07 Museu da Tabanca Santa Catarina 15.093096144474808, -23.701294215269165
+   ","33 Largo Catchás “rei do funana” Santa Cruz: [15.137413367082063, -23.53389234711447]; NEW Destilería Grogue: UPAPIT São Lourenço dos Órgãos: [15.065663013650335, -23.632835232447512]; 10 Centro Cultural Norberto Tavares Santa Catarina: [15.096290678294723, -23.667058405097823]; SCS-07 Museu da Tabanca Santa Catarina: [15.093096144474808, -23.701294215269165]","Passeio Gastronómico em Assomada: Experimente pratos típicos e doces locais no Centro Cultural Norberto Tavares
+Rota da Carne: Prove pratos de carne locais em restaurantes emblemáticos da Assomada e do Tarrafal, famosos pela sua confecção autêntica e sabores intensos.
+Rota do Peixe nos Restaurantes do Litoral: Visite os restaurantes do litoral da Praia e Pedra Badejo para saborear peixe fresco preparado com receitas tradicionais.","Equipamento Recomendado: Roupa confortável, máquina fotográfica e dinheiro para compras locais.
+Acessibilidade: Transporte público disponível para a maioria dos pontos, embora o transporte privado seja recomendado para maior flexibilidade.
+Momento Ideal: Durante todo o ano, principalmente durante as festividades musicais e culturais.
+Custos: Entrada de 100 escudos no Centro Cultural Norberto Tavares; visitas a outros pontos gratuitas ou com custos variáveis ​​dependendo das atividades
+Regras: Respeitar os horários de visitação e as regras de cada espaço cultural.",10
+ROTA COSTEIRA: “PRAIAS E FARÕES DO NORTE DE SANTIAGO”,"Tarrafal
+São Miguel",COD_23,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/jb7s5fK3KB1suavwLlLX.jpg,COD_48,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/YVo4EQGTjDPn3jdQy0ZZ.jpg,COD_52,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/7DzVdUut2MbTJgGtyQwO.jpg,COD_56,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/ENhixE9bRN4Nq8WvB6Jw.jpg,"Explora la belleza natural de las costas del norte de Santiago con esta ruta que conecta playas de arena blanca y negra, paisajes volcánicos y sitios ideales para el descanso y la contemplación. Una experiencia perfecta para amantes de la naturaleza, el ecoturismo y el turismo sostenible.",4 horas. 15 minutos,32 km,Veículo,Baixo-médio,"Banheiro
+Surfar
+Bodyboard
+Windsurf
+Snorkeling e mergulho
+Avistamento de fauna marinha","1. Praia Ribeira da Prata
+Conhecida pelas suas dunas de areia preta e pelo seu potencial como destino de turismo de saúde. É o maior ponto de nidificação de tartarugas marinhas da região.
+Dica Prática: Ideal para visitar na época da seca para maximizar a visibilidade da paisagem.
+2. Praia do Presidente
+Pequena praia em forma de U, conhecida pela tranquilidade e águas cristalinas. Ideal para relaxar e desfrutar de um ambiente sereno.
+Dica Prática: Acessível durante todo o ano; Ele carrega tudo que você precisa para passar o dia.
+3. Praia Branca do Tarrafal em Santiago
+Esta praia paradisíaca, cercada por coqueiros e coqueiros, é famosa por suas areias brancas e águas cristalinas. É um local ideal para nadar, mergulhar com snorkel e explorar a biodiversidade marinha.
+Dica Prática: Perfeito para atividades familiares e para observação de tartarugas marinhas em determinadas épocas do ano.
+4. Praia de Mangue de 7 Ribeira
+Com uma extensão de 2,5 quilómetros e areia preta vulcânica, esta praia é um importante ponto de nidificação de tartarugas. Seu acesso limitado garante sua conservação.
+Dica Prática: Acesso mediante autorização prévia, pois está localizado em propriedade particular.",Praia Ribeira da Prata,Praia de Mangue de 7 Ribeira,"56 Praia Ribeira da Prata Tarrafal 15.233114997172203, -23.743263992213826
+23 Praia de Presidente Tarrafal 15.281979725442074, -23.752386761210758
+48 Praia Branca do Tarrafal de Santiago Tarrafal 15.281517197755285, -23.752689347404843
+52 Praia de Mangue de 7 ribeira São Miguel 15.231881573837127, -23.642631986437134
+   
+https://maps.app.goo.gl/GdAWj2ssQFbmduf57   ",https://maps.app.goo.gl/GdAWj2ssQFbmduf57,"56 Praia Ribeira da Prata Tarrafal 15.233114997172203, -23.743263992213826
+23 Praia de Presidente Tarrafal 15.281979725442074, -23.752386761210758
+48 Praia Branca do Tarrafal de Santiago Tarrafal 15.281517197755285, -23.752689347404843
+52 Praia de Mangue de 7 ribeira São Miguel 15.231881573837127, -23.642631986437134
+   ","56 Praia Ribeira da Prata Tarrafal: [15.233114997172203, -23.743263992213826]; 23 Praia de Presidente Tarrafal: [15.281979725442074, -23.752386761210758]; 48 Praia Branca do Tarrafal de Santiago Tarrafal: [15.281517197755285, -23.752689347404843]; 52 Praia de Mangue de 7 ribeira São Miguel: [15.231881573837127, -23.642631986437134]","Excursão de Observação de Tartarugas: Observe a nidificação da tartaruga Caretta caretta na Praia de Mangue e na Praia de Ribeira Prata.
+Esportes Aquáticos na Praia Branca: Experimente atividades como mergulho com snorkel e passeios de barco.","Equipamentos Recomendados: Roupa de praia, calçado para caminhada na areia, protetor solar e água.
+Acessibilidade: Transportes públicos e privados disponíveis; algumas praias requerem acesso a pé ou autorização prévia.
+Época Ideal: Durante todo o ano, embora a estação seca ofereça melhores condições para desfrutar da paisagem e das atividades ao ar livre.
+Regras: Respeitar as regulamentações ambientais, especialmente nas praias de desova de tartarugas.",11
+ROTA COSTEIRA: “PRAIAS E FARÕES DO SUL DE SANTIAGO”,"Praia
+Ribeira Grande de Santiago",COD_16,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/Mz6XxdpQmrEh1i71gGJd.jpg,COD_22,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/LoLRdqNMlnBCYle7GMQc.jpg,COD_55,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/ol20dU6aO9GOLCOVP4x0.jpg,COD_49,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/giLpIdJSRlHzn9v4K2zZ.jpg,"Explora las tranquilas playas y el histórico faro del sur de Santiago en un recorrido que combina la belleza natural y el legado arquitectónico de Cabo Verde. Descubre desde playas urbanas ideales para el ocio hasta pequeñas calas de arena negra, perfectas para quienes buscan experiencias únicas y relajantes.",4 horas 55 minutos,60 km,Veículo,Baixo-médio,"Banheiro
+Surfar
+Bodyboard
+Windsurf
+Snorkeling e mergulho
+Avistamento de fauna marinha","1. Lanterna Dona Maria Pia
+Situado na Ponta Temerosa, este farol do século XIX é o primeiro construído em Cabo Verde. Sua estrutura octogonal e posição estratégica oferecem vistas espetaculares do mar.
+Dica Prática: Recomenda-se visitar ao pôr do sol para apreciar a vista.
+2.Praia da Prainha
+Praia pequena e muito frequentada dentro da cidade, rodeada de hotéis e restaurantes. Suas águas cristalinas e fácil acesso a tornam perfeita para o lazer urbano.
+Dica Prática: Perfeito para combinar com visitas ao Farol Dona Maria Pia.
+3. Praia Quebra Canela
+Praia de areia branca e águas cristalinas, ideal para atividades náuticas como canoagem e surf. Rodeado de infra-estruturas turísticas.
+Dica Prática: Acesso muito fácil a partir da cidade da Praia.
+4. Praia do Portinho
+Praia em forma de U com águas cristalinas e areia branca, perfeita para os amantes do mergulho livre e da tranquilidade.
+Dica Prática: Acesso um pouco complicado; Recomenda-se calçado apropriado.
+5. Praia de São Francisco
+De areia branca e mar agitado, esta praia destaca-se pelas grutas de sapais e por ser ponto de nidificação de tartarugas marinhas.
+Dica Prática: Ideal para grupos de amigos e visitas em época de seca.
+6. Praia do Mosquito do Porto
+Conhecida pelas piscinas naturais e pela “explosão” de água entre as rochas, esta praia de areia preta oferece um ambiente calmo e pitoresco.
+Dica Prática: Visite a aldeia vizinha para conhecer a sua arte e cultura.",Farol Dona Maria Pia,Praia de Porto Mosquito,"16 Farol dona Maria Pia Praia 14.90050089159667, -23.50924945365985
+49 Praia da Prainha Praia 14.904470569364953, -23.51165720356226
+55 Praia de Quebra Canela Praia 14.904089466426283, -23.51714866782945
+22 Praia de Portinho Praia 14.911248168265082, -23.485005283272415
+24 Praia de São Francisco Praia 14.971722400036619, -23.46103552186532
+54 Praia de Porto Mosquito Ribeira Grande de Santiago 14.952036102095445, -23.686628328914463
+   
+   
+https://maps.app.goo.gl/M3f9W4q9MWXSXRN96",https://maps.app.goo.gl/M3f9W4q9MWXSXRN96,"16 Farol dona Maria Pia Praia 14.90050089159667, -23.50924945365985
+49 Praia da Prainha Praia 14.904470569364953, -23.51165720356226
+55 Praia de Quebra Canela Praia 14.904089466426283, -23.51714866782945
+22 Praia de Portinho Praia 14.911248168265082, -23.485005283272415
+24 Praia de São Francisco Praia 14.971722400036619, -23.46103552186532
+54 Praia de Porto Mosquito Ribeira Grande de Santiago 14.952036102095445, -23.686628328914463
+   
+   ","16 Farol dona Maria Pia Praia: [14.90050089159667, -23.50924945365985]; 49 Praia da Prainha Praia: [14.904470569364953, -23.51165720356226]; 55 Praia de Quebra Canela Praia: [14.904089466426283, -23.51714866782945]; 22 Praia de Portinho Praia: [14.911248168265082, -23.485005283272415]; 24 Praia de São Francisco Praia: [14.971722400036619, -23.46103552186532]; 54 Praia de Porto Mosquito Ribeira Grande de Santiago: [14.952036102095445, -23.686628328914463]","Oficina de Observação de Aves na Praia de Porto Mosquito: Conheça as aves locais neste recanto costeiro repleto de biodiversidade.
+Passeio de Caiaque na Praia de Quebra Canela: Explore a costa a bordo de um caiaque enquanto aprecia a vista e a tranquilidade desta praia.
+Percurso Histórico no Farol Dona Maria Pia: Passeie por este emblemático farol e conheça a sua importância na navegação marítima desde o século XIX.
+Piquenique na Praia de São Francisco: Desfrute de uma tarde relaxante nesta praia com uma paisagem única e extensas áreas de areia branca.
+Passeio pela Aldeia Artística do Porto Mosquito: Descubra as fachadas pintadas e as grutas naturais desta vila piscatória.","Equipamento Recomendado: Roupa leve, calçado confortável, protetor solar, toalha e água.
+Acessibilidade: Transporte público disponível para a maioria dos pontos; Veículo particular é recomendado para maior conforto.
+Momento Ideal: Durante todo o ano, principalmente na estação seca para desfrutar plenamente das atividades ao ar livre.
+Custos: Entrada gratuita em todos os pontos; algumas atividades, como aluguel de equipamentos, podem ter custos adicionais.
+Regras: Respeitar a natureza e as regulamentações locais, especialmente em áreas protegidas.",12
+ROTA COSTEIRA: “PRAIAS E FARÕES DO LESTE DE SANTIAGO”,"São Domingos
+Santa Cruz",COD_34,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/I4hdKDtQZhRry2viHObv.jpg,COD_51,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/o0J3FG1XuAQMvDXOBAiB.jpg,COD_53,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/9HFpfxvPNUDYeSl93l4R.jpg,COD_50,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/QMD9tgrDCsFWvt3XdCdJ.jpg,"Descubre las maravillas del litoral este de Santiago con esta ruta que combina playas de aguas cristalinas, arenas de variados colores y un histórico faro. Una experiencia única para amantes de la naturaleza, el ecoturismo y el relax en un entorno costero incomparable.",5h05min,75 km,Veículo,Baixo-médio,"Banheiro
+Surfar
+Bodyboard
+Windsurf
+Snorkeling e mergulho
+Avistamento de fauna marinha","1. Farol de Ponta Leste
+Um farol histórico com estrutura octogonal e vistas espetaculares do oceano. Embora desativada, a sua arquitetura única e o ambiente costeiro tornam-no num local de interesse.
+Dica Prática: Acessível por veículo, ideal para visitas ao pôr do sol.
+2.Praia Baixo
+Praia de areia branca e preta que se destaca pela sua grande extensão e pela sua aptidão para a prática de desportos náuticos como o windsurf e o snorkeling.
+Conselhos práticos: Perfeito para famílias e grupos.
+3. Praia do Mangue
+Um ponto chave para a observação de tartarugas marinhas e estudos científicos. A sua areia preta e o ambiente natural fazem desta praia um destino especial para os amantes da vida selvagem.
+Dica Prática: É necessária autorização prévia para acesso.
+4. Praia da Areia Grande
+Com mais de 3 quilômetros de extensão, esta praia de areia preta é famosa por receber festivais de música e atividades esportivas.
+Dica Prática: Ideal para visitar durante as festividades locais.
+5. Praia (Baia) de Porto Fundo
+Uma baía serena com águas calmas e uma escadaria histórica. Antigo ponto de desembarque de navios de cruzeiro, hoje é frequentado por pescadores locais.",Farol de Ponta Leste,Praia (Baia) de Porto Fundo,"34 Farol de Ponta Leste São Domingos 14.987226579841511, -23.430374532952417
+51 Praia Baixo São Domingos 15.062061290148275, -23.473368916612312
+53 Praia de mangue Santa Cruz 15.089537558896614, -23.491443703181375
+50 Praia de Areia Grande Santa Cruz 15.134695392737694, -23.528595016991527
+57 Praia (Baia) de porto fundo Santa Cruz 15.145504261204497, -23.541073033072983
+   
+   
+https://maps.app.goo.gl/dahtQVSwxikUAs8u6   
+
+",https://maps.app.goo.gl/dahtQVSwxikUAs8u6,"34 Farol de Ponta Leste São Domingos 14.987226579841511, -23.430374532952417
+51 Praia Baixo São Domingos 15.062061290148275, -23.473368916612312
+53 Praia de mangue Santa Cruz 15.089537558896614, -23.491443703181375
+50 Praia de Areia Grande Santa Cruz 15.134695392737694, -23.528595016991527
+57 Praia (Baia) de porto fundo Santa Cruz 15.145504261204497, -23.541073033072983
+   
+   ","34 Farol de Ponta Leste São Domingos: [14.987226579841511, -23.430374532952417]; 51 Praia Baixo São Domingos: [15.062061290148275, -23.473368916612312]; 53 Praia de mangue Santa Cruz: [15.089537558896614, -23.491443703181375]; 50 Praia de Areia Grande Santa Cruz: [15.134695392737694, -23.528595016991527]; 57 Praia (Baia) de porto fundo Santa Cruz: [15.145504261204497, -23.541073033072983]","Oficina de Observação da Tartaruga na Praia de Mangue: Conheça o ciclo de vida das tartarugas Caretta caretta e observe sua nidificação nesta praia.
+Caminhada no Farol de Ponta Leste: Explore este farol histórico e desfrute de vistas panorâmicas da costa leste.
+Desportos Náuticos na Praia Baixo: Pratique windsurf, snorkeling ou caiaque numa das praias mais dinâmicas da zona.","Equipamento Recomendado: Roupas leves, calçados confortáveis, protetor solar, câmera fotográfica e equipamento para mergulho com snorkel ou esportes aquáticos.
+Acessibilidade: Transporte público disponível, embora seja recomendado veículo particular para maior conforto.
+Horário Ideal: O ano todo; Melhor durante a estação seca para aproveitar ao máximo.
+Custos: Entrada gratuita em todos os pontos; embora o aluguer de equipamento para desportos aquáticos possa ter custos adicionais.
+Regras: Respeitar as regulamentações ambientais, especialmente nas áreas de nidificação de tartarugas.",13
+ROTA COSTEIRA: “PRAIAS E FARÕES DO OESTE DE SANTIAGO”,Santa Catarina,COD_2,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/wsntT98EbG0lz5Xl6DZ4.jpg,COD_28,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/3yKfc7jtgo0gMdNJuvst.png,COD_63,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/GNS4jSdBv7IlCVYxhC40.jpg,,,"Descubre los encantos naturales del oeste de Santiago en una ruta que combina impresionantes formaciones rocosas, grutas fascinantes y bahías pintorescas. Este recorrido es perfecto para quienes buscan tranquilidad, paisajes únicos y un contacto cercano con la naturaleza más auténtica de la isla.",2h30min,76 km,Veículo,Mídia,"Banheiro
+Passeio de barco
+Caminhada","1. Baía do Porto Rinção
+A maior comunidade pesqueira de Santa Catarina. Este recanto combina uma paisagem de areia preta e pedra vulcânica com a vibrante atividade dos pescadores locais.
+Dica Prática: Ideal para um dia relaxante; Traga comida e água.
+2. Gruta de Águas Belas
+Uma gruta fascinante com duas entradas: uma para a praia e outra para o oceano. Oferece vistas espetaculares das ondas quebrando lá dentro.
+Dica Prática: Visite cedo para desfrutar da tranquilidade.
+3. Rocha Fundino em Achada Leite - Pilon di Nhor Dês
+Uma formação rochosa única que lembra um pilar gigante. Este monumento natural é um testemunho do poder erosivo do mar e da beleza geológica da ilha.
+Dica Prática: Requer calçado confortável para caminhar em terrenos irregulares.",Baia do Porto Rinção,Rocha Fundino em Achada Leite,"2 Baia do porto Rinção Santa Catarina 15.058375601322416, -23.764095954038822
+28 Gruta de Águas Belas Santa Catarina 15.101354835927923, -23.77051152250598
+63 Rocha Fundino em Achada Leite- Pilon di Nhor Dês Santa Catarina 15.114515273882162, -23.76958383912538
+   
+   
+https://maps.app.goo.gl/8QXa3KiYLSiSBHm9A",https://maps.app.goo.gl/8QXa3KiYLSiSBHm9A,"2 Baia do porto Rinção Santa Catarina 15.058375601322416, -23.764095954038822
+28 Gruta de Águas Belas Santa Catarina 15.101354835927923, -23.77051152250598
+63 Rocha Fundino em Achada Leite- Pilon di Nhor Dês Santa Catarina 15.114515273882162, -23.76958383912538
+   
+   ","2 Baia do porto Rinção Santa Catarina: [15.058375601322416, -23.764095954038822]; 28 Gruta de Águas Belas Santa Catarina: [15.101354835927923, -23.77051152250598]; 63 Rocha Fundino em Achada Leite- Pilon di Nhor Dês Santa Catarina: [15.114515273882162, -23.76958383912538]","Caminhada Guiada até a Gruta de Águas Belas: Explore esta caverna de abertura dupla e desfrute de um mergulho refrescante na praia adjacente.
+Observação de Flora e Fauna na Ribeira da Barca: Descubra a biodiversidade local neste ambiente costeiro cheio de vida.","Equipamento recomendado: Roupas confortáveis, calçados para caminhada, câmera fotográfica, protetor solar e água.
+Acessibilidade: Transporte público limitado; Recomenda-se veículo particular ou passeios organizados.
+Horário Ideal: O ano todo; As condições climáticas são favoráveis, exceto na época de fortes chuvas.
+Custos: Entrada gratuita em todos os pontos; Atividades como caminhadas guiadas poderão ter custos adicionais.
+Regras: Respeite as áreas naturais, leve seu lixo e não perturbe a fauna local.",14
+RUTA DE PRAIA,Praia,COD_27,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/R5mNymU3FgNv5dSx23q5.jpg,COD_40,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/xI0EQNvNRjQSraaxTZ9u.jpg,COD_7,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/mvKxDy2phNHJ9Zk7YARj.jpg,COD_16,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/Mz6XxdpQmrEh1i71gGJd.jpg,"Recorre el corazón histórico y cultural de Plateau, en Praia. Desde museos únicos hasta calles vibrantes y monumentos emblemáticos, esta ruta te llevará a descubrir la esencia cultural y arquitectónica de Praia, ideal para amantes de la historia y exploradores urbanos.",CH. 25 minutos,"3,9 km",Andando,Baixo-médio,Cultura,"1. Museu Etnográfico da Praia
+Este museu alberga um rico acervo que ilustra o quotidiano, o artesanato e as tradições de Cabo Verde. As suas exposições incluem artesanato, ferramentas tradicionais e mostras interpretativas que permitem aos visitantes conectar-se com as raízes culturais do arquipélago. Situado num edifício histórico no Planalto, é o local ideal para compreender a identidade cultural de Cabo Verde.
+Dica prática: Visite cedo para evitar aglomerações e aproveite as explicações detalhadas.
+2. Rua Pedonal 5 de Julho
+Principal artéria pedonal do Planalto, esta rua vibrante é adornada com basalto e cimento, oferecendo um ambiente seguro para passear e desfrutar da sua oferta cultural. Aqui você encontra lojas de souvenirs, bares, restaurantes e eventos como festivais de música e exposições de artesanato.
+Dica prática: Participe de eventos como o Criol Jazz ou o Atlantic Music Expo para curtir o clima festivo.
+3. Museu Amílcar Cabral e Fundação Amílcar Cabral
+Este espaço cultural é dedicado ao legado do líder independentista Amílcar Cabral. Os visitantes podem explorar documentos históricos, fotografias, objetos pessoais e peças de vestuário que contam a história da independência de Cabo Verde e da Guiné-Bissau.
+Dica prática: Gerencie sua visita com antecedência para aproveitar os guias disponíveis.
+4. Mercado Municipal
+Localizado no coração do Planalto, este mercado histórico remonta ao século XIX e oferece uma experiência autêntica dos sabores e produtos locais de Santiago. É um lugar ideal para aprender sobre a culinária local e comprar produtos frescos diretamente dos agricultores.
+Dica prática: Chegue cedo para aproveitar a atividade e os melhores produtos.
+5. Miradouro do Cruzeiro
+Este miradouro histórico combina a beleza paisagística com o seu passado defensivo. Situado num ponto estratégico, permite ao visitante desfrutar de vistas panorâmicas sobre o porto e o mar, bem como explorar os vestígios de antigos canhões.
+Dica principal: traga uma câmera e visite ao pôr do sol para tirar fotos deslumbrantes.
+6. Estátua de Diogo Gomes
+Monumento dedicado ao navegador português que descobriu Cabo Verde, localizado em frente ao Palácio Presidencial. Da sua localização, o visitante pode desfrutar de vistas únicas sobre a baía, a rampa da Achada Santo Antonio e o Ilhéu de Santa María.
+Dica principal: Ideal para uma parada rápida para fotos enquanto explora o Planalto.
+7. Palácio do Presidente da República
+Este edifício de estilo neoclássico, construído no século XIX, é a residência oficial do Presidente da República. Os seus jardins paisagísticos e a sua arquitectura única tornam-no num local emblemático do Planalto.
+Dica prática: Solicite uma licença se quiser fazer uma visita guiada ao interior.
+8. Lanterna Dona Maria Pia
+Também conhecido como Farol de Ponta Temerosa, é o primeiro farol construído em Cabo Verde. A sua estrutura octogonal e a sua localização virada para o mar tornam-no perfeito para apreciar a beleza dos arredores, principalmente ao nascer ou pôr do sol.
+Dica principal: Use sapatos confortáveis ​​se planeja subir as escadas para apreciar a vista da torre.",Museo Etnográfico da Praia,Farol dona Maria Pia,"39	 Museo Etnográfico da Praia	 Praia	 14.923139226801977, -23.50702813527767
+65	 Rua Pedonal 5 de julho	 Praia	 14.920325323856419, -23.507564732383717
+27	 Museu Amílcar Cabral e Fundação Amílcar Cabral	 Praia	 14.91937784911368, -23.508089449533845
+7	 Mercado Municipal	 Praia	 14.919239383843912, -23.508637271147673
+37	 Miradouro de Cruzeiro	 Praia	 14.916918434881977, -23.507501734802467
+15	 Estatua Diogo Gomes	 Praia	 14.91615223189909, -23.509749818591413
+40	 Palácio da Presidência da República	 Praia	 14.916645462293983, -23.509556218844676
+16	 Farol dona Maria Pia	 Praia	 14.90050089159667, -23.50924945365985
+
+https://maps.app.goo.gl/YUqd961yfy1v5XCy8",https://maps.app.goo.gl/YUqd961yfy1v5XCy8,"39	 Museo Etnográfico da Praia	 Praia	 14.923139226801977, -23.50702813527767
+65	 Rua Pedonal 5 de julho	 Praia	 14.920325323856419, -23.507564732383717
+27	 Museu Amílcar Cabral e Fundação Amílcar Cabral	 Praia	 14.91937784911368, -23.508089449533845
+7	 Mercado Municipal	 Praia	 14.919239383843912, -23.508637271147673
+37	 Miradouro de Cruzeiro	 Praia	 14.916918434881977, -23.507501734802467
+15	 Estatua Diogo Gomes	 Praia	 14.91615223189909, -23.509749818591413
+40	 Palácio da Presidência da República	 Praia	 14.916645462293983, -23.509556218844676
+16	 Farol dona Maria Pia	 Praia	 14.90050089159667, -23.50924945365985
+","39	 Museo Etnográfico da Praia	 Praia: [14.923139226801977, -23.50702813527767]; 65	 Rua Pedonal 5 de julho	 Praia: [14.920325323856419, -23.507564732383717]; 27	 Museu Amílcar Cabral e Fundação Amílcar Cabral	 Praia: [14.91937784911368, -23.508089449533845]; 7	 Mercado Municipal	 Praia: [14.919239383843912, -23.508637271147673]; 37	 Miradouro de Cruzeiro	 Praia: [14.916918434881977, -23.507501734802467]; 15	 Estatua Diogo Gomes	 Praia: [14.91615223189909, -23.509749818591413]; 40	 Palácio da Presidência da República	 Praia: [14.916645462293983, -23.509556218844676]; 16	 Farol dona Maria Pia	 Praia: [14.90050089159667, -23.50924945365985]","Degustação no Mercado Municipal: Experimente a gastronomia local, destacando a famosa cachupa e outros sabores autóctones.
+Passeio na Praia da Gamboa: antes de chegar ao Farol dona Maria Pia, podemos encontrar esta pitoresca praia, ideal para passear à beira-mar e desfrutar de vistas panorâmicas sobre o Atlântico. Durante alguns eventos, como a festa da Gamboa, torna-se ponto de encontro.
+Descanse na Praça Alexandre Albuquerque: local ideal para fazer uma pausa antes de visitar o Palácio da Presidência da República, pois é uma praça rodeada de edifícios coloniais que constitui um ponto central para os visitantes do Planalto.","Equipamento: Traga calçados confortáveis, água, protetor solar e câmera para capturar os destaques.
+Custos: Entrada gratuita em alguns pontos; verifique custos em museus específicos
+Acessibilidade: A maioria dos pontos é acessível a pé; ideal para pessoas com mobilidade reduzida.
+Horário Ideal: Durante todo o ano, principalmente durante os festivais culturais.
+Duração estimada: Dedique um dia inteiro para aproveitar ao máximo a experiência.
+Regras: Respeitar as indicações em museus e áreas naturais.
+Idiomas Disponíveis: Português, Crioulo e, às vezes, Inglês.
+Segurança: Áreas seguras e sinalizadas; Tenha cuidado nos mirantes.",15
+RUTA DE RIBEIRA GRANDE DE SANTIAGO,Ribeira Grande de Santiago,"COD_29
+
+",https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/Fp3lN5HeJxjzZY9reqk1.jpg,COD_67,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/PLrPQobqPC3Ox44gK9fG.jpg,"COD_64
+
+",https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/RCWmKa0rNlYa2ggxXF4C.jpg,"COD_54
+
+",https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/gpmasnTK6lv6K2WVvXz6.jpg,"Explora la historia y la naturaleza de Santiago con una ruta que conecta lugares emblemáticos de la Ribeira Grande de Santiago. Descubre una iglesia histórica, fortalezas, calles pintorescas, y playas únicas. Ideal para amantes de la cultura, la arquitectura y los paisajes costeros.",3 horas. 44 minutos,"16,9 km",Veículo,Baixo-médio,Cultura,"1. Igreja de Nossa Senhora do Rosário 
+Construída em 1495, esta igreja é a igreja em funcionamento mais antiga da África Subsaariana. Destaca-se pela capela lateral manuelina, raro exemplar da arquitetura gótica na região. Além do valor arquitectónico, a igreja alberga três túmulos de missionários, incluindo o Padre Nicolau Ferreira, de Cabo Verde.  
+Dica importante: Use calçado confortável para explorar a zona histórica e roupa adequada para visitar a igreja.
+2. Fortaleza Real de São Filipe
+Esta fortaleza do século XVI, construída no ponto mais alto da Achada Forte, oferece vistas deslumbrantes sobre o Oceano Atlântico e a Cidade Velha. Seu design trapezoidal inclui bastiões de basalto e masmorras históricas. Foi erguido para proteger a Ribeira Grande de Santiago dos ataques piratas.  
+Dica principal: Visite pela manhã para vistas espetaculares e temperaturas mais amenas.
+3. Ruínas da Sé Catedral da Ribeira Grande de Santiago
+Esta catedral, construída entre 1556 e 1700, foi saqueada em 1712 pelo corsário francês Jacques Cassard, deixando as ruínas que ainda hoje permanecem. É um símbolo da importância religiosa e cultural da Ribeira Grande durante a colonização.  
+Dica importante: leve água e protetor solar para sua visita, principalmente ao meio-dia.
+4. Pelourinho
+Este monumento manuelino em mármore branco, construído no século XVI, foi o local onde se administrava a justiça pública durante a época colonial. Localizada na praça principal, simboliza o poder municipal da época.  
+Dica prática: Visite pela manhã para evitar horários de pico.
+5. Centro Cultural Ribeira Grande de Santiago
+Este espaço no coração da Cidade Velha promove a cultura local através de exposições de artesanato, livros e eventos culturais. É também um ponto de encontro para reflexão e intercâmbio cultural.  
+Dica importante: Confira o calendário de eventos para aproveitar ao máximo sua visita.
+6. Rua da Bananeira  
+Esta rua, desenvolvida em 1462, é a primeira construída pelos portugueses na África Subsaariana. As suas casas em basalto, os telhados em telha e os pisos em pedra calhau reflectem a influência colonial. Faz parte do centro histórico da Ribeira Grande, Património Mundial da UNESCO.  
+Dica importante: leve água e protetor solar para sua visita, principalmente ao meio-dia.
+7. Praia do Mosquito do Porto
+Esta praia de areia preta, num ambiente de pesca, possui piscinas naturais e uma comunidade local vibrante. As casas decoradas com murais e as formações naturais do local fazem dele um destino único.  
+Dica prática: Ideal para descansar no final do percurso e desfrutar de um ambiente tranquilo e pitoresco.",Igreja da nossa Senhora do Rosário,Praia de Porto Mosquito,"29	 Igreja da nossa Senhora do Rosário	 Ribeira Grande de Santiago	 14.93716208087615, -23.598002269329278
+26	 Fortaleza Real de São Filipe	 Ribeira Grande de Santiago	 14.916230527923444, -23.602094419460148
+67	 Ruinas da Catedral de RGS	 Ribeira Grande de Santiago	 14.913751164521415, -23.603979363072057
+41	 Pelourinho	 Ribeira Grande de Santiago	 14.915174398165258, -23.605130690008735
+11	 Centro Cultural RGS	 Ribeira Grande de Santiago	 14.915750834313274, -23.605320589755475
+64	 Rua da Banana	 Ribeira Grande de Santiago	 14.916211162622261, -23.605426276563957
+54	 Praia de Porto Mosquito	 Ribeira Grande de Santiago	 14.952036102095445, -23.686628328914463
+
+https://maps.app.goo.gl/15YrCRk4ptGdevCd9",https://maps.app.goo.gl/15YrCRk4ptGdevCd9,"29	 Igreja da nossa Senhora do Rosário	 Ribeira Grande de Santiago	 14.93716208087615, -23.598002269329278
+26	 Fortaleza Real de São Filipe	 Ribeira Grande de Santiago	 14.916230527923444, -23.602094419460148
+67	 Ruinas da Catedral de RGS	 Ribeira Grande de Santiago	 14.913751164521415, -23.603979363072057
+41	 Pelourinho	 Ribeira Grande de Santiago	 14.915174398165258, -23.605130690008735
+11	 Centro Cultural RGS	 Ribeira Grande de Santiago	 14.915750834313274, -23.605320589755475
+64	 Rua da Banana	 Ribeira Grande de Santiago	 14.916211162622261, -23.605426276563957
+54	 Praia de Porto Mosquito	 Ribeira Grande de Santiago	 14.952036102095445, -23.686628328914463
+","29 Igreja da nossa Senhora do Rosário	 Ribeira Grande de Santiago: [14.93716208087615, -23.598002269329278]; 26	 Fortaleza Real de São Filipe	 Ribeira Grande de Santiago: [14.916230527923444, -23.602094419460148]; 67	 Ruinas da Catedral de RGS	 Ribeira Grande de Santiago: [14.913751164521415, -23.603979363072057]; 41 Pelourinho Ribeira Grande de Santiago: [14.915174398165258, -23.605130690008735]; 11	 Centro Cultural RGS	 Ribeira Grande de Santiago: [14.915750834313274, -23.605320589755475]; 64	 Rua da Banana	 Ribeira Grande de Santiago: [14.916211162622261, -23.605426276563957]; 54	 Praia de Porto Mosquito	 Ribeira Grande de Santiago: [14.952036102095445, -23.686628328914463]","Rota do Artesanato: Participe em oficinas de criação de artesanato local, onde aprenderá a trabalhar com materiais tradicionais como a madeira, o barro ou as fibras naturais.
+Tour de Arte Urbana: Passeie pela vila de Porto Mosquito e seus arredores para admirar as casas decoradas com murais artísticos. Conheça as mensagens ambientais e sociais representadas nessas obras.
+Espectáculo de Música e Dança Tradicional: Assista a um espectáculo de batuque ou morna, estilos musicais característicos de Cabo Verde, no Centro Cultural RGS. Esta experiência permite conhecer melhor a riqueza cultural da região.","Equipamentos: Trazer roupas leves, calçados confortáveis, protetor solar e água.
+Duração: Dedique um dia inteiro para aproveitar ao máximo o percurso.
+Custos: Ingressos combinados para vários sites.
+Acessibilidade: Adequado para pessoas com mobilidade reduzida em alguns pontos (Rua da Banana e Igreja).
+Época Ideal: O ano inteiro, mas evite dias de chuva para visitas a praias e ruínas.
+Segurança: Permaneça em caminhos marcados e respeite os regulamentos locais.",16
+ROTA DE SÃO MIGUEL,São Miguel,COD_71,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/VQSLKRpqcwM4mHYOde3b.jpg,COD_87,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/VryrBZEIGEARLlI7g6LL.png,COD_59,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/s5zvE0DG43MmwjYp6rIO.jpg,"COD_52
+",https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/7DzVdUut2MbTJgGtyQwO.jpg,"Embárcate en un viaje que combina cultura, historia y paisajes únicos en São Miguel. Explora el rico legado cultural de los Rabelados, la majestuosidad de la Iglesia Matriz, las tradiciones del Centro Histórico y la serenidad de la Praia de Mangue de 7 Ribeiras. Una experiencia ideal para los amantes de la autenticidad y la naturaleza.",3 horas 23 minutos,"11,5 km",Veículo,Baixo-médio,Cultura,"1. Centro Histórico de São Miguel 
+Não é apenas um centro cultural e histórico, mas também um cenário vibrante para vários eventos culturais que celebram a riqueza da região. Festivais de música, dança e gastronomia animam regularmente as suas ruas e praças, atraindo tanto locais como turistas que procuram uma autêntica imersão na cultura cabo-verdiana. Além disso, a tradição pesqueira vive na região, oferecendo aos visitantes a oportunidade de observar o cotidiano dos pescadores e saborear frutos do mar frescos em aconchegantes restaurantes locais.
+Dica importante: leve sua câmera para capturar esses momentos únicos e verifique os calendários locais para não perder eventos importantes durante sua visita.
+2. Igreja Matriz de São Miguel
+A construção da Igreja Matriz de São Miguel começou em 1953 e foi inaugurada em 1965. O responsável pela sua construção foi o Suíço Padre Syr Cretaz, que iniciou a sua missão em Cabo Verde em 1947. Este majestoso edifício tem uma planta rectangular com dois níveis e três corpos revestidos por azulejos de Marselha. Além disso, esta igreja não é apenas um símbolo de fé para a comunidade local, mas também um exemplo notável da arquitectura religiosa da época, reflectindo a influência europeia na ilha.
+Dica prática: verifique com antecedência o horário de funcionamento e as atividades culturais, como concertos ou serviços religiosos, para desfrutar ao máximo deste impressionante monumento.
+3. Rabelados
+Representam uma das comunidades mais fascinantes de Cabo Verde, conhecida pela sua resiliência cultural e ligação às tradições ancestrais. Este grupo, que se refugiou nas zonas montanhosas para manter a sua independência cultural, desenvolveu uma arte única na pintura e na cerâmica que cativa visitantes nacionais e internacionais. Durante a visita é possível participar de oficinas de artesanato e adquirir peças autênticas que contam histórias através de sua criatividade. 
+Dica principal: Respeite as tradições locais e não se esqueça de coordenar a sua visita com um guia para compreender melhor o seu património cultural.
+4. Praia de Mangue de 7 Ribeiras 
+É um local onde a serenidade do mar se encontra com uma paisagem costeira cheia de vida. Este ambiente natural, antigamente utilizado como porto, destaca-se pela sua beleza paisagística e pelo seu potencial para atividades recreativas como o campismo e a fotografia de paisagem. A ausência de grandes empreendimentos urbanos permite uma experiência em contacto direto com a natureza, ideal para desligar da rotina. 
+Dica prática: leve bastante água, protetor solar e repelente, pois a região carece de serviços básicos próximos.",Centro Hístorico São Miguel,Praia de Mangue de 7 ribeira,"71	 Centro Hístorico	 São Miguel	 15.182036, -23.588192
+87	 Centro Paroquial de São Miguel /Igreja Matriz	 São Miguel	 15.1887089392472, -23.594432208353993
+59	 Rabelados	 São Miguel	 15.22375467976268, -23.6188565613779
+52	 Praia de Mangue de 7 ribeira	 São Miguel	 15.231881573837127, -23.642631986437134
+
+https://maps.app.goo.gl/i9hrgfkGFgFDFTYP9",https://maps.app.goo.gl/i9hrgfkGFgFDFTYP9,"71	 Centro Hístorico	 São Miguel	 15.182036, -23.588192
+87	 Centro Paroquial de São Miguel /Igreja Matriz	 São Miguel	 15.1887089392472, -23.594432208353993
+59	 Rabelados	 São Miguel	 15.22375467976268, -23.6188565613779
+52	 Praia de Mangue de 7 ribeira	 São Miguel	 15.231881573837127, -23.642631986437134
+","71 Centro Hístorico São Miguel: [15.182036, -23.588192]; 87 Centro Paroquial São Miguel /Igreja Matriz São Miguel: [15.1887089392472, -23.594432208353993]; 59 Rabelados São Miguel: [15.22375467976268, -23.6188565613779]; 52 Praia de Mangue de 7 ribeira São Miguel: [15.231881573837127, -23.642631986437134]","Observação da Biodiversidade na Praia de Mangue de 7 Ribeiras: o local oferece atividades como observação de aves e caminhadas guiadas para conhecer a flora local.
+
+Participação em Festivais Culturais Locais: Planeje a sua visita durante os festivais de música e dança de São Miguel para uma experiência autêntica e conecte-se com as tradições locais. Esses eventos oferecem degustações de culinária típica e música ao vivo.
+
+Rota dos Pescadores: Conheça as práticas tradicionais dos pescadores locais e desfrute de uma refeição fresca preparada em um restaurante à beira-mar.","Equipamento recomendado: Calçado confortável, roupa leve, protetor solar, água e máquina fotográfica.
+Custos estimados: Entrada gratuita na maioria dos pontos; workshops e atividades com custos adicionais.
+Acessibilidade: Adequado para todas as idades; algumas áreas exigem esforço moderado ao caminhar.
+Duração estimada: 3 a 6 horas, dependendo do tempo gasto em cada atividade.
+Época ideal: Durante todo o ano, embora seja recomendado evitar o período das chuvas devido à acessibilidade.
+Segurança: Cuidado em dias de chuva; traga repelente de insetos.
+Idiomas disponíveis: Serviços de guia português, crioulo cabo-verdiano e inglês/espanhol disponíveis mediante reserva.",17
+RUTA DE SANTA CRUZ,Santa Cruz,COD_62,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/ZIZs9GQlrWNFv4w5knfm.jpg,COD_30,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/StCUvzqLdsfcTDC6Kjpc.jpg,COD_43,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/PAOgQtfH84piXtUjs8yg.jpg,COD_50,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/QMD9tgrDCsFWvt3XdCdJ.jpg,"Sumérgete en una experiencia única que combina naturaleza, historia y cultura en la región de Santa Cruz,ubicada en la isla de Santiago. Esta ruta ofrece un recorrido por paisajes impresionantes, playas paradisíacas y tesoros culturales únicos, ideal para familias y aventureros.
+",Ei. 15 de,"15,8 km",Veículo,Baixo-médio,Cultura,"1. Ribeira Seca
+É um oásis verde em Santa Cruz e a maior margem fluvial do concelho. Este local destaca-se pelos seus campos agrícolas irrigados por sistemas de gotejamento, contrastando com o ambiente mais seco e oferecendo uma paisagem única que reflete práticas sustentáveis. Os visitantes podem desfrutar de passeios guiados para explorar a flora local, interagir com os agricultores e tirar fotografias deslumbrantes deste cenário rural. 
+Dica prática: é aconselhável levar água e calçado confortável para aproveitar ao máximo a experiência.
+2. Igreja São Tiago Maior
+Construída no século XVIII, é a segunda igreja mais antiga de Santiago. Embora tenha estado abandonado durante anos, o seu restauro preservou a sua arquitectura rústica em pedra e o seu simbolismo histórico. Este local emblemático recuperou a sua importância como centro de turismo histórico e religioso. Os visitantes podem participar em cerimónias religiosas e admirar a sua arquitectura restaurada, ideal para os amantes da história e da cultura.
+Dica prática: é importante ter em mente que os horários das cerimônias eucarísticas podem variar.
+3. Aldeia Rabelados de Achada Bel-Bel
+Representa uma comunidade única que manteve o seu isolamento e as suas tradições culturais e religiosas. Os Rabelados são um símbolo de resistência e diversidade cultural em Cabo Verde, pois as suas origens estão ligadas à sua oposição às reformas eclesiásticas do século XX. Esta comunidade convida os visitantes a participar de oficinas de artesanato tradicional, presenciar cerimônias religiosas e adquirir artesanato exclusivo. 
+Dica prática: Recomenda-se visitar respeitando as tradições locais e solicitar licenças antes de fotografar.
+4. Porto de Pedra Badejo- Falucho
+Antigo porto chave nas ligações marítimas com a ilha do Maio, que alia a tradição piscatória à modernidade, destacando-se pela sua fábrica de gelo e pela sua vibrante atividade. Este porto continua a ser um pólo vital para a economia local e permite aos visitantes comprar peixe fresco, assistir às atividades de pesca tradicional e desfrutar de passeios de barco. 
+Dica importante: É aconselhável visitar pela manhã para vivenciar o melhor do porto.
+5. Praia da Areia Grande
+Com mais de 3 quilómetros de extensão, é a maior praia de Santa Cruz e centro de atividades culturais e desportivas. Este local é conhecido pelo Festival de Música da Areia Grande e pelo seu papel de refúgio para aves migratórias e ocasionalmente para tartarugas marinhas que vêm nidificar.  
+Dica prática: é aconselhável levar proteção solar e não perder o Festival de Música se visitar no verão.
+6. Praia Paraíso Falucho
+É um complexo turístico que combina uma praia privada com serviços modernos, como restaurante, piscina e atividades recreativas. Situado num ambiente recentemente renovado, este destino oferece um espaço de relaxamento e diversão tanto para turistas como para locais, com foco no conforto e acessibilidade.
+Dica principal: Aproveitar a vista do pôr do sol no restaurante é uma experiência inesquecível.",Ribeira seca,Praia Paraíso Falucho,"62	 Ribeira seca	 Santa Cruz	 15.079309699870542, -23.564682398780416
+30	 Igreja São tiago Maior	 Santa Cruz	 15.129555942323655, -23.524592507812905
+SC-02	 Aldeia Rabelados de Achada Bel-Bel	 Santa Cruz	 15.135874405122346, -23.533867515140983
+43	 Porto de Pedra Badejo - Falucho	 Santa Cruz	 15.138721447830783, -23.527203213519837
+19	 Falucho Paradise Beach	 Santa Cruz	 15.134873127639088, -23.529152016340927
+50	 Praia de Areia Grande	 Santa Cruz	 15.134695392737694, -23.528595016991527
+
+https://maps.app.goo.gl/rVc2oq14JDjkq5Zs5
+",https://maps.app.goo.gl/rVc2oq14JDjkq5Zs5,"62	 Ribeira seca	 Santa Cruz	 15.079309699870542, -23.564682398780416
+30	 Igreja São tiago Maior	 Santa Cruz	 15.129555942323655, -23.524592507812905
+SC-02	 Aldeia Rabelados de Achada Bel-Bel	 Santa Cruz	 15.135874405122346, -23.533867515140983
+43	 Porto de Pedra Badejo - Falucho	 Santa Cruz	 15.138721447830783, -23.527203213519837
+19	 Falucho Paradise Beach	 Santa Cruz	 15.134873127639088, -23.529152016340927
+50	 Praia de Areia Grande	 Santa Cruz	 15.134695392737694, -23.528595016991527
+","62 Ribeira seca Santa Cruz: [15.079309699870542, -23.564682398780416]; 30 Igreja São tiago Maior Santa Cruz: [15.129555942323655, -23.524592507812905]; SC-02 Aldeia Rabelados de Achada Bel-Bel Santa Cruz: [15.135874405122346, -23.533867515140983]; 43 Porto de Pedra Badejo - Falucho Santa Cruz: [15.138721447830783, -23.527203213519837]; 19 Falucho Paradise Beach Santa Cruz: [15.134873127639088, -23.529152016340927]; 50 Praia de Areia Grande Santa Cruz: [15.134695392737694, -23.528595016991527]","Explorar o Património Religioso: Participe em visitas guiadas à Igreja São Tiago Maior e outras igrejas locais, com explicações sobre a sua arquitectura e papel histórico na região.
+Oficina de Música e Dança Tradicional: Aprenda os ritmos e passos do Batuque e do Funaná, estilos musicais emblemáticos de Cabo Verde.
+Festival e Gastronomia Local: Desfrute de uma experiência culinária durante o Festival dos 3 Ritmos ou o Festival da Areia Grande.","Equipamento recomendado: Calçado confortável, protetor solar, repelente de insetos, água e máquina fotográfica.
+Custos estimados: Acesso gratuito à maioria dos pontos; algumas atividades podem ter custos adicionais.
+Acessibilidade: Adequado para famílias e pessoas com mobilidade reduzida em vários pontos (Falucho Paradise e Porto de Pedra Badejo).
+Época ideal para visitar: Durante todo o ano, especialmente de outubro a abril para atividades e eventos culturais.
+Duração estimada: 5-8 horas.
+Regras e regulamentos: Respeite as comunidades locais, evite deixar lixo e não perturbe a vida selvagem.
+Idiomas disponíveis: Português, Inglês e Francês em alguns pontos turísticos.
+Segurança: Cuidado ao caminhar, principalmente em dias de chuva. Contato de emergência disponível em pontos-chave.",18
+RUTA SANTA CATARINA,Santa Catarina,COD_9,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/kXaUaDECXQ0xEGjB9JVt.png,COD_10,,COD_28,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/3yKfc7jtgo0gMdNJuvst.png,COD_31,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/qXnG0N85xiN3fVByEpQQ.jpg,"Explora los tesoros culturales, históricos y naturales de Santa Catarina, en un recorrido que conecta su rica herencia arquitectónica, lugares de culto y paisajes únicos. Esta ruta destaca por su diversidad, perfecta para quienes desean adentrarse en la esencia de Santiago.",3 horas. 40 minutos,31 km,Veículo,Mídia,"Cultura
+Banheiro
+Passeio de barco
+Caminhada","1. Cachoeira Água Caída
+Cascata única na ilha, perfeita para caminhadas e observação da vida selvagem.
+2. Casa da Infância de Amílcar Cabral
+Residência onde Amílcar Cabral, herói revolucionário cabo-verdiano, passou parte da sua infância. Este site combina história e arquitetura colonial.
+Dica Prática: Embora o acesso seja limitado, é possível desfrutar do seu valor exterior e histórico.
+3. Centro Cultural Norberto Tavares
+Homenagem ao influente músico Norberto Tavares, este espaço abriga artefatos musicais e exposições culturais.
+4. Igreja Nossa Senhora de Fátima
+Um símbolo religioso no coração da Assomada, com uma arquitectura colonial marcante.
+Dica Prática: Visite no dia 13 de maio para presenciar as festividades.
+5. Antigo Mercado Municipal
+O primeiro mercado construído em Cabo Verde, um espaço para interagir com a comunidade local e desfrutar do artesanato e da gastronomia.
+6. Miradouro Cruz dos Picos
+Um miradouro estratégico para desfrutar de vistas panorâmicas sobre Assomada e arredores.
+Dica Prática: Ideal para desfrutar ao nascer ou pôr do sol.
+7. Museu Tabanca
+Museu dedicado a preservar e mostrar as tradições das tabancas de Cabo Verde. Oferece visitas guiadas e exposições culturais.
+8. Gruta de Águas Belas
+Caverna com dupla abertura, ideal para quem busca contato direto com a natureza.
+Dica Prática: Requer calçado confortável para chegar.",Cascata de Água Caída,Gruta de Águas Belas,"SCS-12 Cascata de águas Caídas Santa Catarina 15.137134339859662, -23.740433130178772
+9 Casa da Infância de Amilcar Cabral Santa Catarina 15.12574178378061, -23.674921840078337
+10 Centro Cultural Norberto Tavares Santa Catarina 15.096290678294723, -23.667058405097823
+31 Igreja Nossa senhora de Fatima Santa Catarina 15.09619763039477, -23.667297330669346
+35 Mercado Municipal Antigo Santa Catarina 15.098096258262572, -23.667853391821478
+36 Miradouro Cruz dos Picos Santa Catarina 15.092238584665067, -23.654219690621968
+SCS-07 Museu da Tabanca (https://ipc.cv/museus/museu-da-tabanca) Santa Catarina 15.093096144474808, -23.701294215269165
+28 Gruta de Águas Belas Santa Catarina 15.101354835927923, -23.77051152250598
+   
+   
+https://maps.app.goo.gl/og5K2bYqMLQxARek7   ","https://ipc.cv/museus/museu-da-tabanca) Santa Catarina 15.093096144474808, -23.701294215269165
+28 Gruta de Águas Belas Santa Catarina 15.101354835927923, -23.77051152250598
+   
+   
+https://maps.app.goo.gl/og5K2bYqMLQxARek7","SCS-12 Cascata de águas Caídas Santa Catarina 15.137134339859662, -23.740433130178772
+9 Casa da Infância de Amilcar Cabral Santa Catarina 15.12574178378061, -23.674921840078337
+10 Centro Cultural Norberto Tavares Santa Catarina 15.096290678294723, -23.667058405097823
+31 Igreja Nossa senhora de Fatima Santa Catarina 15.09619763039477, -23.667297330669346
+35 Mercado Municipal Antigo Santa Catarina 15.098096258262572, -23.667853391821478
+36 Miradouro Cruz dos Picos Santa Catarina 15.092238584665067, -23.654219690621968
+SCS-07 Museu da Tabanca ","SCS-12 Cascata de águas Caídas Santa Catarina: [15.137134339859662, -23.740433130178772]; 9 Casa da Infância de Amilcar Cabral Santa Catarina: [15.12574178378061, -23.674921840078337]; 10 Centro Cultural Norberto Tavares Santa Catarina: [15.096290678294723, -23.667058405097823]; 31 Igreja Nossa senhora de Fatima Santa Catarina: [15.09619763039477, -23.667297330669346]; 35 Mercado Municipal Antigo Santa Catarina: [15.098096258262572, -23.667853391821478]; 36 Miradouro Cruz dos Picos Santa Catarina: [15.092238584665067, -23.654219690621968]","Participação nas Festas de Santa Catarina: Experimente as tradicionais celebrações em honra dos padroeiros, como Nha Santa Catarina (25 de novembro) ou Nossa Senhora de Fátima (13 de maio). Desfrute de música ao vivo, procissões e culinária local.
+Demonstração e Workshop de Batuco: Aprenda sobre o género musical tradicional de Cabo Verde. Participe de uma demonstração ao vivo do Batuco, com opções para aprender movimentos básicos de dança.
+Visita aos Moinhos Tradicionais: Conheça o processo artesanal de produção de aguardente de cana (grogue) em engenhos tradicionais movidos a tracção animal. Uma experiência única para compreender a importância cultural desta bebida.","Equipamento Recomendado: Roupa confortável, calçado para caminhada, protetor solar e água.
+Acessibilidade: Recomenda-se veículos particulares ou passeios organizados.
+Horário Ideal: O ano todo; ideal para dias ensolarados.
+Custos: Museu da Tabanca: 100 escudos; Centro Cultural Norberto Tavares: 100 escudos.
+Regras: Respeitar as áreas protegidas e a comunidade local.",19
+RUTA SÃO DOMINGOS,São Domingos,COD_34,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/I4hdKDtQZhRry2viHObv.jpg,COD_38,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/cqdMxM28mlraAWMtup0o.jpg,COD_18,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/ElB4yb1c0081NE8gp4fe.jpg,COD_51,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/o0J3FG1XuAQMvDXOBAiB.jpg,"Explora los tesoros naturales, históricos y culturales del municipio de São Domingos. Esta ruta combina grutas impresionantes, vistas panorámicas, playas y monumentos, ofreciendo una experiencia completa de la riqueza de Santiago.",5h. 25min,85 km,Veículo,Mídia,"Banheiro
+Cultura
+Caminhada","1. Farol de Ponta Leste
+Um farol histórico que oferece vistas espetaculares do oceano e da costa leste. É um local emblemático para desfrutar da paisagem.
+Dica principal: Use roupas confortáveis ​​e visite ao pôr do sol para capturar as melhores vistas.
+2. Igreja de São Nicolau Tolentino
+Ponto de encontro espiritual que atrai fiéis e visitantes durante as suas festividades religiosas.
+Dica Prática: Planeje sua visita em setembro para aproveitar as celebrações em homenagem ao santo.
+3. Busto de António Denti d’Oru
+Uma homenagem a um dos ícones culturais de Cabo Verde, conhecido pelo seu contributo para a música Batuko e Finaçon.
+Dica Prática: Confira a agenda local para participar de eventos culturais no local.
+4. Água para gatos
+Uma área natural com um microclima único, fontes de água doce e rica biodiversidade. Ideal para contacto próximo com a natureza.
+Dica Prática: Leve repelente de insetos e água para desfrutar confortavelmente do ambiente.
+5. Miradouro de Rui Vaz
+Localizado a 820 metros acima do nível do mar, este mirante oferece vistas panorâmicas de Santiago Norte e áreas protegidas próximas.
+Dica Prática: Ideal para visitar durante a manhã, quando o tempo está mais fresco.
+6. Igreja Nossa Senhora da Luz
+Localizada na Baía dos Alcatrazes, esta igreja histórica destaca-se pela sua arquitetura colonial e pelo seu significado cultural.
+Dica importante: Visite no dia 13 de maio para aproveitar as festividades locais.
+7.Praia Baixo
+Praia serena de areia branca e preta, perfeita para esportes aquáticos como mergulho com snorkel e windsurf.
+Dica Prática: Traga o seu equipamento de mergulho para desfrutar da rica biodiversidade marinha.",Farol de Ponta Leste,Praia Baixo,"34 Farol de Ponta Leste São Domingos 14.987226579841511, -23.430374532952417
+SD-01 Igreja de S. Nicolau Tolentino São Domingos 15.030319060671761, -23.560768467672514
+SD-18 Busto de Antoni denti d oru São Domingos 15.028500333031738, -23.561129008833944
+SD-12 Água de Gato São Domingos 15.036196388972884, -23.579534148133163
+38 Miradouro de Rui Vaz São Domingos 15.035651704836042, -23.59963023640967
+18 Igreja Nossa senhora da Luz São Domingos 15.037714364270734, -23.454270648425307
+51 Praia Baixo São Domingos 15.062061290148275, -23.473368916612312
+   
+   
+https://maps.app.goo.gl/ah3ob7ADLLP6b17i7 ",https://maps.app.goo.gl/ah3ob7ADLLP6b17i7,"34 Farol de Ponta Leste São Domingos 14.987226579841511, -23.430374532952417
+SD-01 Igreja de S. Nicolau Tolentino São Domingos 15.030319060671761, -23.560768467672514
+SD-18 Busto de Antoni denti d oru São Domingos 15.028500333031738, -23.561129008833944
+SD-12 Água de Gato São Domingos 15.036196388972884, -23.579534148133163
+38 Miradouro de Rui Vaz São Domingos 15.035651704836042, -23.59963023640967
+18 Igreja Nossa senhora da Luz São Domingos 15.037714364270734, -23.454270648425307
+51 Praia Baixo São Domingos 15.062061290148275, -23.473368916612312
+   
+   ","34 Farol de Ponta Leste São Domingos: [14.987226579841511, -23.430374532952417]; SD-01 Igreja de S. Nicolau Tolentino São Domingos: [15.030319060671761, -23.560768467672514]; SD-18 Busto de Antoni denti d oru São Domingos: [15.028500333031738, -23.561129008833944]; SD-12 Água de Gato São Domingos: [15.036196388972884, -23.579534148133163]; 38 Miradouro de Rui Vaz São Domingos: [15.035651704836042, -23.59963023640967]; 18 Igreja Nossa senhora da Luz São Domingos: [15.037714364270734, -23.454270648425307]; 51 Praia Baixo São Domingos: [15.062061290148275, -23.473368916612312]","Participação na Festa de Nossa Senhora de Fátima (13 de maio): Participar de celebrações religiosas e culturais na comunidade de Milho Branco, incluindo procissão e missa, seguidas de música tradicional e feiras de artesanato. 
+Explore a Arte do Batuku: Aprenda sobre o Batuku, gênero musical e de dança tradicional de Santiago, por meio de oficinas com grupos locais que explicam sua história e técnica. 
+Aproveite a Festa de Nossa Senhora da Estrela-do-Mar (Último Domingo de Junho): Participe na procissão na Praia Baixo, seguida de actividades culturais e recreativas como feiras gastronómicas e agrícolas. 
+Festa de Nhu Febreru (1 a 2 de fevereiro): Participe da festa mais antiga do município, com missa campal, procissão, almoço típico e atividades culturais como música e esportes. 
+Oficina de Cimboa: Descubra como a Cimboa, instrumento musical tradicional, é feita e tocada em oficinas ministradas por artesãos locais. 
+Rota Gastronómica do Pastel de Milho: Prove os famosos bolinhos de milho de São Domingos em locais tradicionais como Titina e Carlita, complementados com visitas à praça de comercialização. 
+Feira de Artesanato Local: Participe em eventos onde estão expostas cerâmicas, tecidos e bordados típicos do concelho, promovidos pela Cooperativa Rabenta e pela Fábrica de Cerâmica São Domingos.","Equipamentos Recomendados: Roupas leves, calçados confortáveis, protetor solar, água e câmera fotográfica.
+Acessibilidade: Recomenda-se veículos particulares ou passeios organizados.
+Época Ideal: Durante todo o ano, idealmente de maio a outubro para desfrutar do clima mais favorável.
+Custos: Entrada gratuita em todos os recursos.",20
+RUTA SÃO LOURENÇO DOS ÓRGÃOS,São Lourenço dos Órgãos,COD_13,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/fzdutQv8QTgBTOLTV2ja.jpg,COD_32,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/mc1cPMag5VHSs6jOtAiQ.jpg,COD_80,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/grE3cChXwQHNzTdNRLLY.jpg,,,"Adéntrate en el corazón natural y cultural de São Lourenço dos Órgãos, un municipio que combina biodiversidad, historia y tradiciones. Desde jardines botánicos hasta mercados históricos y casas coloniales, esta ruta te conecta con la esencia auténtica de Cabo Verde.",2 horas. 40 minutos,24 km,Veículo,Mídia,"Banheiro
+Cultura
+Caminhada","1. Centro Interpretativo ""Kintal de Nós Djentis""
+Espaço dedicado à biodiversidade e ao conhecimento agrícola de São Lourenço, com exposições interativas e oficinas educativas.
+Dica Prática: Ideal para todas as idades; Visite cedo para aproveitar as atividades ao ar livre.
+2. Jardim Botânico Grandvaux Barbosa
+Único jardim botânico de Cabo Verde, que abriga espécies endémicas e exóticas, que promove a conservação da biodiversidade local.
+Dica Prática: Leve repelente de insetos e desfrute da tranquilidade do ambiente.
+3. Mercado dos Órgãos
+Um mercado renovado que mantém o seu encanto colonial, onde poderá encontrar produtos frescos e artesanato local.
+Dica Prática: Visite pela manhã para encontrar maior variedade de produtos frescos.
+4. Casa Grande do Senhor Carlos Aguiar
+Um exemplo notável da arquitectura colonial do século XX, contando histórias da vida em Cabo Verde em tempos passados.
+Dica Prática: Verifique com antecedência a disponibilidade de visitas guiadas.","Centro Interpretativo ""Kintal de Nós Djentis""",Casa Grande de Senhor Carlos Aguiar,"13 Centro Interpretativo de São Lourenço dos Órgãos – “Kintal de Nós Djentis” São Lourenço dos Órgãos 15.053118702612295, -23.605132476262273
+32 Jardim Botánico Grandvaux Barbosa São Lourenço dos Órgãos 15.048891453610121, -23.603855597369304
+SL-03 Mercado dos Órgãos São Lourenço dos Órgãos 15.063649070130142, -23.609063257493272
+SL-06 Casa Grande de Senhor Carlos Aguiar São Lourenço dos Órgãos 15.062711020824796, -23.621116199899525
+   
+   
+https://maps.app.goo.gl/WUSGyrrQzMfJYmWo9   
+",https://maps.app.goo.gl/WUSGyrrQzMfJYmWo9,"13 Centro Interpretativo de São Lourenço dos Órgãos – “Kintal de Nós Djentis” São Lourenço dos Órgãos 15.053118702612295, -23.605132476262273
+32 Jardim Botánico Grandvaux Barbosa São Lourenço dos Órgãos 15.048891453610121, -23.603855597369304
+SL-03 Mercado dos Órgãos São Lourenço dos Órgãos 15.063649070130142, -23.609063257493272
+SL-06 Casa Grande de Senhor Carlos Aguiar São Lourenço dos Órgãos 15.062711020824796, -23.621116199899525
+   
+   ","13 Centro Interpretativo de São Lourenço dos Órgãos – “Kintal de Nós Djentis” São Lourenço dos Órgãos: [15.053118702612295, -23.605132476262273]; 32 Jardim Botánico Grandvaux Barbosa São Lourenço dos Órgãos: [15.048891453610121, -23.603855597369304]; SL-03 Mercado dos Órgãos São Lourenço dos Órgãos: [15.063649070130142, -23.609063257493272]; SL-06 Casa Grande de Senhor Carlos Aguiar São Lourenço dos Órgãos: [15.062711020824796, -23.621116199899525]","Participação na Festa de São Lourenço (10 de agosto): Experimente as celebrações dedicadas ao padroeiro, incluindo procissões, música tradicional e feiras gastronómicas. O festival combina momentos sagrados e profanos, destacando a coesão comunitária.
+Explore o Festival do Milho (1 de novembro): Desfrute de um dia dedicado ao milho, com pequenos-almoços tradicionais (couscoz, bolos de milho, totoco) e feiras culinárias onde são apresentados pratos típicos como a cachupa e o xerém.
+Assistir à Festa de São Jorge (Domingo depois da Páscoa): Comemore com procissões religiosas e eventos culturais. O festival inclui música, feiras de artesanato e atividades esportivas.
+Venda de Artesanato Local em João Teves.","Equipamentos Recomendados: Roupas leves, calçados confortáveis, protetor solar, água e câmera fotográfica.
+Duração: Percurso completo de 6 a 8 horas.
+Acessibilidade: Transporte público disponível, embora seja recomendado veículo particular para maior conforto.
+Época Ideal: Todo o ano, ideal para dias de sol e festividades locais【252†fonte】.
+Custos: Entrada gratuita na maioria dos recursos; Workshops e visitas guiadas poderão ter custos adicionais【251†fonte】.
+Regras: Respeitar as áreas protegidas e a comunidade local.",21
+RUTA DE TARRAFAL,Tarrafal,COD_68,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/HXHfwzSweRjHE2Iu0V6d.jpg,COD_3,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/Fp3lN5HeJxjzZY9reqk1.jpg,COD_20,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/Ey6BTxxiVBbG0CFymLRI.jpg,COD_48,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/YVo4EQGTjDPn3jdQy0ZZ.jpg,"Descubre la historia, cultura y belleza natural de Tarrafal en una ruta que abarca desde su patrimonio colonial hasta los paisajes más hermosos. Visita espacios tan emblemático como el Campo de Concentração, la Iglesia o el Centro de Arte, mientras disfrutas de la vida costera y la vibrante cultura local.",Rh 45 de,14 km,Veículo e pé,Media-Alta,"Surfar
+Bodyboard
+Windsurf
+Snorkeling e mergulho
+Caminhadas costeiras
+Avistamento de fauna marinha
+Cultura  
+Arte 
+Arte","1. Turismo de surf (Ponta d'Atum)
+Ponta d'Atum é um destino popular de surf, conhecido pelas ondas consistentes e águas cristalinas. A paisagem natural da costa, rodeada de formações rochosas, cria o ambiente perfeito para os surfistas. Você também pode desfrutar da observação da fauna marinha e fazer caminhadas ao longo da costa. 
+2. Campo de Concentração do Tarrafal
+Este histórico campo de concentração, hoje museu ao ar livre, foi utilizado para presos políticos durante a ditadura portuguesa. É um espaço de memória que oferece exposições sobre presos e a luta pelos direitos humanos. Os visitantes podem passear pelo campo e conhecer sua importância histórica. 
+3. Arte Urbana Local
+O Tarrafal destaca-se pela sua vibrante arte urbana. A arte reflete as tradições e lutas da comunidade local, fundindo o moderno com o tradicional. Os visitantes podem passear pelos bairros para apreciar a arte e a cultura local.
+4. Igreja Matriz Santo Amaro Abade
+É um importante local religioso e cultural, notável pela sua arquitetura colonial. Construída no século XIX, abriga valiosas peças de arte sacra. Os visitantes podem participar de missas e explorar seu interior histórico. 
+5. Porto de Mangui
+Pitoresco porto de pesca tradicional, rodeado de pequenas embarcações e paisagens naturais. É ideal para passeios de barco e pesca esportiva, além de ser um local representativo da economia local. Os visitantes podem interagir com os pescadores locais e conhecer seu trabalho. 
+6. Praia Branca do Tarrafal em Santiago
+Linda praia de areia branca e águas cristalinas, perfeita para nadar e relaxar. É um local tranquilo e acessível, ideal para desfrutar do sol e praticar desportos náuticos como o snorkeling. 
+7. Centro de Artes e Ofícios de Trás os Montes
+Este centro cultural celebra as tradições artesanais da ilha de Santiago, oferecendo oficinas interativas e exposições. Os visitantes podem aprender técnicas como carpintaria e cerâmica, além de adquirir artesanato local.",Turismo de surf (ponta d ´atum),Centro de arte e oficios de tras os Montes,"68 Turismo de surf (ponta d ´atum)  Tarrafal  15.276685277487989, -23.757980658013825
+6 Campo de Concentração de Tarrafal  Tarrafal  15.263697243130842, -23.743767789751654
+3 Arte urbana Local  Tarrafal  15.278286085477442, -23.751723172812003
+20 Igreja Matriz santo Amaro Abade  Tarrafal  15.278772953995617, -23.751064019461676
+42 Porto de Mangui  Tarrafal  15.280267883791458, -23.754467999397566
+48 Praia Branca do Tarrafal de Santiago  Tarrafal  15.281517197755285, -23.752689347404843
+12 Centro de arte e oficios de tras os Montes  Tarrafal  15.3038536354514, -23.710943337999346
+
+https://maps.app.goo.gl/GrVe3G1jAvo2s9qf7",https://maps.app.goo.gl/GrVe3G1jAvo2s9qf7,"68 Turismo de surf (ponta d ´atum)  Tarrafal  15.276685277487989, -23.757980658013825
+6 Campo de Concentração de Tarrafal  Tarrafal  15.263697243130842, -23.743767789751654
+3 Arte urbana Local  Tarrafal  15.278286085477442, -23.751723172812003
+20 Igreja Matriz santo Amaro Abade  Tarrafal  15.278772953995617, -23.751064019461676
+42 Porto de Mangui  Tarrafal  15.280267883791458, -23.754467999397566
+48 Praia Branca do Tarrafal de Santiago  Tarrafal  15.281517197755285, -23.752689347404843
+12 Centro de arte e oficios de tras os Montes  Tarrafal  15.3038536354514, -23.710943337999346
+","68 Turismo de surf (ponta d ´atum) Tarrafal: [15.276685277487989, -23.757980658013825]; 6 Campo de Concentração de Tarrafal Tarrafal: [15.263697243130842, -23.743767789751654]; 3 Arte urbana Local Tarrafal: [15.278286085477442, -23.751723172812003]; 20 Igreja Matriz santo Amaro Abade Tarrafal: [15.278772953995617, -23.751064019461676]; 42 Porto de Mangui Tarrafal: [15.280267883791458, -23.754467999397566]; 48 Praia Branca do Tarrafal de Santiago Tarrafal: [15.281517197755285, -23.752689347404843]; 12 Centro de arte e oficios de tras os Montes Tarrafal: [15.3038536354514, -23.710943337999346]","Parque Natural do Tarrafal
+Oferece percursos pedestres que permitem explorar paisagens montanhosas e a biodiversidade local. 
+Visita à Praia da Ribeira da Prata
+Esta praia é menos conhecida que a Praia Branca, mas é igualmente bonita. Com águas calmas e areia dourada, é o local ideal para um dia relaxante na praia ou para a prática de desportos náuticos como o snorkeling.
+Visita ao Mercado Local do Tarrafal
+Aqui poderá encontrar produtos frescos, peixe local, artesanato e têxteis tradicionais. 
+Explore as Aldeias Rabelados
+As aldeias dos Rabelados, comunidade tradicional da ilha, são conhecidas pelo seu estilo de vida e cultura únicos. Um passeio por estas aldeias permitirá ver como as comunidades preservam os seus costumes, músicas e danças tradicionais.
+Visita ao Museu de História Natural do Tarrafal
+Este pequeno museu oferece uma visão do património natural de Cabo Verde, com exposições sobre a flora e a fauna locais. É um ótimo lugar para aprender sobre a biodiversidade e a história geológica da ilha.","Equipamento: roupa leve e confortável, água, protetor solar e boné. Fato de banho, toalha e calçado adequado para caminhar em trilhos arenosos ou rochosos.
+Temporada: Todo o ano; Para desfrutar de atividades ao ar livre, recomenda-se ir nos meses de primavera e outono.
+Acessibilidade: Os recursos são acessíveis por veículo e facilmente a pé. Enquanto alguns como o Turismo de Surf e o Centro de Arte podem envolver caminhadas em terrenos irregulares.
+Regras: manter uma atitude de respeito em locais históricos e/ou religiosos. 
+Idiomas: Português e Inglês principalmente
+Turismo de surf - Verifique previamente as condições do mar.
+Porto de Mangui – Negocie os preços dos passeios caso decida embarcar",22
+RUTA DE SÃO SALVADOR DO MUNDO,São Salvador do Mundo,COD_72,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/9QAitAoOVdDU0r0GfTxh.jpg,COD_83,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/alz1BotvnaYSBUzZrMlz.png,COD_85,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/DlkUn1FiufTAbCUkYJgu.png,COD_86,https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/vGSx7XE482WK3IyOQsKn/pub/6aHXjiwhwSwPnAn4e6lv.png,"Embárcate en una ruta única que fusiona historia, naturaleza y cultura en el corazón de Santiago. Desde impresionantes paisajes volcánicos hasta monumentos históricos, descubrirás la esencia de la isla mientras exploras sus maravillas naturales y tradiciones autóctonas. Ideal para los amantes de la aventura, la cultura local y la ecología.",CH. 15 minutos,"7,5 km",Veículo e pé,Media-Alta,"Cultura
+Caminhada 
+Avistamento de fauna marinha","1. Barragem de Favetá
+Esta moderna infraestrutura hidráulica, inaugurada em 2013, transformou a paisagem agrícola da região, tornando-se uma atração turística devido ao seu impacto ambiental positivo. A barreira hídrica tem atraído diversas espécies de aves, principalmente garças-brancas. A área verde é ideal para caminhadas e o festival anual do milho atrai muitos visitantes em novembro.
+2. Igreja de São Salvador do Mundo
+Marco arquitetónico da região, esta igreja substituiu uma capela original mandada construir pelo bispo D. Victoriano Portuense. Situado no centro histórico da Achada Igreja, o seu edifício reflete a influência colonial e é o epicentro das celebrações religiosas, especialmente da Festa de São Salvador do Mundo.
+3. Monte Gulilância
+Este monumento natural, conhecido localmente como ""Nguli Lansa"", caracteriza-se pela sua formação rochosa que lembra um homem a cavalo. Oferece vistas panorâmicas sobre a ilha e alberga uma flora única, albergando espécies endémicas como o marmulano. É um local ideal para os amantes de caminhadas e observação da natureza.
+4. Rocha Pomba Sansão
+Este gigantesco monólito que lembra um pombo, é famoso por sua espetacular cachoeira sazonal que se forma quando as chuvas alimentam a margem do rio. Esta rocha é um excelente local para fotografia e observação de aves locais.
+5. Quinta Dona Joana
+Um histórico que oferece vistas panorâmicas sobre a região da Ribeira de Laranja, conhecida pela sua arquitetura tradicional e ligação à história local. É um excelente local para desfrutar da tranquilidade e beleza natural enquanto explora os arredores.",Barragem de Faveta,Fazenda Dona Joana,"SSM-01 Barragem de Faveta  São Salvador do Mundo  15.098386421628481, -23.6232018415272
+72 Igreja de São Salvador do Mundo  São Salvador do Mundo  15.084020920999105, -23.632154280477504
+SSM-08 Monte Gulilância	São Salvador do Mundo  15.080760093614556, -23.635334231756797
+SSM-09 Rocha Pomba Sansão São Salvador do Mundo  15.076458299917254, -23.62994890079657
+SSM-06 Quinta Dona Joana  São Salvador do Mundo  15.078619093087088, -23.627411837755275
+
+https://maps.app.goo.gl/3Zud8FyCc64StTfp8",https://maps.app.goo.gl/3Zud8FyCc64StTfp8,"SSM-01 Barragem de Faveta  São Salvador do Mundo  15.098386421628481, -23.6232018415272
+72 Igreja de São Salvador do Mundo  São Salvador do Mundo  15.084020920999105, -23.632154280477504
+SSM-08 Monte Gulilância	São Salvador do Mundo  15.080760093614556, -23.635334231756797
+SSM-09 Rocha Pomba Sansão São Salvador do Mundo  15.076458299917254, -23.62994890079657
+SSM-06 Quinta Dona Joana  São Salvador do Mundo  15.078619093087088, -23.627411837755275
+","SSM-01 Barragem de Faveta  São Salvador do Mundo: [15.098386421628481, -23.6232018415272]; 72 Igreja de São Salvador do Mundo  São Salvador do Mundo: [15.084020920999105, -23.632154280477504]; SSM-08 Monte Gulilância	São Salvador do Mundo: [15.080760093614556, -23.635334231756797]; SSM-09 Rocha Pomba Sansão São Salvador do Mundo: [15.076458299917254, -23.62994890079657]; SSM-06 Quinta Dona Joana  São Salvador do Mundo: [15.078619093087088, -23.627411837755275]","Festival do Milho na Barragem de Faveta: Participe deste evento gastronômico que celebra a cultura do milho com degustações e atividades tradicionais.
+Oficina de Artesanato Local: Aprenda técnicas tradicionais com artesãos locais, criando lembranças únicas com materiais nativos.
+Observação de Aves na Rocha Pomba Sansão: Desfrute de um dia observando espécies locais como a garça branca no seu habitat natural.","Equipamentos: Roupa confortável, calçado adequado para caminhada, protetor solar e água. 
+Custos: O acesso à Barragem de Faveta é gratuito. As visitas guiadas ou workshops poderão ter um custo adicional (cerca de 5-10€).
+Acessibilidade: O percurso é adequado para PMR exceto em pontos como o Monte Gulilância, que podem ser de difícil acesso. 
+Época ideal: Primavera e outono. Evite os meses chuvosos (agosto a outubro).
+Duração: Todo o percurso pode durar entre 4 e 6 horas, dependendo das atividades adicionais escolhidas.
+Normas: Respeite as instruções dos guias e as regulamentações locais sobre o cuidado do meio ambiente, principalmente em áreas protegidas.
+Idiomas: Os guias turísticos falam português e crioulo; alguns também ingleses.",23

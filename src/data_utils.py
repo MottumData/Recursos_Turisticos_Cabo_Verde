@@ -60,7 +60,7 @@ def inicializar_estado():
     # Idioma por defecto
 
 def mostrar_logo():
-    st.sidebar.image('assets/Logo_cabo_verde.png')
+    st.image('assets/Logo_cabo_verde.png')
 
 def seleccionar_idioma():
     idiomas_disponibles = obtener_idiomas()
@@ -95,18 +95,33 @@ def seleccionar_categorias(traducciones, datos):
     return categorias_seleccionadas_ids
 
 
+# src/data_utils.py
+
+# src/data_utils.py
+
 def seleccionar_ruta(traducciones):
     category_mapping_ruta = traducciones.get("category_mapping_ruta", {})
     rutas_df = cargar_dataset_rutas(st.session_state['idioma_seleccionado'], category_mapping_ruta)
-    ruta_predefinida = None
     if not rutas_df.empty:
-        # Usa el nombre de la columna después del mapeo ('route_name')
-        ruta_predefinida = st.selectbox(
+        ruta_options = ['Ninguna'] + list(rutas_df['route_name'].unique())
+        selected_route_name = st.selectbox(
             traducciones.get("select_route", "Seleccionar ruta"),
-            ['Ninguna'] + list(rutas_df['route_name'].unique())
+            ruta_options
         )
-        if ruta_predefinida != 'Ninguna':
-            st.session_state['selected_route_id'] = rutas_df[rutas_df['route_name'] == ruta_predefinida]['id'].values[0]
+        if selected_route_name != 'Ninguna':
+            ruta = rutas_df[rutas_df['route_name'] == selected_route_name]
+            if not ruta.empty:
+                selected_route_id = ruta.iloc[0]['id']
+            else:
+                selected_route_id = None
         else:
-            st.session_state['selected_route_id'] = None
-    return ruta_predefinida
+            selected_route_id = None
+    else:
+        selected_route_name = 'Ninguna'
+        selected_route_id = None
+
+    # Almacenar el nombre de la ruta en st.session_state
+    st.session_state['selected_route_name'] = selected_route_name
+    st.session_state['selected_route_id'] = selected_route_id
+
+    return selected_route_name, selected_route_id
