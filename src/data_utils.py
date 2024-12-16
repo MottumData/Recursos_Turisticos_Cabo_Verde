@@ -60,7 +60,7 @@ def inicializar_estado():
     # Idioma por defecto
 
 def mostrar_logo():
-    st.sidebar.image('assets/Logo_cabo_verde.png')
+    st.image('assets/Logo_cabo_verde.png')
 
 def seleccionar_idioma():
     idiomas_disponibles = obtener_idiomas()

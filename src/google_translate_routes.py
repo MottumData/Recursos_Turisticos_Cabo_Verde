@@ -3,6 +3,7 @@ from googletrans import Translator
 
 # Cargar el dataset original
 datos = pd.read_csv('data/rutas_cabo_verde.csv')
+datos['id'] = datos.index + 1
 
 translator = Translator()
 
@@ -23,10 +24,10 @@ idiomas = ['en', 'es', 'pt']  # Agrega los códigos de idioma que necesites
 columnas_a_traducir = [
     'Nombre de la ruta',
     'Municipios por los que transcurre',
-    'Imagen 1',
-    'Imagen 2',
-    'Imagen 3',
-    'Imagen 4',
+    'URL_img1',
+    'URL_img2',
+    'URL_img3',
+    'URL_img4',
     'Descripción de la ruta',
     'Duración',
     'Distancia',
@@ -36,7 +37,10 @@ columnas_a_traducir = [
     'Recursos incluidos',
     'Punto de inicio',
     'Punto de salida',
-    'Recursos Georeferenciados'
+    'URL Google Maps',
+    'Ruta LatLong Transformed',
+    'Actividades Opcionales:',
+    'Recomendaciones'
 ]
 
 # Crear un diccionario para almacenar las traducciones de los nombres de columnas por idioma

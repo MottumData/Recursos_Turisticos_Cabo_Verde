@@ -27,7 +27,7 @@ def mostrar_detalles_recurso(salida, datos, traducciones):
                 break
         if recurso is not None:
             st.session_state['selected_resource_id'] = recurso['id']
-            st.sidebar.success(traducciones["resource_selected"].format(resource_name=recurso['resource_name']))
+            st.success(traducciones["resource_selected"].format(resource_name=recurso['resource_name']))
     return recurso
 
 def mostrar_detalles_ruta(rutas_df, traducciones):
@@ -36,20 +36,31 @@ def mostrar_detalles_ruta(rutas_df, traducciones):
         ruta = rutas_df[rutas_df['id'] == st.session_state['selected_route_id']]
         if not ruta.empty:
             ruta = ruta.iloc[0]
-            st.sidebar.success(traducciones["route_selected"].format(route_name=ruta['route_name']))
+            st.success(traducciones["route_selected"].format(route_name=ruta['route_name']))
         else:
-            st.sidebar.warning(traducciones["messages"]["route_not_found"])
+            st.warning(traducciones["messages"]["route_not_found"])
     return ruta
 
 def aplicar_css_personalizado(ruta_label, categorias_label):
     st.markdown(f"""
     <style>
-    [data-testid="stSelectbox"]:has(input[aria-label$="{ruta_label}"]) {{
+        [data-testid="stImageContainer"] {{
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            z-index: 99999999 !important;
+            max-width: 150px;
+            
+        }}
+            
+        [data-testid="stSelectbox"]:has(input[aria-label$="{ruta_label}"]) {{
             position: fixed;
             top: 10px;
-            left: 100px;
+            right: 170px;
             z-index: 99999999 !important;
             width: auto !important;
+            max-width: 200px;
+            
         }}
         [data-testid="stSelectbox"]:has(input[aria-label$="Idioma:"]) {{
             position: fixed;
@@ -64,7 +75,9 @@ def aplicar_css_personalizado(ruta_label, categorias_label):
             right: 10px;
             z-index: 99999999 !important;
             width: auto !important;
+            max-width: 150px;
         }}
+        
         .stButton button {{
             width: 100%; /* Ajustar al tamaño del sidebar */
             margin: 20px auto;
@@ -208,7 +221,6 @@ def aplicar_css_global():
 
 def main():
     inicializar_estado()
-    mostrar_logo()
 
     # Cargar configuración inicial desde session_state o usar valores por defecto
     if 'idioma_seleccionado' not in st.session_state:
@@ -267,7 +279,7 @@ def main():
             st.session_state['resource_id'] = st.session_state['selected_resource_id']
             st.switch_page("pages/detalle_recurso.py")
         else:
-            st.sidebar.warning(traducciones["messages"]["select_resource_warning"])
+            st.warning(traducciones["messages"]["select_resource_warning"])
     
     st.markdown('<span id="button-after-2"></span>', unsafe_allow_html=True)
     
@@ -276,9 +288,10 @@ def main():
             st.session_state['route_id'] = st.session_state['selected_route_id']
             st.switch_page("pages/detalle_ruta.py")
         else:
-            st.sidebar.warning(traducciones["messages"]["select_route_warning"])
+            st.warning(traducciones["messages"]["select_route_warning"])
 
     aplicar_css_global()
+    mostrar_logo()
     
 if __name__ == "__main__":
     main()

@@ -97,7 +97,7 @@ def procesar_rutas(mapa, rutas_df, ruta_predefinida):
         ruta = rutas_df[rutas_df['route_name'] == ruta_predefinida]
         if not ruta.empty:
             ruta = ruta.iloc[0]
-            recursos_georeferenciados = ruta['georeferenced_resources']
+            recursos_georeferenciados = ruta['latlong_route_transformed']
             puntos = recursos_georeferenciados.split(';')
             coords = []
             for punto in puntos:

@@ -17,116 +17,104 @@ def cargar_datos_ruta(idioma_seleccionado, route_id):
     return ruta.iloc[0], traducciones
 
 def mostrar_informacion_general(ruta, traducciones):
-    st.subheader(traducciones.get('informacion_general', "Información General"))
+    st.subheader(f"📍 {traducciones.get('informacion_general', 'Información General')}")
     mostrar_informacion_basica(ruta, traducciones)
     mostrar_descripcion(ruta, traducciones)
 
 def mostrar_informacion_basica(ruta, traducciones):
     info_basica = {
-        traducciones.get("route_name_label", "Nombre de la Ruta"): ruta.get('route_name', ''),
-        traducciones.get("distance_label", "Distancia"): ruta.get('distance', ''),
-        traducciones.get("duration_label", "Duración"): ruta.get('duration', ''),
-        traducciones.get("difficulty_label", "Dificultad"): ruta.get('difficulty', ''),
+        f"🗺️ {traducciones.get('route_name_label', 'Nombre de la Ruta')}": ruta.get('route_name', ''),
+        f"📏 {traducciones.get('distance_label', 'Distancia')}": ruta.get('distance', ''),
+        f"⏱️ {traducciones.get('duration_label', 'Duración')}": ruta.get('duration', ''),
+        f"⚙️ {traducciones.get('difficulty_label', 'Dificultad')}": ruta.get('difficulty', ''),
     }
     st.table(info_basica)
 
 def mostrar_descripcion(ruta, traducciones):
     descripcion = ruta.get('description', '')
     if descripcion:
-        st.markdown(f"**{traducciones.get('descripcion', 'Descripción')}:**")
+        st.markdown(f"**📝 {traducciones.get('descripcion', 'Descripción')}:**")
         st.write(descripcion)
 
 def mostrar_puntos_interes(ruta, traducciones):
-    puntos_interes = ruta.get('points_of_interest', '')
+    puntos_interes = ruta.get('municipalities', '')
     if puntos_interes:
-        st.markdown(f"**{traducciones.get('puntos_interes', 'Puntos de Interés')}:**")
+        st.markdown(f"**📌 {traducciones.get('puntos_interes', 'Puntos de Interés')}:**")
         st.write(puntos_interes)
 
 def mostrar_recursos_asociados(ruta, traducciones):
     recursos_asociados = ruta.get('resources_included', '')
     if recursos_asociados:
-        st.markdown(f"**{traducciones.get('recursos_asociados', 'Recursos Asociados')}:**")
-        st.write(recursos_asociados)
-
-def mostrar_informacion_adicional(ruta, traducciones):
-    with st.expander(traducciones.get('informacion_adicional', 'Información Adicional')):
-        mostrar_condiciones_climaticas(ruta, traducciones)
-        mostrar_epoca_recomendada(ruta, traducciones)
-        mostrar_tipos_transporte(ruta, traducciones)
-
-def mostrar_condiciones_climaticas(ruta, traducciones):
-    condiciones = ruta.get('weather_conditions', '')
-    if condiciones:
-        st.markdown(f"**{traducciones.get('condiciones_climaticas', 'Condiciones Climáticas')}:**")
-        st.write(condiciones)
-
-def mostrar_epoca_recomendada(ruta, traducciones):
-    epoca = ruta.get('recommended_season', '')
-    if epoca:
-        st.markdown(f"**{traducciones.get('epoca_recomendada', 'Época Recomendada')}:**")
-        st.write(epoca)
-
-def mostrar_tipos_transporte(ruta, traducciones):
-    transporte = ruta.get('transport_types', '')
-    if transporte:
-        st.markdown(f"**{traducciones.get('tipos_transporte', 'Tipos de Transporte')}:**")
-        st.write(transporte)
+        with st.expander(f"**🔧 {traducciones.get('recursos_asociados', 'Recursos Asociados')}:**"):
+            st.write(recursos_asociados)
 
 def mostrar_accesibilidad(ruta, traducciones):
-    with st.expander(traducciones.get('accesibilidad', 'Accesibilidad')):
+    with st.expander(f"🔑 {traducciones.get('accesibilidad', 'Accesibilidad')}"):
         mostrar_acceso_inicio(ruta, traducciones)
         mostrar_acceso_final(ruta, traducciones)
-        mostrar_medios_acceso(ruta, traducciones)
+        mostrar_access_mode(ruta, traducciones)
 
 def mostrar_acceso_inicio(ruta, traducciones):
-    acceso_inicio = ruta.get('start_access', '')
+    acceso_inicio = ruta.get('starting_point', '')
     if acceso_inicio:
-        st.markdown(f"**{traducciones.get('acceso_inicio', 'Acceso al Inicio de la Ruta')}:**")
+        st.markdown(f"**🚪 {traducciones.get('acceso_inicio', 'Acceso al Inicio de la Ruta')}:**")
         st.write(acceso_inicio)
 
 def mostrar_acceso_final(ruta, traducciones):
-    acceso_final = ruta.get('end_access', '')
+    acceso_final = ruta.get('exit_point', '')
     if acceso_final:
-        st.markdown(f"**{traducciones.get('acceso_final', 'Acceso al Final de la Ruta')}:**")
+        st.markdown(f"**🚪 {traducciones.get('acceso_final', 'Acceso al Final de la Ruta')}:**")
         st.write(acceso_final)
 
-def mostrar_medios_acceso(ruta, traducciones):
-    medios = ruta.get('access_means', '')
-    if medios:
-        st.markdown(f"**{traducciones.get('medios_acceso', 'Medios de Acceso')}:**")
-        st.write(medios)
+def mostrar_access_mode(ruta, traducciones):
+    access_mode = ruta.get('access_mode', '')
+    if access_mode:
+        st.markdown(f"**🛣️ {traducciones.get('access_mode_label', 'Modo de Acceso')}:**")
+        st.write(access_mode)
 
-def mostrar_servicios(ruta, traducciones):
-    with st.expander(traducciones.get('servicios', 'Servicios')):
-        mostrar_servicios_disponibles(ruta, traducciones)
-        mostrar_estado_senalizacion(ruta, traducciones)
+def mostrar_optional_activities(ruta, traducciones):
+    optional_activities = ruta.get('optional_activities', '')
+    if optional_activities:
+        st.markdown(f"**🎯 {traducciones.get('optional_activities_label', 'Actividades Opcionales')}:**")
+        st.write(optional_activities)
 
-def mostrar_servicios_disponibles(ruta, traducciones):
-    servicios = ruta.get('available_services', '')
-    if servicios:
-        st.markdown(f"**{traducciones.get('servicios_disponibles', 'Servicios Disponibles')}:**")
-        st.write(servicios)
+def mostrar_recommendations(ruta, traducciones):
+    recommendations = ruta.get('recommendations', '')
+    if recommendations:
+        st.markdown(f"**💡 {traducciones.get('recommendations_label', 'Recomendaciones')}:**")
+        st.write(recommendations)
 
-def mostrar_estado_senalizacion(ruta, traducciones):
-    senalizacion = ruta.get('signage_status', '')
-    if senalizacion:
-        st.markdown(f"**{traducciones.get('estado_senalizacion', 'Estado de la Señalización')}:**")
-        st.write(senalizacion)
+def mostrar_georeferenced_resources(ruta, traducciones):
+    georeferenced_resources = ruta.get('georeferenced_resources', '')
+    if georeferenced_resources:
+        st.markdown(f"**📍 {traducciones.get('georeferenced_resources_label', 'Recursos Georeferenciados')}:**")
+        st.write(georeferenced_resources)
+
+def mostrar_google_maps(ruta, traducciones):
+    google_maps_url = ruta.get('google_maps_url', '')
+    if google_maps_url:
+        st.markdown(f"**🗺️ {traducciones.get('google_maps_url_label', 'URL de Google Maps')}:**")
+        st.markdown(f"[Ver en Google Maps]({google_maps_url})")
 
 def mostrar_imagenes(ruta):
     imagenes = []
     for i in range(1, 5):
-        img_key = f'image_{i}'
+        img_key = f'url_image_{i}'
         img_url = ruta.get(img_key, '')
         if img_url and pd.notna(img_url):
             imagenes.append(img_url)
     if imagenes:
-        st.subheader('Imágenes')
-        st.image(imagenes, use_column_width=True)
+        st.subheader('🖼️ Imágenes')
+        st.image(imagenes, use_container_width=True)
 
 def aplicar_css_personalizado():
     st.markdown("""
     <style>
+        [data-testid="stImageContainer"] {{
+            display: block;
+            position: relative;
+            
+        }}
         /* Estilo para los subtítulos */
         .stMarkdown h2{
             color: #2E586E;
@@ -148,7 +136,8 @@ def aplicar_css_personalizado():
             color: #333333;
         }
         .stButton button {
-            width: 100%; /* Ajustar al tamaño del sidebar */
+            max-width: 200px;
+            display: block;
             margin: 20px auto;
             margin-top: 5px;
             padding: 8px 24px;
@@ -194,8 +183,11 @@ def aplicar_css_personalizado():
 st.set_page_config(layout="wide", page_title="Detalle de la Ruta")
 aplicar_css_personalizado()
 
-st.sidebar.image('assets/Logo_cabo_verde.png')
+cols = st.columns([3, 2])
 
+with cols[0]:
+    st.image('assets/Logo_cabo_verde.png', width=200)
+    
 # Obtener el ID de la ruta
 route_id = st.session_state.get("route_id", None)
 if route_id is None:
@@ -208,23 +200,25 @@ idioma_seleccionado = st.session_state.get('idioma_seleccionado', 'es')
 # Cargar los datos de la ruta
 ruta, traducciones = cargar_datos_ruta(idioma_seleccionado, route_id)
 
+with cols[1]:
+    if st.button(traducciones.get('volver_al_mapa', 'Volver al Mapa')):
+        st.switch_page("app.py")
+
 # Título de la página
-st.title(f"{ruta['id']}")
+st.title(f"{ruta['route_name']}")
 
 # Columnas para el diseño
-cols = st.columns([3, 2])
+cols2 = st.columns([3, 2])
 
-with cols[0]:
+with cols2[0]:
     mostrar_informacion_general(ruta, traducciones)
     mostrar_puntos_interes(ruta, traducciones)
-    mostrar_recursos_asociados(ruta, traducciones)
-    mostrar_informacion_adicional(ruta, traducciones)
+    mostrar_optional_activities(ruta, traducciones)
+    mostrar_recommendations(ruta, traducciones)
     mostrar_accesibilidad(ruta, traducciones)
-    mostrar_servicios(ruta, traducciones)
+    mostrar_recursos_asociados(ruta, traducciones)
+    #mostrar_georeferenced_resources(ruta, traducciones)
+    mostrar_google_maps(ruta, traducciones)
 
-#with cols[1]:
-    #mostrar_imagenes(ruta)
-
-# Botón para regresar a la página principal
-if st.sidebar.button(traducciones.get('volver_al_mapa', 'Volver al Mapa')):
-    st.switch_page("app.py")
+with cols2[1]:
+    mostrar_imagenes(ruta)

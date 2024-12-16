@@ -189,6 +189,11 @@ def mostrar_imagenes(recurso):
 def aplicar_css_personalizado():
     st.markdown("""
     <style>
+        [data-testid="stImageContainer"] {{
+            display: block;
+            position: relative;
+            
+        }}
         /* Estilo para los subtítulos */
         .stMarkdown h2{
             color: #2E586E;
@@ -210,6 +215,8 @@ def aplicar_css_personalizado():
             color: #333333;
         }
         .stButton button {
+            max-width: 200px;
+            display: block;
             width: 100%; /* Ajustar al tamaño del sidebar */
             margin: 20px auto;
             margin-top: 5px;
@@ -256,7 +263,9 @@ def aplicar_css_personalizado():
 st.set_page_config(layout="wide", page_title="Detalle del Recurso")
 aplicar_css_personalizado()
 
-st.sidebar.image('assets/Logo_cabo_verde.png')
+cols = st.columns([3, 2])
+with cols[0]:
+    st.image('assets/Logo_cabo_verde.png', width=200)
 
 # Obtener el ID del recurso
 resource_id = st.session_state.get("resource_id", None)
@@ -270,22 +279,22 @@ idioma_seleccionado = st.session_state.get('idioma_seleccionado', 'es')
 # Cargar los datos del recurso
 recurso, traducciones = cargar_datos_recurso(idioma_seleccionado, resource_id)
 
+with cols[1]:
+    if st.button(traducciones.get('volver_al_mapa', 'Volver al Mapa')):
+        st.session_state['resource_id'] = None
+        st.switch_page("app.py")
+
 # Título de la página
 st.title(f"{recurso['resource_name']}")
 
 # Columnas para el diseño
-cols = st.columns([3, 2])
+cols2 = st.columns([3, 2])
 
-with cols[0]:
+with cols2[0]:
     mostrar_informacion_general(recurso, traducciones)
     mostrar_caracteristicas_recurso(recurso, traducciones)
     mostrar_accesibilidad_y_senalizacion(recurso, traducciones)
     mostrar_servicios_y_estado(recurso, traducciones)
 
-with cols[1]:
+with cols2[1]:
     mostrar_imagenes(recurso)
-
-# Botón para regresar a la página principal
-if st.sidebar.button(traducciones.get('volver_al_mapa', 'Volver al Mapa')):
-    st.session_state['resource_id'] = None
-    st.switch_page("app.py")
