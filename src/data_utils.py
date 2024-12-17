@@ -51,7 +51,7 @@ def filtrar_datos(datos, categorias_seleccionadas_ids=None, recurso_seleccionado
             datos['id'].isin(recurso_seleccionados_ids)
         ]
     elif categorias_seleccionadas_ids:
-        datos_filtrados = datos[datos['categoria_id'].isin(categorias_seleccionadas_ids)]
+        datos_filtrados = datos[datos['category_id'].isin(categorias_seleccionadas_ids)]
     elif recurso_seleccionados_ids:
         datos_filtrados = datos[datos['id'].isin(recurso_seleccionados_ids)]
     else:
