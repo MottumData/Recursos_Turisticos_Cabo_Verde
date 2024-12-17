@@ -33,7 +33,7 @@ def cargar_red_carreteras_por_puntos(coords):
     lats, lons = zip(*coords)
     north, south = max(lats) + margin, min(lats) - margin
     east, west = max(lons) + margin, min(lons) - margin
-    G = ox.graph_from_bbox(north, south, east, west, network_type='all_private')
+    G = ox.graph_from_bbox(north, south, east, west, network_type='all')
     return G
 
 

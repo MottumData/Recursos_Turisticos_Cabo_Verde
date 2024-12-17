@@ -44,12 +44,19 @@ def cargar_traducciones(idioma):
 def obtener_idiomas():
     return [archivo.split(".")[0] for archivo in os.listdir("traducciones") if archivo.endswith(".json")]
 
-def filtrar_datos(datos, categorias_ids, recurso_ids=None):
-    if categorias_ids:
-        datos = datos[datos['category_id'].isin(categorias_ids)]
-    if recurso_ids:
-        datos = datos[datos['id'].isin(recurso_ids)]
-    return datos
+def filtrar_datos(datos, categorias_seleccionadas_ids=None, recurso_seleccionados_ids=None):
+    if categorias_seleccionadas_ids and recurso_seleccionados_ids:
+        datos_filtrados = datos[
+            datos['category_id'].isin(categorias_seleccionadas_ids) |  # Operador OR
+            datos['id'].isin(recurso_seleccionados_ids)
+        ]
+    elif categorias_seleccionadas_ids:
+        datos_filtrados = datos[datos['categoria_id'].isin(categorias_seleccionadas_ids)]
+    elif recurso_seleccionados_ids:
+        datos_filtrados = datos[datos['id'].isin(recurso_seleccionados_ids)]
+    else:
+        datos_filtrados = datos
+    return datos_filtrados
 
 def inicializar_estado():
     if 'selected_resource_id' not in st.session_state:
