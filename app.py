@@ -59,17 +59,17 @@ def aplicar_css_personalizado(ruta_label, categorias_label):
             top: 10px;
             left: 10px;
             z-index: 99999999 !important;
-            max-width: 150px;
+            max-width: 130px;
             
         }}
             
         [data-testid="stSelectbox"]:has(input[aria-label$="{ruta_label}"]) {{
             position: fixed;
             top: 10px;
-            right: 170px;
+            right: 130px;
             z-index: 99999999 !important;
             width: auto !important;
-            max-width: 200px;
+            max-width: 130px;
             
         }}
         [data-testid="stSelectbox"]:has(input[aria-label$="Idioma:"]) {{
@@ -90,7 +90,7 @@ def aplicar_css_personalizado(ruta_label, categorias_label):
             right: 10px;
             z-index: 99999999 !important;
             width: auto !important;
-            max-width: 150px;
+            max-width: 110px;
         }}
         
         .stButton button {{
@@ -236,8 +236,7 @@ def aplicar_css_global():
 
 def main():
     inicializar_estado()
-    st.session_state['categorias_seleccionadas_ids'] = []
-
+    
     # Cargar configuración inicial desde session_state o usar valores por defecto
     if 'idioma_seleccionado' not in st.session_state:
         st.session_state['idioma_seleccionado'] = 'pt'
@@ -251,6 +250,12 @@ def main():
     category_mapping_ruta = traducciones.get("category_mapping_ruta", {})
     rutas_df = cargar_dataset_rutas(st.session_state['idioma_seleccionado'], category_mapping_ruta)
     
+    if 'categorias_seleccionadas_ids' not in st.session_state:
+        st.session_state['categorias_seleccionadas_ids'] = []
+        
+    if 'recurso_seleccionados_ids' not in st.session_state:
+        st.session_state['recurso_seleccionados_ids'] = []
+        
     # Determinar ruta seleccionada, o None por defecto
     if 'selected_route_name' not in st.session_state:
         st.session_state['selected_route_name'] = None
@@ -270,6 +275,7 @@ def main():
     # Renderizar el mapa UNA SOLA VEZ en cada ejecución, con los datos actuales
     salida = mostrar_mapa(datos_filtrados, traducciones, st.session_state['selected_route_name'], rutas_df)
 
+    print('categorias_seleccionadasde_numero:', st.session_state['recurso_seleccionados_ids'])
     print('categorias_seleccionadas_ids2:', st.session_state['categorias_seleccionadas_ids'])
     
     idioma_seleccionado = seleccionar_idioma()
@@ -279,12 +285,6 @@ def main():
     st.session_state['categorias_seleccionadas_ids'] = categorias_seleccionadas_ids
     
     seleccionar_ruta(traducciones)
-    
-    datos_filtrados = filtrar_datos(
-        datos,
-        st.session_state['categorias_seleccionadas_ids'],
-        st.session_state.get('recurso_seleccionados_ids', None)
-    )
     
     ruta_label = traducciones.get("select_route", "Seleccionar ruta")
     categorias_label = traducciones.get("select_category", "Categorias:")

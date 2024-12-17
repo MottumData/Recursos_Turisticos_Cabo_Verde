@@ -282,6 +282,11 @@ recurso, traducciones = cargar_datos_recurso(idioma_seleccionado, resource_id)
 with cols[1]:
     if st.button(traducciones.get('volver_al_mapa', 'Volver al Mapa')):
         st.session_state['resource_id'] = None
+        st.session_state['selected_resource_id'] = None 
+        st.session_state['recurso_seleccionados_ids'] = [] 
+        st.session_state['categorias_seleccionadas_ids'] = [] 
+        st.session_state['selected_route_name'] = None
+        st.session_state['selected_route_id'] = None
         st.switch_page("app.py")
 
 # Título de la página
